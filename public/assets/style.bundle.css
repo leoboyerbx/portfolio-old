@@ -1,0 +1,683 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-ExtraLightItalic.8cdb23a.woff2) format('woff2'),
+        url(fonts/Montserrat-ExtraLightItalic.2f3578b.woff) format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Black.6f505fc.woff2) format('woff2'),
+        url(fonts/Raleway-Black.65f6036.woff) format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Light.cefd3f3.woff2) format('woff2'),
+        url(fonts/Raleway-Light.0e89a10.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Thin.ed5ced2.woff2) format('woff2'),
+        url(fonts/Montserrat-Thin.152b34f.woff) format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-SemiBoldItalic.7b8ae5e.woff2) format('woff2'),
+        url(fonts/Raleway-SemiBoldItalic.c4d159a.woff) format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Italic.82168e0.woff2) format('woff2'),
+        url(fonts/Montserrat-Italic.dcda6be.woff) format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-LightItalic.58ea362.woff2) format('woff2'),
+        url(fonts/Raleway-LightItalic.45ee41f.woff) format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-SemiBoldItalic.5fec409.woff2) format('woff2'),
+        url(fonts/Montserrat-SemiBoldItalic.7b1d233.woff) format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Bold.8b61c60.woff2) format('woff2'),
+        url(fonts/Raleway-Bold.22dc6db.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Regular.8447ab6.woff2) format('woff2'),
+        url(fonts/Raleway-Regular.4f0b9ca.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-MediumItalic.43a841b.woff2) format('woff2'),
+        url(fonts/Montserrat-MediumItalic.5eb647b.woff) format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Black.0b4a7a7.woff2) format('woff2'),
+        url(fonts/Montserrat-Black.2ed2c79.woff) format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-ThinItalic.35d68fe.woff2) format('woff2'),
+        url(fonts/Raleway-ThinItalic.0581053.woff) format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-BoldItalic.d0289d0.woff2) format('woff2'),
+        url(fonts/Raleway-BoldItalic.4a32c2b.woff) format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Thin.2697366.woff2) format('woff2'),
+        url(fonts/Raleway-Thin.fd2f806.woff) format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-ExtraLightItalic.aaff71c.woff2) format('woff2'),
+        url(fonts/Raleway-ExtraLightItalic.6b97f64.woff) format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-ThinItalic.71e915f.woff2) format('woff2'),
+        url(fonts/Montserrat-ThinItalic.dbcc614.woff) format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-ExtraBold.6954210.woff2) format('woff2'),
+        url(fonts/Montserrat-ExtraBold.6bf1740.woff) format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Medium.4193cb3.woff2) format('woff2'),
+        url(fonts/Montserrat-Medium.72aebf4.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-SemiBold.6e97792.woff2) format('woff2'),
+        url(fonts/Raleway-SemiBold.47b88fa.woff) format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Medium.25fa062.woff2) format('woff2'),
+        url(fonts/Raleway-Medium.9900426.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-ExtraBoldItalic.5e4ec2d.woff2) format('woff2'),
+        url(fonts/Raleway-ExtraBoldItalic.ce3718c.woff) format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-LightItalic.8bd27fe.woff2) format('woff2'),
+        url(fonts/Montserrat-LightItalic.7267159.woff) format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Light.40e3170.woff2) format('woff2'),
+        url(fonts/Montserrat-Light.75ac2d4.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-BoldItalic.bcc7a47.woff2) format('woff2'),
+        url(fonts/Montserrat-BoldItalic.660f8f3.woff) format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Bold.1eaf595.woff2) format('woff2'),
+        url(fonts/Montserrat-Bold.137a9f5.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-Italic.7837c6d.woff2) format('woff2'),
+        url(fonts/Raleway-Italic.8e962dd.woff) format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-ExtraLight.99b7ee2.woff2) format('woff2'),
+        url(fonts/Montserrat-ExtraLight.08cb6a5.woff) format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-Regular.6c88072.woff2) format('woff2'),
+        url(fonts/Montserrat-Regular.c0b8804.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-ExtraBoldItalic.df71456.woff2) format('woff2'),
+        url(fonts/Montserrat-ExtraBoldItalic.30f0e9b.woff) format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-BlackItalic.7514fb9.woff2) format('woff2'),
+        url(fonts/Raleway-BlackItalic.57d86bd.woff) format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-SemiBold.c74260c.woff2) format('woff2'),
+        url(fonts/Montserrat-SemiBold.f410366.woff) format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-BlackItalic.cec2d49.woff2) format('woff2'),
+        url(fonts/Montserrat-BlackItalic.68f02d7.woff) format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-ExtraBold.ea462ff.woff2) format('woff2'),
+        url(fonts/Raleway-ExtraBold.b710a27.woff) format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-ExtraLight.4cb4954.woff2) format('woff2'),
+        url(fonts/Raleway-ExtraLight.8618633.woff) format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(fonts/Raleway-MediumItalic.c95275b.woff2) format('woff2'),
+        url(fonts/Raleway-MediumItalic.5d56c8a.woff) format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url(fonts/MarkPro-Heavy.cfb645d.woff2) format('woff2'),
+        url(fonts/MarkPro-Heavy.08287a7.woff) format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url(fonts/MarkPro-Medium.86778c1.woff2) format('woff2'),
+        url(fonts/MarkPro-Medium.04d642e.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url(fonts/MarkPro.fb83fc9.woff2) format('woff2'),
+        url(fonts/MarkPro.3b8d758.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark Pro';
+    src: url(fonts/MarkPro-Bold.a0062b9.woff2) format('woff2'),
+        url(fonts/MarkPro-Bold.17c4759.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+#menu-button {
+  cursor: pointer; }
+  #menu-button #menu-button-icon {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transform: scale(0.7); }
+    #menu-button #menu-button-icon::before {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform: scale(2); }
+    #menu-button #menu-button-icon .h-bar {
+      position: relative;
+      height: 4px;
+      width: 100%; }
+    #menu-button #menu-button-icon .h-bar::after, #menu-button #menu-button-icon .h-bar::before {
+      content: '';
+      position: absolute;
+      background-color: #101010;
+      border-radius: 10px;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98); }
+    #menu-button #menu-button-icon .h-bar:first-child::before {
+      transform-origin: left center; }
+    #menu-button #menu-button-icon .h-bar:nth-child(1)::before {
+      left: 0;
+      right: 25%; }
+    #menu-button #menu-button-icon .h-bar:nth-child(1)::after {
+      left: 90%;
+      right: 0; }
+    #menu-button #menu-button-icon .h-bar:nth-child(2)::before {
+      left: 0;
+      right: 90%; }
+    #menu-button #menu-button-icon .h-bar:nth-child(2)::after {
+      left: 25%;
+      right: 0; }
+    #menu-button #menu-button-icon .h-bar:nth-child(3)::before {
+      left: 0;
+      right: 50%; }
+    #menu-button #menu-button-icon .h-bar:nth-child(3)::after {
+      left: 65%;
+      right: 0; }
+    #menu-button #menu-button-icon .x-bar {
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden; }
+      #menu-button #menu-button-icon .x-bar::before, #menu-button #menu-button-icon .x-bar:nth-child(4)::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 100%;
+        border-radius: 5px;
+        left: 0;
+        top: 0;
+        background-color: #101010;
+        transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98); }
+      #menu-button #menu-button-icon .x-bar:nth-child(4)::after {
+        right: 0;
+        left: auto; }
+      #menu-button #menu-button-icon .x-bar:nth-child(4) {
+        transform: rotate(45deg) scaleX(1.1); }
+      #menu-button #menu-button-icon .x-bar:last-child {
+        transform: rotate(-45deg) scaleX(1.1); }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(1)::before {
+    left: 0;
+    right: 60%; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(1)::after {
+    left: 55%;
+    right: 0; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(2)::before {
+    left: 0;
+    right: 40%; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(2)::after {
+    left: 75%;
+    right: 0; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(3)::before {
+    left: 0;
+    right: 75%; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(3)::after {
+    left: 40%;
+    right: 0; }
+  #menu-button:hover #menu-button-icon .h-bar:nth-child(2)::before, #menu-button:hover #menu-button-icon .h-bar:nth-child(2)::after {
+    animation-direction: reverse; }
+  #menu-button.menu-open #menu-button-hint .text-menu span {
+    transform: translate3d(0, -80%, 0); }
+  #menu-button.menu-open #menu-button-hint .text-close span {
+    transform: translate3d(0, 0, 0); }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(1)::after, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(1)::after {
+    left: 100%;
+    transition-delay: 0s; }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(1)::before, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(1)::before {
+    right: 0;
+    left: 100%;
+    transition: right 0.3s cubic-bezier(0.42, 0, 0.11, 0.98) 0.2s, left 0.2s cubic-bezier(0.42, 0, 0.11, 0.98) 0.3s; }
+  #menu-button.menu-open #menu-button-icon .x-bar::before, #menu-button.menu-open:hover #menu-button-icon .x-bar::before {
+    width: 100%; }
+  #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::after, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::after {
+    width: 35%;
+    transition-delay: .8s; }
+  #menu-button.menu-open #menu-button-icon .x-bar:last-child::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:last-child::before {
+    transition-delay: .7s; }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(2)::after, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(2)::after {
+    left: 100%;
+    transition-delay: 0.1s; }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(2)::before, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(2)::before {
+    right: 0;
+    left: 100%;
+    transition: right 0.3s cubic-bezier(0.42, 0, 0.11, 0.98) 0.3s, left 0.3s cubic-bezier(0.42, 0, 0.11, 0.98) 0.4s; }
+  #menu-button.menu-open #menu-button-icon .x-bar::before, #menu-button.menu-open:hover #menu-button-icon .x-bar::before {
+    width: 100%; }
+  #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::after, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::after {
+    width: 35%;
+    transition-delay: .8s; }
+  #menu-button.menu-open #menu-button-icon .x-bar:last-child::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:last-child::before {
+    transition-delay: .7s; }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(3)::after, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(3)::after {
+    left: 100%;
+    transition-delay: 0.2s; }
+  #menu-button.menu-open #menu-button-icon .h-bar:nth-child(3)::before, #menu-button.menu-open:hover #menu-button-icon .h-bar:nth-child(3)::before {
+    right: 0;
+    left: 100%;
+    transition: right 0.3s cubic-bezier(0.42, 0, 0.11, 0.98) 0.4s, left 0.4s cubic-bezier(0.42, 0, 0.11, 0.98) 0.5s; }
+  #menu-button.menu-open #menu-button-icon .x-bar::before, #menu-button.menu-open:hover #menu-button-icon .x-bar::before {
+    width: 100%; }
+  #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open #menu-button-icon .x-bar:nth-child(4)::after, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:nth-child(4)::after {
+    width: 35%;
+    transition-delay: .8s; }
+  #menu-button.menu-open #menu-button-icon .x-bar:last-child::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:last-child::before {
+    transition-delay: .7s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(1)::before {
+    transition-delay: 0.3s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(1)::after {
+    transition-delay: 0.5s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(2)::before {
+    transition-delay: 0.4s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(2)::after {
+    transition-delay: 0.6s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(3)::before {
+    transition-delay: 0.5s; }
+  #menu-button.closed #menu-button-icon .h-bar:nth-child(3)::after {
+    transition-delay: 0.7s; }
+  #menu-button #menu-button-hint {
+    position: absolute;
+    top: 25px;
+    left: 75px;
+    line-height: 30px;
+    color: #101010;
+    font-size: 120%;
+    font-family: 'Raleway Medium', sans-serif; }
+    #menu-button #menu-button-hint span {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      transition: all 0.4s cubic-bezier(0.42, 0, 0.11, 0.98); }
+    #menu-button #menu-button-hint span:nth-child(1) {
+      transition-delay: 0s; }
+    #menu-button #menu-button-hint span:nth-child(2) {
+      transition-delay: 0.02s; }
+    #menu-button #menu-button-hint span:nth-child(3) {
+      transition-delay: 0.04s; }
+    #menu-button #menu-button-hint span:nth-child(4) {
+      transition-delay: 0.06s; }
+    #menu-button #menu-button-hint span:nth-child(5) {
+      transition-delay: 0.08s; }
+    #menu-button #menu-button-hint span:nth-child(6) {
+      transition-delay: 0.1s; }
+    #menu-button #menu-button-hint .text-menu, #menu-button #menu-button-hint .text-close {
+      position: absolute;
+      overflow: hidden;
+      padding: 0;
+      width: 100px; }
+    #menu-button #menu-button-hint .text-close span {
+      transform: translate3d(0, 80%, 0); }
+
+body {
+  font-family: 'Raleway', sans-serif; }
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0; }
+
+#home {
+  position: fixed; }
+  #home #home-content-wrapper {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; }
+    #home #home-content-wrapper #home-text-wrapper {
+      color: #101010;
+      font-family: 'Mark Pro', sans-serif;
+      font-weight: normal;
+      font-size: 400%; }
+      #home #home-content-wrapper #home-text-wrapper #home-name {
+        color: #323739;
+        overflow: hidden; }
+        #home #home-content-wrapper #home-text-wrapper #home-name .name:nth-child(1) {
+          display: inline-block;
+          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0s both; }
+        #home #home-content-wrapper #home-text-wrapper #home-name .name:nth-child(2) {
+          display: inline-block;
+          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0.05s both; }
+
+@keyframes name-arrive {
+  from {
+    transform: translate3d(0, 100%, 0); } }
+    #home #home-content-wrapper #home-portfolio-word {
+      display: flex; }
+      #home #home-content-wrapper #home-portfolio-word .letter-path {
+        fill: #fce14b; }
+      #home #home-content-wrapper #home-portfolio-word .letter img {
+        height: 18vw;
+        max-height: 200px; }
+
+@keyframes letter-1 {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(1) {
+        animation: letter-1 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-2 {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(2) {
+        animation: letter-2 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-3 {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(3) {
+        animation: letter-3 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-4 {
+  from {
+    opacity: 0;
+    transform: translate3d(60px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(4) {
+        animation: letter-4 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-5 {
+  from {
+    opacity: 0;
+    transform: translate3d(90px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(5) {
+        animation: letter-5 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-6 {
+  from {
+    opacity: 0;
+    transform: translate3d(120px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(6) {
+        animation: letter-6 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-7 {
+  from {
+    opacity: 0;
+    transform: translate3d(150px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(7) {
+        animation: letter-7 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-8 {
+  from {
+    opacity: 0;
+    transform: translate3d(180px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(8) {
+        animation: letter-8 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-9 {
+  from {
+    opacity: 0;
+    transform: translate3d(210px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(9) {
+        animation: letter-9 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-10 {
+  from {
+    opacity: 0;
+    transform: translate3d(240px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(10) {
+        animation: letter-10 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+
+@keyframes letter-11 {
+  from {
+    opacity: 0;
+    transform: translate3d(270px, 0, 0); } }
+      #home #home-content-wrapper #home-portfolio-word .letter:nth-child(11) {
+        animation: letter-11 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+    #home #home-content-wrapper #arrow-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      width: 80px;
+      cursor: pointer;
+      transform: translate(-50%, 0);
+      transition: all 0.5s cubic-bezier(0.42, 0, 0.11, 0.98);
+      outline: 0; }
+      #home #home-content-wrapper #arrow-scroll:hover {
+        transform: translate(-50%, -20%); }
+      #home #home-content-wrapper #arrow-scroll .arrow-scroll-line {
+        fill: none;
+        stroke: #323739;
+        stroke-width: 15;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 1000;
+        transform-origin: center center;
+        stroke-dashoffset: 500;
+        stroke-linecap: round;
+        animation: tracer 2s cubic-bezier(0.83, 0.01, 0.19, 1.01) backwards 0.3s;
+        transition: all 0.8s cubic-bezier(0.42, 0, 0.11, 0.98) 0.5s; }
+      #home #home-content-wrapper #arrow-scroll.hidden .arrow-scroll-line {
+        stroke-dashoffset: -400;
+        transform: rotate(-100deg); }
+
+@keyframes tracer {
+  from {
+    transform: translate(0, 100%) rotate(100deg);
+    stroke-dashoffset: 1000; } }
+
+#portfolio {
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfdfdf; }
+  #portfolio #portfolio-wrapper {
+    text-align: center;
+    width: 90%; }
+    @media (min-width: 768px) {
+      #portfolio #portfolio-wrapper {
+        width: 70%; } }
+    #portfolio #portfolio-wrapper h1 {
+      margin-bottom: 80px; }
+    #portfolio #portfolio-wrapper .portfolio-category {
+      text-align: center;
+      width: 200px; }
+      #portfolio #portfolio-wrapper .portfolio-category .icon {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin: 0;
+        background-color: #fce14b; }
+
