@@ -232,10 +232,10 @@ $bar-color: #101010;
     transform: translate(-50%, -50% ) scale3d(0, 0, 0);
     position: absolute;
     border-radius: 100%;
-    min-width: 250vh;
-    width: 250vw;
-    min-height: 250vw;
-    height: 250vh;
+    min-width: 300vh;
+    width: 300vw;
+    min-height: 300vw;
+    height: 300vh;
     background-color: $theme-main;
     transition:  all .5s $transition-easing;
   }
