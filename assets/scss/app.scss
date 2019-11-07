@@ -14,9 +14,11 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+  overflow: hidden;
 }
 #home {
-  position: fixed;
+  //position: fixed;
+  background-color: #fff;
   #home-content-wrapper {
     height: 90%;
     display: flex;
