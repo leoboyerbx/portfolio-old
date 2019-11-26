@@ -12,14 +12,14 @@ export default class ScrollMoov {
   constructor (element, from = {}, to = {}, options = {}) {
     this.element = element
     this.parent = options.parent ? options.parent : window
-
-    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    const viewportHeight = Math.max(document.documentElement.clientHeight, this.parent.innerHeight || 0)
     this.startPoint = Math.max(options.startPoint ? options.startPoint : this.getPosition().y - viewportHeight, 0)
 
     if (options.considerEndScroll === false) {
       this.endPoint = options.endPoint ? options.endPoint : this.getPosition().y + this.element.offsetHeight
     } else {
-      this.endPoint = Math.min(options.endPoint ? options.endPoint : this.getPosition().y + this.element.offsetHeight, documentHeight() - viewportHeight)
+      this.endPoint = Math.min(options.endPoint ? options.endPoint : this.getPosition().y + this.element.offsetHeight, this.parent === window ? documentHeight() : this.parent.scrollHeight - viewportHeight)
+      console.log(this.endPoint)
     }
 
     this.parent.addEventListener('scroll', () => { this.updateProgression() })
@@ -33,6 +33,19 @@ export default class ScrollMoov {
     this.applyTransform(progress)
   }
 
+  initUnidimensionnalProperty (from, to, CssName) {
+    this.animatedProperties.push({
+      CssName,
+      dimensions: [{
+        from: CssDimension(from[CssName].toString()),
+        to: CssDimension(to[CssName].toString())
+      }],
+      toCssString: function (dimensions) {
+        return `${this.CssName}(${dimensions[0].toString()})`
+      }
+    })
+  }
+
   initBidimensionnalProperty (from, to, CssName) {
     const propToInit = {
       CssName,
@@ -43,33 +56,23 @@ export default class ScrollMoov {
     }
     for (let i = 0; i < 2; i++) {
       propToInit.dimensions.push({
-        from: CssDimension(from[CssName][i]),
-        to: CssDimension(to[CssName][i])
+        from: CssDimension(from[CssName][i].toString()),
+        to: CssDimension(to[CssName][i].toString())
       })
     }
     this.animatedProperties.push(propToInit)
   }
 
   initAnimatedProperties (from, to) {
-    if (from.translate && to.translate) {
-      this.initBidimensionnalProperty(from, to, 'translate')
-    } else {
-      if (from.translateX && to.translateX) {
-        this.initBidimensionnalProperty({
-          translate: [from.translateX, 0]
-        }, {
-          translate: [to.translateX, 0]
-        }, 'translate')
-      }
-      if (from.translateY && to.translateY) {
-        this.initBidimensionnalProperty({
-          translate: [from.translateY, 0]
-        }, {
-          translate: [to.translateY, 0]
-        }, 'translate')
+    for (const CssProperty in from) {
+      if (to[CssProperty] !== undefined) {
+        if (['rotate', 'scaleX', 'scaleY', 'translateX', 'translateY'].includes(CssProperty)) {
+          this.initUnidimensionnalProperty(from, to, CssProperty)
+        } else if (['translate', 'scale'].includes(CssProperty)) {
+          this.initBidimensionnalProperty(from, to, CssProperty)
+        }
       }
     }
-
     this.applyTransform(this.getProgress())
   }
 
@@ -91,14 +94,14 @@ export default class ScrollMoov {
       for (const dimension of property.dimensions) {
         currentDimensions.push(this.calcDimensionValue(dimension.from, dimension.to, progress))
       }
-      trf = trf + property.toCssString(currentDimensions)
+      trf = trf + ' ' + property.toCssString(currentDimensions)
     }
-    console.log(trf)
     this.element.style.transform = trf
   }
 
   getProgress () {
-    const relativeScroll = window.scrollY - this.startPoint
+    const absScroll = this.parent === window ? window.scrollY : this.parent.scrollTop
+    const relativeScroll = absScroll - this.startPoint
     const deltaScroll = this.endPoint - this.startPoint
     let progress = (relativeScroll / deltaScroll)
     if (progress < 0) progress = 0
@@ -119,3 +122,5 @@ export default class ScrollMoov {
     return { x: xPosition, y: yPosition }
   }
 }
+
+window.ScrollMoov = ScrollMoov

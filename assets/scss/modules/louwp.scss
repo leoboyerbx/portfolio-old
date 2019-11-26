@@ -1,0 +1,37 @@
+$transition: all .3s $transition-easing;
+
+#mybio-text-wrapper {
+  position: relative;
+
+  .mybio-text {
+    //position: absolute;
+    width: 100%;
+    height: auto;
+    //top: 0;
+    //left: 0;
+  }
+  #mybio-text-louwp {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transition: $transition;
+    border-radius: 50%;
+  }
+  &:hover #mybio-text-louwp {
+    width: 180px;
+    height: 180px;
+  }
+  #mybio-hidden {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: $transition;
+  }
+}
+

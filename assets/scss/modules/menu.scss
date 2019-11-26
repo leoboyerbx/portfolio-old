@@ -8,6 +8,9 @@ $bar-color: #101010;
 #menu-button {
   cursor: pointer;
   z-index: 11;
+  #menu-button-hint {
+    transition: all .3s $transition-easing;
+  }
 
   #menu-button-icon {
     z-index: 11;
@@ -166,6 +169,11 @@ $bar-color: #101010;
       }
     }
   }
+  &.scrolled {
+    #menu-button-hint {
+      transform: translate3d(0, -100px, 0);
+    }
+  }
 
   &.closed #menu-button-icon {
     @for $i from 0 through 2 {
@@ -236,7 +244,7 @@ $bar-color: #101010;
     width: 300vw;
     min-height: 300vw;
     height: 300vh;
-    background-color: $theme-main;
+    background-color: $theme-grey-dark;
     transition:  all .5s $transition-easing;
   }
   &.open {

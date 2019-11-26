@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Léo Boyer - Portfolio</title>
-
+    <!--    <link rel="stylesheet" href="https://use.typekit.net/lum0cyk.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="assets/style.bundle.css">
@@ -13,52 +14,86 @@
     <script defer src="assets/app.bundle.js"></script>
 </head>
 <body>
-<div id="home" class="slide">
-    <div id="home-content-wrapper">
+<div id="page-content">
+    <div id="home">
+        <div id="home-content-wrapper">
 
-        <div id="home-text-wrapper">
-            <div id="home-name">
-                <span class="name">Léo</span>
-                <span class="name">Boyer</span>
+            <div id="home-text-wrapper">
+                <div id="home-name">
+                    <span class="name">Léo</span>
+                    <span class="name">Boyer</span>
+                </div>
+                <div id="home-portfolio-word">
+                    <div class="letter">p</div>
+                    <div class="letter">o</div>
+                    <div class="letter">r</div>
+                    <div class="letter">t</div>
+                    <div class="letter">f</div>
+                    <div class="letter">o</div>
+                    <div class="letter">l</div>
+                    <div class="letter">i</div>
+                    <div class="letter">o</div>
+                    <div class="letter dot">.</div>
+                </div>
+
             </div>
-            <div id="home-portfolio-word">
-                <div class="letter"><img src="assets/images/home-text_p.svg" alt="p"></div>
-                <div class="letter"><img src="assets/images/home-text_o1.svg" alt="o"></div>
-                <div class="letter"><img src="assets/images/home-text_r.svg" alt="r"></div>
-                <div class="letter"><img src="assets/images/home-text_t.svg" alt="t"></div>
-                <div class="letter"><img src="assets/images/home-text_f.svg" alt="f"></div>
-                <div class="letter"><img src="assets/images/home-text_o2.svg" alt="o"></div>
-                <div class="letter"><img src="assets/images/home-text_l.svg" alt="l"></div>
-                <div class="letter"><img src="assets/images/home-text_i.svg" alt="i"></div>
-                <div class="letter"><img src="assets/images/home-text_o3.svg" alt="o"></div>
-                <div class="letter"><img src="assets/images/home-text_dot.svg" alt="."></div>
-        </div>
-
-        </div>
-        <div id="arrow-scroll">
-            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+            <div id="arrow-scroll">
+                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
                 <polyline class="arrow-scroll-line" points="21,105.5 151.4,194.5 279,105.5" />
                 </svg>
 
+            </div>
         </div>
     </div>
-</div>
-<div id="portfolio" class="slide">
-    <div id="portfolio-wrapper">
-        <h1 id="mywork">Mes réalisations</h1>
-        <div class="row justify-content-between">
-            <div class="col-4">
-
+    <div id="homepage-content">
+        <div id="mybio" class="slide">
+            <div id="mybio-title">
+                <div id="line-1">Qui</div>
+                <div id="line-2">suis-je ?</div>
             </div>
-            <div class="col-4">
-                <div class="portfolio-category">
-                    Hello
+            <div id="mybio-content">
+                <div class="row">
+                    <div class="col-12 col-md-auto text-center align-items-center justify-content-center d-flex">
+                        <div id="mybio-photo"></div>
+                    </div>
+                    <div class="col-12 col-md px-3">
+                        <div id="mybio-text-wrapper">
+                            <div class="mybio-text">
+                                <p>
+                                    Léo Boyer, étudiant en DUT Métiers du Multimédia et de l'Internet à Grenoble. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto aut blanditiis consequatur deserunt dolorum eligendi esse ex explicabo
+                                </p>
+                            </div>
+                            <div id="mybio-text-louwp">
+                                <div id="mybio-hidden"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="portfolio-category">
-                    Hello
+        </div>
+        <div id="my-portfolio">
+            <div id="my-portfolio-title">
+                <div class="line-1">Ce que</div>
+                <div class="line-2">je sais faire</div>
+            </div>
+            <div id="my-portfolio-categories">
+                <div class="row">
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="category">
+                            Code
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="category">
+                            Av
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="category">
+                            Graph
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,13 +111,13 @@
     </div>
     <div id="menu-button-hint">
         <div class="text-menu">
-               <span>M</span><!-- whitespace
+            <span>M</span><!-- whitespace
             --><span>e</span><!-- whitespace
             --><span>n</span><!-- whitespace
             --><span>u</span>
         </div>
         <div class="text-close">
-               <span>F</span><!-- whitespace
+            <span>F</span><!-- whitespace
             --><span>e</span><!-- whitespace
             --><span>r</span><!-- whitespace
             --><span>m</span><!-- whitespace

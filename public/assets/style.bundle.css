@@ -287,42 +287,11 @@
 }
 
 
-@font-face {
-    font-family: 'Mark Pro';
-    src: url(fonts/MarkPro-Heavy.cfb645d.woff2) format('woff2'),
-        url(fonts/MarkPro-Heavy.08287a7.woff) format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mark Pro';
-    src: url(fonts/MarkPro-Medium.86778c1.woff2) format('woff2'),
-        url(fonts/MarkPro-Medium.04d642e.woff) format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mark Pro';
-    src: url(fonts/MarkPro.fb83fc9.woff2) format('woff2'),
-        url(fonts/MarkPro.3b8d758.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mark Pro';
-    src: url(fonts/MarkPro-Bold.a0062b9.woff2) format('woff2'),
-        url(fonts/MarkPro-Bold.17c4759.woff) format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-
 #menu-button {
   cursor: pointer;
   z-index: 11; }
+  #menu-button #menu-button-hint {
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98); }
   #menu-button #menu-button-icon {
     z-index: 11;
     position: fixed;
@@ -463,6 +432,8 @@
     transition-delay: .8s; }
   #menu-button.menu-open #menu-button-icon .x-bar:last-child::before, #menu-button.menu-open:hover #menu-button-icon .x-bar:last-child::before {
     transition-delay: .7s; }
+  #menu-button.scrolled #menu-button-hint {
+    transform: translate3d(0, -100px, 0); }
   #menu-button.closed #menu-button-icon .h-bar:nth-child(1)::before {
     transition-delay: 0.3s; }
   #menu-button.closed #menu-button-icon .h-bar:nth-child(1)::after {
@@ -528,7 +499,7 @@
     width: 300vw;
     min-height: 300vw;
     height: 300vh;
-    background-color: #fce14b;
+    background-color: #323739;
     transition: all 0.5s cubic-bezier(0.42, 0, 0.11, 0.98); }
   #menu.open {
     z-index: 10;
@@ -536,18 +507,50 @@
   #menu.open::before {
     transform: translate(-50%, -50%) scale3d(1, 1, 1); }
 
+#mybio-text-wrapper {
+  position: relative; }
+  #mybio-text-wrapper .mybio-text {
+    width: 100%;
+    height: auto; }
+  #mybio-text-wrapper #mybio-text-louwp {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98);
+    border-radius: 50%; }
+  #mybio-text-wrapper:hover #mybio-text-louwp {
+    width: 180px;
+    height: 180px; }
+  #mybio-text-wrapper #mybio-hidden {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98); }
+
 body {
   font-family: 'Raleway', sans-serif; }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
+#page-content {
+  position: fixed;
   top: 0;
-  overflow: hidden; }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll; }
 
 #home {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #fff; }
   #home #home-content-wrapper {
     height: 90%;
@@ -557,8 +560,8 @@ body {
     background-color: #fff; }
     #home #home-content-wrapper #home-text-wrapper {
       color: #101010;
-      font-family: 'Mark Pro', sans-serif;
-      font-weight: normal;
+      font-family: 'europa', sans-serif;
+      font-weight: 400;
       font-size: 400%; }
       #home #home-content-wrapper #home-text-wrapper #home-name {
         color: #323739;
@@ -574,12 +577,19 @@ body {
   from {
     transform: translate3d(0, 100%, 0); } }
     #home #home-content-wrapper #home-portfolio-word {
-      display: flex; }
+      font-family: "Mark Pro", sans-serif;
+      font-weight: 600;
+      font-size: 14vw;
+      display: flex;
+      align-items: baseline;
+      color: #fce14b; }
       #home #home-content-wrapper #home-portfolio-word .letter-path {
         fill: #fce14b; }
       #home #home-content-wrapper #home-portfolio-word .letter img {
         height: 18vw;
         max-height: 200px; }
+      #home #home-content-wrapper #home-portfolio-word .letter.dot {
+        font-size: 50%; }
 
 @keyframes letter-1 {
   from {
@@ -688,27 +698,99 @@ body {
     transform: translate(0, 100%) rotate(100deg);
     stroke-dashoffset: 1000; } }
 
-#portfolio {
+#homepage-content {
+  position: absolute;
+  width: 100%;
   top: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dfdfdf; }
-  #portfolio #portfolio-wrapper {
+  left: 0;
+  overflow: hidden; }
+
+#mybio {
+  position: relative;
+  min-height: 400px; }
+  #mybio #mybio-title {
     text-align: center;
-    width: 90%; }
-    @media (min-width: 768px) {
-      #portfolio #portfolio-wrapper {
-        width: 70%; } }
-    #portfolio #portfolio-wrapper h1 {
-      margin-bottom: 80px; }
-    #portfolio #portfolio-wrapper .portfolio-category {
-      text-align: center;
-      width: 200px; }
-      #portfolio #portfolio-wrapper .portfolio-category .icon {
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        margin: 0;
-        background-color: #fce14b; }
+    width: 100%;
+    font-size: 6em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    line-height: 1em; }
+    #mybio #mybio-title #line-1 {
+      transform: translate(-50px, 0);
+      transition: none; }
+    #mybio #mybio-title #line-2 {
+      transform: translate(50px, 0);
+      transition: none; }
+  #mybio #mybio-content {
+    padding-top: 50px; }
+    #mybio #mybio-content #mybio-photo {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin: 0 50px;
+      border-radius: 100%;
+      position: relative; }
+      @media (min-width: 768px) {
+        #mybio #mybio-content #mybio-photo {
+          margin: 0 50px 0 110px; } }
+      #mybio #mybio-content #mybio-photo::before {
+        transition: all 0.4s cubic-bezier(0.42, 0, 0.11, 0.98);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: #323739;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.1); }
+      #mybio #mybio-content #mybio-photo::after {
+        transition: all 0.4s cubic-bezier(0.42, 0, 0.11, 0.98);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-image: url(images/moi.81ce5a2.jpg);
+        background-size: cover;
+        z-index: 1;
+        width: 100%;
+        height: 100%; }
+      #mybio #mybio-content #mybio-photo img {
+        z-index: 2; }
+      #mybio #mybio-content #mybio-photo:hover::before {
+        transform: scale(1.15); }
+      #mybio #mybio-content #mybio-photo:hover::after {
+        transform: scale(0.95); }
+    #mybio #mybio-content .mybio-text, #mybio #mybio-content #mybio-hidden {
+      padding: 60px 60px 60px 40px;
+      font-size: 1.8em;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700; }
+      @media (min-width: 768px) {
+        #mybio #mybio-content .mybio-text, #mybio #mybio-content #mybio-hidden {
+          padding: 80px; } }
+    #mybio #mybio-content #mybio-hidden {
+      -webkit-text-stroke-width: 1px;
+      color: #fff;
+      -webkit-text-stroke-color: #323739; }
+
+#my-portfolio {
+  position: relative;
+  min-height: 400px;
+  background-color: white; }
+  #my-portfolio #my-portfolio-title {
+    text-align: center;
+    width: 100%;
+    font-size: 6em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    line-height: 1em; }
+    #my-portfolio #my-portfolio-title .line-1 {
+      transform: translate(-50px, 0);
+      transition: none; }
+    #my-portfolio #my-portfolio-title .line-2 {
+      transform: translate(50px, 0);
+      transition: none; }
 
