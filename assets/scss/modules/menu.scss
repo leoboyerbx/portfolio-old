@@ -14,7 +14,7 @@ $bar-color: #101010;
   }
 
   #menu-button-icon {
-    z-index: 11;
+    z-index: 200;
     position: fixed;
     width: 40px;
     height: 40px;
@@ -191,7 +191,7 @@ $bar-color: #101010;
     }
   }
   #menu-button-hint {
-    z-index: 11;
+    z-index: 200;
     position: absolute;
     top: 25px;
     left: 75px;
@@ -249,7 +249,7 @@ $bar-color: #101010;
     transition:  all .5s $transition-easing;
   }
   &.open {
-    z-index: 10;
+    //z-index: 199;
     transition-delay: 0s;
   }
   &.open::before {

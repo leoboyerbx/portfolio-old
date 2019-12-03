@@ -1,4 +1,4 @@
-<%- include(path.join(__viewsPath, 'partials/head'))%>
+<%- include(_path.join(__viewsPath, 'partials/head'))%>
 <body>
 <div id="page-content">
     <div id="home">
@@ -64,24 +64,24 @@
                 <div class="line-2">je sais faire</div>
             </div>
             <div id="my-portfolio-categories">
-                <div class="category link-1 link-light" id="category-code">
+                <a href="/web" class="category i-link link-1 link-light" id="category-code">
                     <div class="category-content">
                         <img src="assets/icons/web-programming.svg" alt="">
                         <div class="category-name">Web et<br> programmation</div>
                     </div>
-                </div>
-                <div class="category link-1 link-light">
+                </a>
+                <a href="#" class="category i-link link-1 link-light">
                     <div class="category-content">
                         <img src="assets/icons/web-programming.svg" alt="">
                         <div class="category-name">Audiovisuel</div>
                     </div>
-                </div>
-                <div class="category link-1 link-light">
+                </a>
+                <a href="#" class="category i-link link-1 link-light">
                     <div class="category-content">
                         <img src="assets/icons/web-programming.svg" alt="">
                         <div class="category-name">Graphisme</div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div id="contact" class="mt-5">
@@ -141,15 +141,20 @@
         </div>
     </div>
 </div>
-<div id="ext-page">
+<div id="ext-page" <%= locals.page ? 'class=open' : '' %>>
     <div class="cache"></div>
+    <div id="ext-content" <%= locals.page ? '' : 'class=hidden' %>>
+        <%if (locals.page) { %>
+        <%-include(_path.join(__viewsPath, locals.page))%>
+        <%}%>
+    </div>
 </div>
 
 <!--<div id="cursor-pointer" class="cursor-follow"></div>-->
 <div id="cursor-follower" class="cursor-follow">
     <div class="progress-cursor">
         <svg height="40" width="40">
-            <circle cx="20" cy="20" r="15" stroke-width="4" fill="none" />
+            <circle id="loadcircle" cx="20" cy="20" r="15" stroke-width="3" fill="none" />
         </svg>
     </div>
 </div>

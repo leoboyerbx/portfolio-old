@@ -293,7 +293,7 @@
   #menu-button #menu-button-hint {
     transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98); }
   #menu-button #menu-button-icon {
-    z-index: 11;
+    z-index: 200;
     position: fixed;
     width: 40px;
     height: 40px;
@@ -446,7 +446,7 @@
   #menu-button.closed #menu-button-icon .h-bar:nth-child(3)::after {
     transition-delay: 0.7s; }
   #menu-button #menu-button-hint {
-    z-index: 11;
+    z-index: 200;
     position: absolute;
     top: 25px;
     left: 75px;
@@ -501,7 +501,6 @@
     background-color: #323739;
     transition: all 0.5s cubic-bezier(0.42, 0, 0.11, 0.98); }
   #menu.open {
-    z-index: 10;
     transition-delay: 0s; }
   #menu.open::before {
     transform: translate(-50%, -50%) scale3d(1, 1, 1); }
@@ -545,7 +544,8 @@ body.dark #contact-title {
   top: 0;
   left: 0;
   z-index: -1;
-  transition-delay: .5s; }
+  transition-delay: .5s;
+  color: #fff; }
   #ext-page .cache {
     content: '';
     top: 0;
@@ -558,12 +558,20 @@ body.dark #contact-title {
     min-height: 300vw;
     height: 300vh;
     background-color: #323739;
-    transition: transform 0.9s cubic-bezier(0.42, 0, 0.11, 0.98); }
+    transition: transform 0.9s cubic-bezier(0.42, 0, 0.11, 0.98);
+    z-index: -1; }
   #ext-page.open {
-    z-index: 1000;
+    z-index: 100;
     transition-delay: 0s; }
   #ext-page.open .cache {
     transform: translate(-50%, -50%) scale3d(1, 1, 1); }
+  #ext-page #ext-content {
+    z-index: 1000;
+    color: #fff;
+    transition: all .3s;
+    opacity: 1; }
+    #ext-page #ext-content.hidden {
+      opacity: 0; }
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -827,8 +835,10 @@ body {
       #my-portfolio #my-portfolio-categories {
         flex-direction: row; } }
     #my-portfolio #my-portfolio-categories .category {
+      text-decoration: none;
       position: relative;
       flex-grow: 1;
+      display: block;
       cursor: pointer;
       text-align: center;
       padding: 100px 50px;
@@ -886,6 +896,8 @@ body {
   display: inline-block; }
 
 #cursor-follower {
+  box-sizing: border-box;
+  padding: 0;
   z-index: 10000;
   width: 40px;
   height: 40px;
@@ -916,18 +928,22 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 40px;
+    height: 40px;
     transform: rotate(-90deg);
     stroke: #fce14b;
     transition: all .3s;
     opacity: 0; }
     #cursor-follower .progress-cursor circle {
       stroke-dasharray: 130;
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 36;
       transition: all 0.2s cubic-bezier(0.42, 0, 0.11, 0.98); }
   #cursor-follower.ext-page {
     stroke: #323739; }
+  #cursor-follower.loading {
+    border-color: transparent; }
+    #cursor-follower.loading .progress-cursor {
+      opacity: 1; }
 
 .cursor-follow {
   position: absolute;

@@ -5,6 +5,7 @@ import Louwp from './modules/louwp'
 import letterByLetterAnim from './modules/letterByLetterAnim'
 import cursorFollower from './modules/cursorFollower'
 import extPage from './modules/extPage'
+import ajax from './modules/ajax'
 
 // parallax($('#home'), 0.4)
 menu($('#menu'), $('#menu-button'), $('#page-content'))
@@ -64,9 +65,4 @@ cursorFollower($('#cursor-follower'), followerHovers, true)
 // setTimeout(preventScroll.enableScroll, 30
 
 const extpage = extPage($('#ext-page'))
-$$('.category').forEach(el => {
-  el.addEventListener('click', e => {
-    console.log(e)
-    extpage.openPage(e.clientX, e.clientY)
-  })
-})
+ajax(extpage)

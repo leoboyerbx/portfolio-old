@@ -8,8 +8,9 @@
   left: 0;
   z-index: -1;
   transition-delay: .5s;
+  color: #fff;
 
-  & .cache { // Round cache animation
+  .cache { // Round cache animation
     content: '';
     top: 0;
     left: 0;
@@ -22,12 +23,22 @@
     height: 300vh;
     background-color: $theme-grey-dark;
     transition:  transform .9s $transition-easing;
+    z-index: -1;
   }
   &.open {
-    z-index: 1000;
+    z-index: 100;
     transition-delay: 0s;
   }
   &.open .cache {
     transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  }
+  #ext-content {
+    z-index: 1000;
+    color: #fff;
+    transition: all .3s;
+    opacity: 1;
+    &.hidden{
+      opacity: 0;
+    }
   }
 }
