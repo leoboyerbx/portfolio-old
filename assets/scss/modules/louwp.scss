@@ -35,3 +35,12 @@ $transition: all .3s $transition-easing;
   }
 }
 
+
+body.dark {
+  #page-content {
+    background-color: #000;
+  }
+  #contact-title {
+    color: #fff;
+  }
+}

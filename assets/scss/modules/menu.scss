@@ -7,6 +7,7 @@ $bar-color: #101010;
 
 #menu-button {
   cursor: pointer;
+  //cursor: none;
   z-index: 11;
   #menu-button-hint {
     transition: all .3s $transition-easing;
@@ -22,7 +23,7 @@ $bar-color: #101010;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    cursor: pointer;
+    //cursor: pointer;
     transform: scale(.7);
 
     &::before {

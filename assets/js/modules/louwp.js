@@ -17,7 +17,7 @@ export default class Louwp {
       this.moveTo(e.layerX, e.layerY)
     }
 
-    const handler = _.throttle(this.moveGlass, 120)
+    const handler = _.throttle(this.moveGlass, 100)
     element.addEventListener('mousemove', handler)
     element.parentNode.addEventListener('mousemove', handler)
 

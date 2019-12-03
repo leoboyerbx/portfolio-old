@@ -1,0 +1,33 @@
+@import '../globals/colors';
+@import '../globals/globals';
+#ext-page {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition-delay: .5s;
+
+  & .cache { // Round cache animation
+    content: '';
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale3d(0, 0, 0);
+    position: absolute;
+    border-radius: 100%;
+    min-width: 300vh;
+    width: 300vw;
+    min-height: 300vw;
+    height: 300vh;
+    background-color: $theme-grey-dark;
+    transition:  transform .9s $transition-easing;
+  }
+  &.open {
+    z-index: 1000;
+    transition-delay: 0s;
+  }
+  &.open .cache {
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  }
+}
