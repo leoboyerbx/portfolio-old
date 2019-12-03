@@ -1,6 +1,4 @@
 import { $ } from './qs'
-let isAnimating = false
-let waitingShow = false
 
 export default function extPage (element) {
   const cache = element.querySelector('.cache')
@@ -8,8 +6,6 @@ export default function extPage (element) {
   function showPage (x, y) {
     console.log(x, y)
     element.classList.add('open')
-    isAnimating = true
-    setTimeout(afterAnimation, 600)
     // cursorFollow.classList.add('ext-page')
     cache.style.left = x + 'px'
     cache.style.top = y + 'px'
@@ -23,7 +19,7 @@ export default function extPage (element) {
   }
   function hidePage () {
     centerCircle()
-    $('#page-content').style.display = 'block'
+    $('#page-content').classList.remove('ext-page')
     element.classList.remove('open')
     hideContent()
   }
@@ -31,17 +27,7 @@ export default function extPage (element) {
     $('#ext-content').innerHTML = html
   }
   function showContent () {
-    if (isAnimating) {
-      waitingShow = true
-    } else {
-      $('#ext-content').classList.remove('hidden')
-    }
-  }
-  function afterAnimation () {
-    if (waitingShow) {
-      $('#ext-content').classList.remove('hidden')
-      waitingShow = false
-    }
+    $('#ext-content').classList.remove('hidden')
   }
 
   function hideContent () {
@@ -53,6 +39,7 @@ export default function extPage (element) {
     hidePage,
     setHTML,
     showContent,
-    hideContent
+    hideContent,
+    extContent: $('#ext-content')
   }
 }

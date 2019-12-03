@@ -35,9 +35,10 @@
   #ext-content {
     z-index: 1000;
     color: #fff;
-    transition: all .3s;
+    transition: all .3s .3s;
     opacity: 1;
     &.hidden{
+      transition: all .3s;
       opacity: 0;
     }
   }
