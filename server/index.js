@@ -26,6 +26,9 @@ module.exports = function () {
   serverApp.get('/web', (req, res) => {
     portfolioController.web(req, res)
   })
+  serverApp.get('/av', (req, res) => {
+    portfolioController.av(req, res)
+  })
 
   http.listen(process.env.PORT || 3000, () => {
     console.log(`App Started on PORT ${process.env.PORT || 3000}`)

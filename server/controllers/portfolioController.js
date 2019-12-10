@@ -1,10 +1,17 @@
 class PortfolioController {
-  web (req, res) {
+  ajaxView (req, res, view) {
     if (req.isAjax) {
-      res.renderView('portfolio/web')
+      res.renderView(view)
     } else {
-      res.render('index', { page: 'portfolio/web' })
+      res.render('index', { page: view })
     }
+  }
+
+  web (req, res) {
+    this.ajaxView(req, res, 'portfolio/web')
+  }
+  av (req, res) {
+    this.ajaxView(req, res, 'portfolio/audiovisuel')
   }
 }
 

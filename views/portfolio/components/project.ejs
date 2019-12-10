@@ -1,0 +1,13 @@
+<div class="project">
+    <div class="project-image">
+        <img src="<%=img%>" alt="">
+    </div>
+    <div class="project-title">
+        <%=title%>
+    </div>
+    <div class="project-badges">
+        <%tags.forEach(tag => {%>
+        <span class="project-badge"><%=tag%></span>
+        <%})%>
+    </div>
+</div>

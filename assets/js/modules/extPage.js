@@ -1,16 +1,19 @@
 import { $ } from './qs'
-
+let isAnimating = false
+let externalPageOpened = $('#ext-page').classList.contains('open')
 export default function extPage (element) {
   const cache = element.querySelector('.cache')
   // const cursorFollow = document.querySelector('#cursor-follower')
   function showPage (x, y) {
-    console.log(x, y)
     element.classList.add('open')
-    // cursorFollow.classList.add('ext-page')
+    externalPageOpened = true
+    // $('#menu-button').classList.add('scrolled')
+    isAnimating = true
     cache.style.left = x + 'px'
     cache.style.top = y + 'px'
     setTimeout(() => {
       $('#page-content').classList.add('ext-page')
+      isAnimating = false
     }, 900)
   }
   function centerCircle () {
@@ -18,6 +21,7 @@ export default function extPage (element) {
     cache.style.left = (document.documentElement.clientWidth / 2) + 'px'
   }
   function hidePage () {
+    externalPageOpened = false
     centerCircle()
     $('#page-content').classList.remove('ext-page')
     element.classList.remove('open')
@@ -27,7 +31,18 @@ export default function extPage (element) {
     $('#ext-content').innerHTML = html
   }
   function showContent () {
-    $('#ext-content').classList.remove('hidden')
+    function action () {
+      $('#ext-content').classList.remove('hidden')
+    }
+    if (!isAnimating) {
+      action()
+    } else {
+      setTimeout(action, 700)
+    }
+  }
+
+  function isOpen () {
+    return externalPageOpened
   }
 
   function hideContent () {
@@ -40,6 +55,7 @@ export default function extPage (element) {
     setHTML,
     showContent,
     hideContent,
-    extContent: $('#ext-content')
+    extContent: $('#ext-content'),
+    isOpen
   }
 }

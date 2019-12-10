@@ -1,5 +1,26 @@
-<h1>Mes réalisations web</h1>
-<img src="/assets/images/test1.jpg" alt="">
-<img src="/assets/images/test2.jpg" alt="">
-<img src="/assets/images/test3.jpg" alt="">
-<img src="/assets/images/test4.jpg" alt="">
+    <header class="header web">
+        <svg class="svg-text web" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 570.3 187.5" style="enable-background:new 0 0 570.3 187.5;" xml:space="preserve">
+            <g style="padding: 10px">
+                <path class="st0 letter-wmaj" d="M0,2.8h39.9L69.3,110c3.1,11.2,6.5,25.3,6.7,26.7c0.3-1.4,3.1-14.9,6.2-26.7L109.5,2.8h40.7L177.1,110
+                c2.8,11.5,5.6,25.3,5.9,26.7c0.6-1.4,3.6-15.2,7-26.7L220.3,2.8h39L205.2,185h-41.5L135.8,81.7c-3.4-12.6-5.6-29.8-6.2-31.7
+                c-0.6,2-2.8,19.1-6.2,31.7L95.7,185H53.9L0,2.8z"/>
+                <path class="st0 letter-e" d="M260.7,114.5c0-40.4,31.4-73,72.7-73c38.2,0,68.2,32.6,68.2,72.4c0,6.7-0.8,13.5-0.8,13.5H298.9
+                c4.5,19.4,20.5,28.6,39,28.6c13.5,0,27.5-3.9,37.9-10.9l14,26.9c-15.7,10.4-34,15.4-52.2,15.4C296.7,187.5,260.7,160.8,260.7,114.5
+                z M366.3,102.4c-2.8-17.7-16.8-29.5-34-29.5c-16.3,0-30.3,11.8-34,29.5H366.3z"/>
+                <path class="st0 letter-b" d="M462,167.8v16.8h-35.6V0H464v60.1c10.1-12.1,26.1-18.5,42.4-18.5c38.7,0,64,32.6,64,73s-24.7,73-63.4,73
+                C490.1,187.5,472.4,181.3,462,167.8z M532.2,114.5c0-21.9-14.6-38.2-34.8-38.2c-19.4,0-33.4,16.3-33.4,38.2
+                c0,22.5,14.3,38.2,33.4,38.2C517.6,152.7,532.2,136.7,532.2,114.5z"/>
+            </g>
+        </svg>
+
+    </header>
+    <section class="content-wrapper text-center portfolio-list">
+    <!--            <img src="/assets/" alt="">-->
+            <h3 class="title">Mes projets</h3>
+
+        <div class="projects-list">
+            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'Locked in 60\'', tags: ['Projet de cours']})%>
+            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['Projet personnel']})%>
+        </div>
+
+    </section>

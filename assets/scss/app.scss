@@ -5,6 +5,7 @@
 @import "./modules/menu";
 @import "./modules/louwp";
 @import "./modules/ext-page";
+@import "./modules/portfolio-category";
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -423,8 +424,18 @@ body {
 
     circle {
       stroke-dasharray: $offset;
-      stroke-dashoffset: $offset;
-      transition: all .2s $transition-easing;
+      stroke-dashoffset: 0;
+      //transition: all .2s $transition-easing;
+      animation: dash 2s infinite;
+    }
+
+    @keyframes dash {
+      50% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+        stroke-dashoffset: -$offset;
+      }
     }
   }
   &.ext-page {
@@ -439,8 +450,6 @@ body {
     }
   }
 }
-
-
 
 .cursor-follow {
   position: absolute;

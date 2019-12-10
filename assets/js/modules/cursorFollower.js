@@ -1,7 +1,24 @@
 import _ from 'lodash/function'
 import { $$ } from '@/modules/qs'
 
-export default function cursorFollower (element, hovers = [], throttle = true) {
+export default function auto (element, hovers = [], throttle = true) {
+  let started = false
+  function start () {
+    if (!started) {
+      cursorFollower(element, hovers, throttle)
+      started = true
+      window.cursor = true
+      window.removeEventListener('mousemove', start, false)
+    }
+  }
+  window.addEventListener('touchstart', function () {
+    started = true
+    element.style.display = 'none'
+    window.cursor = false
+  })
+  window.addEventListener('mousemove', start, false)
+}
+function cursorFollower (element, hovers = [], throttle = true) {
   element.style.position = 'absolute'
   element.style.top = '0'
   element.style.left = '0'
