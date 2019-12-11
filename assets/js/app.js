@@ -6,9 +6,10 @@ import letterByLetterAnim from './modules/letterByLetterAnim'
 import cursorFollower from './modules/cursorFollower'
 import extPage from './modules/extPage'
 import ajax from './modules/ajax'
+import invertScroll from './modules/invertScroll'
 
 // parallax($('#home'), 0.4)
-menu($('#menu'), $('#menu-button'), $('#page-content'))
+// menu($('#menu'), $('#menu-button'), $('#page-content'))
 const who = new ScrollMoov($('#mybio #line-1'),
   {
     translateX: '50px'
@@ -66,3 +67,4 @@ cursorFollower($('#cursor-follower'), followerHovers, true)
 
 const extpage = extPage($('#ext-page'))
 ajax(extpage)
+invertScroll()

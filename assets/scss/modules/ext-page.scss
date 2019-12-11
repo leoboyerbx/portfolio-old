@@ -2,14 +2,14 @@
 @import '../globals/globals';
 
 $header-text-color: white;
-$header-background-color: adjust-color($theme-main, $lightness: -5, $saturation: -5);
-
 @mixin stroke ($offset) {
   stroke-dasharray: $offset;
   stroke-dashoffset: $offset;
 }
 @mixin delay ($numletters, $delay) {
-  animation: appear .3s both $numletters * $delay + 1.5s;
+  &::before {
+    animation: appear .3s both $numletters * $delay + 1.5s;
+  }
   .svg-text{
     animation: fill .4s both;
     animation-delay: $numletters * $delay + 1.2s;
@@ -84,6 +84,48 @@ $header-background-color: adjust-color($theme-main, $lightness: -5, $saturation:
       align-items: center;
       justify-content: center;
       z-index: 100;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        transform-origin: left center;
+        transform: scale(0, 1);
+      }
+      @include md() {
+        //position: absolute;
+        //background-color: #ff0000;
+        background-color: transparent;
+        position: fixed;
+        //width: 20vw;
+        height: 100%;
+        left: 40vw;
+        right: 40vw;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .svg-text {
+          max-width: 20vw;
+        }
+        .svg-text-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 16vw;
+          height: 16vw;
+          //border: solid white 1px;
+        }
+        &::before {
+          content: none;
+        }
+      }
 
       .svg-text {
         overflow: visible;
@@ -110,6 +152,9 @@ $header-background-color: adjust-color($theme-main, $lightness: -5, $saturation:
 
     .content-wrapper {
       margin-top: 100px;
+      @include md () {
+        margin: 20px 0;
+      }
     }
   }
 }
@@ -138,6 +183,6 @@ $header-background-color: adjust-color($theme-main, $lightness: -5, $saturation:
 }
 @keyframes appear {
   to {
-    background-color: $header-background-color;
+    transform: scale(1,1);
   }
 }
