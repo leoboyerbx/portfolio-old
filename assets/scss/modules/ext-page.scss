@@ -98,13 +98,12 @@ $header-text-color: white;
       @include md() {
         //position: absolute;
         //background-color: #ff0000;
+        pointer-events: none;
         background-color: transparent;
         position: fixed;
-        //width: 20vw;
+        width: 20%;
         height: 100%;
-        left: 40vw;
-        right: 40vw;
-        width: auto;
+        left: 39%;
         padding: 0;
         margin: 0;
         display: flex;
@@ -153,7 +152,7 @@ $header-text-color: white;
     .content-wrapper {
       margin-top: 100px;
       @include md () {
-        margin: 20px 0;
+        margin: 0;
       }
     }
   }

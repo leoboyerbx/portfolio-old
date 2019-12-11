@@ -19,10 +19,10 @@ body {
   right: 0;
   bottom: 0;
   overflow-y: scroll;
-  &.ext-page {
-    transition-delay: .9s;
-    display: none;
-  }
+  //&.ext-page {
+  //  transition-delay: .9s;
+  //  display: none;
+  //}
 }
 #home {
   //position: fixed;

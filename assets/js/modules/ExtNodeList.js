@@ -14,7 +14,6 @@ export default class ExtNodeList {
     this.item = this.nodeList.item.bind(this.nodeList)
     this.keys = this.nodeList.keys.bind(this.nodeList)
     this.values = this.nodeList.values.bind(this.nodeList)
-
   }
 
   get () {
@@ -52,8 +51,15 @@ export default class ExtNodeList {
   }
 
   css (...args) {
+    const returnValue = []
     this.forEach(node => {
-      css(node, ...args)
+      const res = css(node, ...args)
+      if (res) {
+        returnValue.push(res)
+      }
     })
+    if (returnValue.length) {
+      return returnValue
+    }
   }
 }

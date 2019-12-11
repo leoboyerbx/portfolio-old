@@ -605,12 +605,12 @@ body.dark #contact-title {
         transform: scale(0, 1); }
       @media (min-width: 768px) {
         #ext-page #ext-content .header {
+          pointer-events: none;
           background-color: transparent;
           position: fixed;
+          width: 20%;
           height: 100%;
-          left: 40vw;
-          right: 40vw;
-          width: auto;
+          left: 39%;
           padding: 0;
           margin: 0;
           display: flex;
@@ -670,7 +670,7 @@ body.dark #contact-title {
       margin-top: 100px; }
       @media (min-width: 768px) {
         #ext-page #ext-content .content-wrapper {
-          margin: 20px 0; } }
+          margin: 0; } }
 
 #ext-page:not(.hidden) .svg-text path {
   animation: path 1.4s both; }
@@ -731,23 +731,24 @@ body.dark #contact-title {
 
 .portfolio-list {
   text-align: left; }
-  .portfolio-list .title {
-    font-family: 'arboria', sans-serif; }
   .portfolio-list .projects-list {
     width: 100%;
     padding: 20px 8%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 25px; }
+    grid-template-columns: repeat(1, 1fr); }
     @media (min-width: 768px) {
       .portfolio-list .projects-list {
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 20vw;
-        padding: 0 3%; } }
+        padding: 0 3%;
+        margin: 4vw 0; } }
   .portfolio-list .project {
     width: 100%;
     overflow: hidden;
-    text-align: left; }
+    text-align: left;
+    margin-bottom: 25px; }
+    .portfolio-list .project.transition {
+      transition: all 1s cubic-bezier(0.42, 0, 0.11, 0.98); }
     .portfolio-list .project .project-image {
       width: 100%;
       position: relative;
@@ -793,9 +794,6 @@ body {
   right: 0;
   bottom: 0;
   overflow-y: scroll; }
-  #page-content.ext-page {
-    transition-delay: .9s;
-    display: none; }
 
 #home {
   overflow: hidden;

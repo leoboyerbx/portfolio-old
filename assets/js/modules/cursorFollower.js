@@ -17,8 +17,31 @@ export default function auto (element, hovers = [], throttle = true) {
     window.cursor = false
   })
   window.addEventListener('mousemove', start, false)
+
+  return {
+    classList: element.classList
+  }
 }
 function cursorFollower (element, hovers = [], throttle = true) {
+
+  // eslint-disable-next-line no-undef
+  class CursorLink extends HTMLElement {
+    constructor () {
+      super()
+      this.className = this.getAttribute('class-names')
+      this.addEventListener('mouseover', () => {
+        element.classList.add(...(this.className).split(' '))
+      })
+      this.addEventListener('mouseleave', () => {
+        element.classList.remove(...(this.className).split(' '))
+      })
+    }
+  }
+
+  for (const hover of hovers) {
+    handleHovers(hover.selector, hover.className)
+  }
+  window.customElements.define('cursor-link', CursorLink)
   element.style.position = 'absolute'
   element.style.top = '0'
   element.style.left = '0'
@@ -43,20 +66,16 @@ function cursorFollower (element, hovers = [], throttle = true) {
     const x = cx - (rect.width / 2)
     const y = cy - (rect.height / 2)
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
-
-    for (const hover of hovers) {
-      handleHovers(cx, cy, hover.selector, hover.className)
-    }
   }
-  function handleHovers (cx, cy, selector, className) {
-    let hover = false
+
+  function handleHovers (selector, className) {
     $$(selector).forEach(link => {
-      const rect = link.getBoundingClientRect()
-      if (cx > rect.x && cx < rect.x + rect.width && cy > rect.y && cy < rect.y + rect.height) {
+      link.addEventListener('mouseover', () => {
         element.classList.add(...(className).split(' '))
-        hover = true
-      }
+      })
+      link.addEventListener('mouseleave', () => {
+        element.classList.remove(...(className).split(' '))
+      })
     })
-    if (!hover) element.classList.remove(...(className).split(' '))
   }
 }

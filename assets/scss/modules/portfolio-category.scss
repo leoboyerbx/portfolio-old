@@ -3,26 +3,27 @@
 
 .portfolio-list {
   text-align: left;
-  .title {
-    font-family: 'arboria', sans-serif;
-  }
   .projects-list {
     width: 100%;
     padding: 20px 8%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 25px;
+    //grid-row-gap: 25px;
     @include md() {
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 20vw;
       padding: 0 3%;
+      margin: 4vw 0;
     }
   }
   .project {
     width: 100%;
     overflow: hidden;
     text-align: left;
-    //margin: 10px 0;
+    margin-bottom: 25px;
+    &.transition {
+      transition: all 1s $transition-easing;
+    }
     .project-image {
       width: 100%;
       position: relative;
