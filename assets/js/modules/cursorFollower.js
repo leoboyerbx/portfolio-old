@@ -35,7 +35,10 @@ function allowMove () {
 function cursorFollower (element, hovers = [], throttle = true) {
   function cursorEventListeners (link, className, grab = false) {
     link.addEventListener('mouseover', () => {
-      if (className) element.classList.add(...(className).split(' '))
+      if (className) {
+        element.className = ''
+        element.classList.add(...(className).split(' '))
+      }
       if (grab) link.grab()
     })
     link.addEventListener('mouseleave', () => {

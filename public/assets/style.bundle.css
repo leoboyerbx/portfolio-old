@@ -620,11 +620,24 @@ body.dark #contact-title {
           #ext-page #ext-content .header .svg-text {
             max-width: 20vw; }
           #ext-page #ext-content .header .svg-text-wrapper {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 16vw;
             height: 16vw; }
+            #ext-page #ext-content .header .svg-text-wrapper::before {
+              position: absolute;
+              content: '';
+              height: 5px;
+              left: 10%;
+              right: 90%;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: #fff;
+              transition: all .3s; }
+            #ext-page #ext-content .header .svg-text-wrapper.del::before {
+              right: 10%; }
           #ext-page #ext-content .header::before {
             content: none; } }
       #ext-page #ext-content .header .svg-text {
@@ -673,7 +686,6 @@ body.dark #contact-title {
         position: absolute;
         right: 20px;
         top: 50%;
-        transform: translateY(-55%);
         width: 20px;
         height: 20px; }
         @media (min-width: 768px) {
@@ -682,6 +694,38 @@ body.dark #contact-title {
             right: unset;
             top: unset;
             transform: scale(1.5); } }
+        #ext-page #ext-content .header .header-close .cross {
+          position: absolute;
+          pointer-events: all;
+          width: 20px;
+          height: 20px; }
+          #ext-page #ext-content .header .header-close .cross .x-bar {
+            position: absolute;
+            height: 3px;
+            left: 0;
+            right: 0;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+            overflow: hidden; }
+            #ext-page #ext-content .header .header-close .cross .x-bar::before {
+              content: '';
+              position: absolute;
+              width: 0;
+              transition: all .2s .2s;
+              height: 100%;
+              border-radius: 10px;
+              top: 0;
+              left: 0;
+              background-color: #fff;
+              animation: trace .3s both .6s; }
+            #ext-page #ext-content .header .header-close .cross .x-bar:last-child::before {
+              animation-delay: .8s; }
+
+@keyframes trace {
+  to {
+    width: 100%; } }
+            #ext-page #ext-content .header .header-close .cross .x-bar:last-child {
+              transform: rotate(45deg); }
     #ext-page #ext-content .content-wrapper {
       margin-top: 100px; }
       @media (min-width: 768px) {
@@ -695,6 +739,7 @@ body.dark #contact-title {
   animation: appear 0.3s both 2.7s; }
 
 #ext-page:not(.hidden) .header.web .svg-text {
+  position: relative;
   animation: fill .4s both;
   animation-delay: 2.4s; }
   #ext-page:not(.hidden) .header.web .svg-text path:nth-child(1) {
@@ -708,6 +753,7 @@ body.dark #contact-title {
   animation: appear 0.3s both 2.6s; }
 
 #ext-page:not(.hidden) .header.audiovisuel .svg-text {
+  position: relative;
   animation: fill .4s both;
   animation-delay: 2.3s; }
   #ext-page:not(.hidden) .header.audiovisuel .svg-text path:nth-child(1) {
@@ -745,21 +791,21 @@ body.dark #contact-title {
   to {
     transform: scale(1, 1); } }
 
-#cursor-follower .cross {
+#cursor-follower .cross-cursor {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
   position: absolute;
   width: 20px;
   height: 20px; }
-  #cursor-follower .cross .x-bar {
+  #cursor-follower .cross-cursor .x-bar {
     position: absolute;
     height: 3px;
     width: 100%;
     border-radius: 10px;
     transform: translateY(10px) rotate(-45deg);
     overflow: hidden; }
-    #cursor-follower .cross .x-bar::before {
+    #cursor-follower .cross-cursor .x-bar::before {
       content: '';
       position: absolute;
       width: 0;
@@ -769,19 +815,19 @@ body.dark #contact-title {
       top: 0;
       left: 0;
       background-color: #323739; }
-    #cursor-follower .cross .x-bar:last-child::before {
+    #cursor-follower .cross-cursor .x-bar:last-child::before {
       transition-delay: 0s; }
-    #cursor-follower .cross .x-bar:last-child {
+    #cursor-follower .cross-cursor .x-bar:last-child {
       transform: translateY(10px) rotate(45deg); }
 
 #cursor-follower.closing .round-cursor {
   background-color: #fce14b;
   transform: scale(1.5); }
 
-#cursor-follower.closing .cross .x-bar::before {
+#cursor-follower.closing .cross-cursor .x-bar::before {
   width: 100%; }
 
-#cursor-follower.closing .cross .x-bar:first-child::before {
+#cursor-follower.closing .cross-cursor .x-bar:first-child::before {
   transition-delay: .2s; }
 
 .portfolio-list {
@@ -822,7 +868,6 @@ body.dark #contact-title {
         min-height: 100%;
         object-fit: cover; }
     .portfolio-list .project .project-title {
-      font-family: 'Raleway Thin', sans-serif;
       text-align: left;
       font-size: 1.5em;
       margin: 10px 20px; }
@@ -897,10 +942,8 @@ a, a:hover {
       #home #home-content-wrapper #home-portfolio-word .letter-path {
         fill: #fce14b; }
       #home #home-content-wrapper #home-portfolio-word .letter {
+        line-height: .5em;
         margin: 0 2px; }
-        #home #home-content-wrapper #home-portfolio-word .letter img {
-          height: 18vw;
-          max-height: 200px; }
         #home #home-content-wrapper #home-portfolio-word .letter.dot {
           font-size: 50%; }
 
@@ -1163,13 +1206,15 @@ a, a:hover {
   display: inline-block; }
 
 #cursor-follower {
+  position: absolute;
+  z-index: 10000;
+  top: -100px;
+  left: 0;
   box-sizing: border-box;
   padding: 0;
-  z-index: 10000;
   width: 40px;
   height: 40px;
   transition: all .2s ease;
-  position: absolute;
   transform: translate(-100%, -100%); }
   #cursor-follower .round-cursor {
     transition: all .2s ease;
@@ -1270,13 +1315,6 @@ a, a:hover {
   #cursor-follower.loading .progress-cursor {
     opacity: 1; }
 
-.cursor-follow {
-  opacity: 0;
-  position: absolute;
-  z-index: 10000;
-  top: -100px;
-  left: 0; }
-
-body:hover .cursor-follow {
-  opacity: 1; }
+body:not(:hover) #cursor-follower {
+  opacity: 0; }
 

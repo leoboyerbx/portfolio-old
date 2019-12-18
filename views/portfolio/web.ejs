@@ -15,20 +15,23 @@
                 </g>
             </svg>
         </div>
-        <a href="/" class="header-close i-link" is="cursor-link" cursor-class="closing" >
+        <a href="/" onmouseover="document.querySelector('.svg-text-wrapper').classList.add('del')" onmouseout="document.querySelector('.svg-text-wrapper').classList.remove('del')" class="header-close i-link" is="cursor-link" cursor-class="closing" >
+            <div class="cross">
+                <div class="x-bar"></div>
+                <div class="x-bar"></div>
+            </div>
         </a>
 
     </header>
     <!--            <img src="/assets/" alt="">-->
 
         <div class="projects-list">
-            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'Locked in 60\'', tags: ['Projet de cours']})%>
-            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'CueuleurJS', tags: ['Projet personnel']})%>
-            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'Locked in 60\'', tags: ['Projet de cours']})%>
-            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['Projet personnel']})%>
-            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'Locked in 60\'', tags: ['Projet de cours']})%>
-            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['Projet personnel']})%>
-<!--            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['Projet personnel']})%>-->
+            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'Locked in 60\'', tags: ['HTML', 'CSS', 'JS']})%>
+            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['JS', 'Projet perso']})%>
+            <%-include('./components/project', { img: '/assets/images/qwwizzy.jpg', title: 'Qwwizzy', tags: ['PHP', 'JS']})%>
+            <%-include('./components/project', { img: '/assets/images/colorjs.jpg', title: 'StackAlert', tags: ['JS', 'Projet perso']})%>
+            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'pyRushHour', tags: ['Python']})%>
+            <%-include('./components/project', { img: '/assets/images/locked-60.jpg', title: 'ENTs1', tags: ['PHP', 'JS']})%>
         </div>
 
     </section>

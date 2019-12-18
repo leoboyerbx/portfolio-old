@@ -11,6 +11,7 @@ $header-text-color: white;
     animation: appear .3s both $numletters * $delay + 1.5s;
   }
   .svg-text{
+    position: relative;
     animation: fill .4s both;
     animation-delay: $numletters * $delay + 1.2s;
     @for $i from 1 through $numletters {
@@ -115,12 +116,28 @@ $header-text-color: white;
           max-width: 20vw;
         }
         .svg-text-wrapper {
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
           width: 16vw;
           height: 16vw;
           //border: solid white 1px;
+
+          &::before {
+            position: absolute;
+            content: '';
+            height: 5px;
+            left: 10%;
+            right: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            transition: all .3s;
+          }
+          &.del::before {
+            right: 10%;
+          }
         }
         &::before {
           content: none;
@@ -155,7 +172,6 @@ $header-text-color: white;
         position: absolute;
         right: 20px;
         top: 50%;
-        transform: translateY(-55%);
         width: 20px;
         height: 20px;
         @include md() {
@@ -164,7 +180,44 @@ $header-text-color: white;
           top: unset;
           transform: scale(1.5);
         }
-
+        .cross {
+          position: absolute;
+          pointer-events: all;
+          width: 20px;
+          height: 20px;
+          .x-bar {
+            position: absolute;
+            height: 3px;
+            left: 0;
+            right: 0;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+            overflow: hidden;
+            &::before {
+              content: '';
+              position: absolute;
+              width: 0;
+              transition: all .2s .2s;
+              height: 100%;
+              border-radius: 10px;
+              top: 0;
+              left: 0;
+              background-color: #fff;
+              animation: trace .3s both .6s;
+            }
+            &:last-child::before {
+              animation-delay: .8s;
+            }
+            @keyframes trace {
+              to {
+                width: 100%;
+              }
+            }
+            &:last-child {
+              transform: rotate(45deg);
+            }
+          }
+        }
       }
     }
 
@@ -206,7 +259,7 @@ $header-text-color: white;
 }
 
 #cursor-follower {
-  .cross {
+  .cross-cursor {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
@@ -245,7 +298,7 @@ $header-text-color: white;
     background-color: $theme-main;
     transform: scale(1.5);
   }
-  .cross {
+  .cross-cursor {
     .x-bar::before {
       width: 100%;
     }
