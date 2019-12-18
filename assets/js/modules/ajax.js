@@ -1,10 +1,11 @@
 /* global fetch history */
 import { $, $$ } from './qs'
+import animateCols from '@/modules/animateCols'
 // import fetchProgress from 'fetch-progress'
 
 let extPage
 // let progress = 0
-const cursorFollower = $('#cursor-follower')
+let cursorFollower
 
 function cursorLoading () {
   cursorFollower.classList.add('loading')
@@ -53,8 +54,9 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
     cursorLoading()
     loadPage(page).then(content => {
       extPage.setHTML(content)
-      const newlinks = extPage.extContent.querySelectorAll('.i-link')
-      if (newlinks) setUpLinks(newlinks)
+      const newLinks = extPage.extContent.querySelectorAll('.i-link')
+      if (newLinks) setUpLinks(newLinks)
+      animateCols(900)
       extPage.showContent()
       cursorEndLoading()
     }).catch(console.error)
@@ -88,6 +90,7 @@ function setUpLinks (links) {
 }
 
 export default function ajax (extP) {
+  cursorFollower = $('#cursor-follower')
   extPage = extP
   setUpLinks($$('.i-link'))
   window.addEventListener('popstate', ev => {

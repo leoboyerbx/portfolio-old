@@ -83,6 +83,7 @@ $header-text-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       z-index: 100;
       &::before {
         content: '';
@@ -146,6 +147,79 @@ $header-text-color: white;
         .letter-v {@include stroke(634)}
         .letter-wmaj {@include stroke(1415)}
 
+      }
+
+      .header-close {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-55%);
+        width: 20px;
+        height: 20px;
+        @include md() {
+          position: relative;
+          right: unset;
+          top: unset;
+          transform: scale(1.5);
+        }
+      }
+      .cross {
+        position: absolute;
+        pointer-events: all;
+        width: 20px;
+        height: 20px;
+        .x-bar {
+          position: absolute;
+          height: 3px;
+          left: 0;
+          right: 0;
+          border-radius: 10px;
+          transform: rotate(-45deg);
+          overflow: hidden;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            transition: all .2s .2s;
+            height: 100%;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            animation: trace .3s both .6s;
+          }
+          &:last-child::before {
+            animation-delay: .8s;
+          }
+          @keyframes trace {
+            to {
+              width: 100%;
+            }
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            transition: all .2s .2s;
+            height: 100%;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            background-color: $theme-main;
+          }
+          &:last-child {
+            transform: rotate(45deg);
+            &::after {
+              transition-delay: 0s;
+            }
+          }
+        }
+        &:hover {
+          .x-bar::after {
+            width: 100%;
+          }
+        }
       }
     }
 

@@ -1,6 +1,8 @@
 import _ from 'lodash/function'
 import { $$ } from '@/modules/qs'
 
+let isGrabbed = false
+
 export default function auto (element, hovers = [], throttle = true) {
   let started = false
   function start () {
@@ -22,44 +24,95 @@ export default function auto (element, hovers = [], throttle = true) {
     classList: element.classList
   }
 }
-function cursorFollower (element, hovers = [], throttle = true) {
 
+function allowMove () {
+  if (isGrabbed) {
+    return false
+  }
+  return true
+}
+
+function cursorFollower (element, hovers = [], throttle = true) {
+  function cursorEventListeners (link, className, grab = false) {
+    link.addEventListener('mouseover', () => {
+      if (className) element.classList.add(...(className).split(' '))
+      if (grab) link.grab()
+    })
+    link.addEventListener('mouseleave', () => {
+      if (className) element.classList.remove(...(className).split(' '))
+      if (grab) link.unGrab()
+    })
+  }
   // eslint-disable-next-line no-undef
-  class CursorLink extends HTMLElement {
+  class CursorLink extends HTMLAnchorElement {
     constructor () {
       super()
-      this.className = this.getAttribute('class-names')
-      this.addEventListener('mouseover', () => {
-        element.classList.add(...(this.className).split(' '))
-      })
-      this.addEventListener('mouseleave', () => {
-        element.classList.remove(...(this.className).split(' '))
-      })
+      const className = this.getAttribute('cursor-class')
+      cursorEventListeners(this, className, this.getAttribute('cursor-grab') !== null)
+    }
+
+    grab () {
+      isGrabbed = true
+      const rect = this.getBoundingClientRect()
+      let x = rect.left
+      let y = rect.top
+      let width = rect.width
+      let height = rect.height
+      const padding = this.getAttribute('cursor-grab-padding')
+      if (padding) {
+        x = x - parseInt(padding)
+        y = y - parseInt(padding)
+        width = width + 2 * parseInt(padding)
+        height = height + 2 * parseInt(padding)
+      }
+
+      element.style.transform = `translate3d(${x}px, ${y}px,0)`
+      element.querySelector('.round-cursor').style.width = width + 'px'
+      element.querySelector('.round-cursor').style.height = height + 'px'
+      element.querySelector('.round-cursor').style.transform = 'scale(1)'
+    }
+
+    unGrab () {
+      isGrabbed = false
+      element.querySelector('.round-cursor').style.width = null
+      element.querySelector('.round-cursor').style.height = null
+      element.querySelector('.round-cursor').style.transform = null
     }
   }
-
-  for (const hover of hovers) {
-    handleHovers(hover.selector, hover.className)
+  // eslint-disable-next-line no-undef
+  class CursorHide extends HTMLDivElement {
+    constructor () {
+      super()
+      cursorEventListeners(this, 'hidden')
+    }
   }
-  window.customElements.define('cursor-link', CursorLink)
+  window.customElements.define('cursor-link', CursorLink, {
+    extends: 'a'
+  })
+  window.customElements.define('cursor-hide', CursorHide, {
+    extends: 'div'
+  })
   element.style.position = 'absolute'
   element.style.top = '0'
   element.style.left = '0'
   element.style.pointerEvents = 'none'
 
   function handler (ev) {
-    if (!element.classList.contains('static')) {
+    if (allowMove()) {
       moveTo(ev.pageX, ev.pageY)
     }
   }
   if (throttle) {
     const throttled = _.throttle(handler, 50)
     document.addEventListener('mousemove', throttled)
-    document.addEventListener('scroll', throttled)
   } else {
     document.addEventListener('mousemove', handler)
-    document.addEventListener('scroll', handler)
   }
+  document.addEventListener('wheel', ev => {
+    if (isGrabbed) {
+      translate(0, -ev.deltaY)
+    }
+  })
 
   const moveTo = (cx, cy) => {
     const rect = element.getBoundingClientRect()
@@ -67,15 +120,21 @@ function cursorFollower (element, hovers = [], throttle = true) {
     const y = cy - (rect.height / 2)
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
   }
-
-  function handleHovers (selector, className) {
-    $$(selector).forEach(link => {
-      link.addEventListener('mouseover', () => {
-        element.classList.add(...(className).split(' '))
-      })
-      link.addEventListener('mouseleave', () => {
-        element.classList.remove(...(className).split(' '))
-      })
-    })
+  const translate = function (dx, dy) {
+    const rect = element.getBoundingClientRect()
+    const x = rect.x + dx
+    const y = rect.y + dy
+    element.style.transform = `translate3d(${x}px, ${y}px,0)`
   }
+
+  // function handleHovers (selector) {
+  //   $$(selector).forEach(link => {
+  //     link.addEventListener('mouseover', () => {
+  //       element.classList.add(...(link.getAttribute('cursor-class')).split(' '))
+  //     })
+  //     link.addEventListener('mouseleave', () => {
+  //       element.classList.remove(...(link.getAttribute('cursor-class')).split(' '))
+  //     })
+  //   })
+  // }
 }

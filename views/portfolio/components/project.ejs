@@ -1,13 +1,15 @@
 <div class="project">
-    <div class="project-image">
-        <img src="<%=img%>" alt="">
-    </div>
-    <div class="project-title">
-        <%=title%>
-    </div>
+    <a href="#" is="cursor-link" cursor-class="hover-plus">
+        <div class="project-image">
+            <img src="<%=img%>" alt="">
+        </div>
+        <div class="project-title">
+            <%=title%>
+        </div>
+    </a>
     <div class="project-badges">
         <%tags.forEach(tag => {%>
-        <span class="project-badge"><%=tag%></span>
+            <span class="project-badge"><%=tag%></span>
         <%})%>
     </div>
 </div>

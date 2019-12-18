@@ -1,7 +1,7 @@
 import { $ } from './qs'
-let isAnimating = false
-let externalPageOpened = $('#ext-page').classList.contains('open')
 export default function extPage (element) {
+  let isAnimating = false
+  let externalPageOpened = $('#ext-page').classList.contains('open')
   const cache = element.querySelector('.cache')
   // const cursorFollow = document.querySelector('#cursor-follower')
   function showPage (x, y) {
