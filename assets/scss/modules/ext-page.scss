@@ -150,6 +150,7 @@ $header-text-color: white;
       }
 
       .header-close {
+        pointer-events: all;
         display: block;
         position: absolute;
         right: 20px;
@@ -163,63 +164,7 @@ $header-text-color: white;
           top: unset;
           transform: scale(1.5);
         }
-      }
-      .cross {
-        position: absolute;
-        pointer-events: all;
-        width: 20px;
-        height: 20px;
-        .x-bar {
-          position: absolute;
-          height: 3px;
-          left: 0;
-          right: 0;
-          border-radius: 10px;
-          transform: rotate(-45deg);
-          overflow: hidden;
-          &::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            transition: all .2s .2s;
-            height: 100%;
-            border-radius: 10px;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            animation: trace .3s both .6s;
-          }
-          &:last-child::before {
-            animation-delay: .8s;
-          }
-          @keyframes trace {
-            to {
-              width: 100%;
-            }
-          }
-          &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            transition: all .2s .2s;
-            height: 100%;
-            border-radius: 10px;
-            top: 0;
-            left: 0;
-            background-color: $theme-main;
-          }
-          &:last-child {
-            transform: rotate(45deg);
-            &::after {
-              transition-delay: 0s;
-            }
-          }
-        }
-        &:hover {
-          .x-bar::after {
-            width: 100%;
-          }
-        }
+
       }
     }
 
@@ -257,5 +202,55 @@ $header-text-color: white;
 @keyframes appear {
   to {
     transform: scale(1,1);
+  }
+}
+
+#cursor-follower {
+  .cross {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    .x-bar {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      border-radius: 10px;
+      transform: translateY(10px) rotate(-45deg);
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        transition: all .2s;
+        height: 100%;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        background-color: $theme-grey-dark;
+      }
+      &:last-child::before {
+        transition-delay: 0s;
+      }
+      &:last-child {
+        transform: translateY(10px) rotate(45deg);
+      }
+    }
+  }
+}
+#cursor-follower.closing {
+  .round-cursor {
+    background-color: $theme-main;
+    transform: scale(1.5);
+  }
+  .cross {
+    .x-bar::before {
+      width: 100%;
+    }
+    .x-bar:first-child::before {
+      transition-delay: .2s;
+    }
   }
 }

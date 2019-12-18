@@ -668,6 +668,7 @@ body.dark #contact-title {
           stroke-dasharray: 1415;
           stroke-dashoffset: 1415; }
       #ext-page #ext-content .header .header-close {
+        pointer-events: all;
         display: block;
         position: absolute;
         right: 20px;
@@ -681,52 +682,6 @@ body.dark #contact-title {
             right: unset;
             top: unset;
             transform: scale(1.5); } }
-      #ext-page #ext-content .header .cross {
-        position: absolute;
-        pointer-events: all;
-        width: 20px;
-        height: 20px; }
-        #ext-page #ext-content .header .cross .x-bar {
-          position: absolute;
-          height: 3px;
-          left: 0;
-          right: 0;
-          border-radius: 10px;
-          transform: rotate(-45deg);
-          overflow: hidden; }
-          #ext-page #ext-content .header .cross .x-bar::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            transition: all .2s .2s;
-            height: 100%;
-            border-radius: 10px;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            animation: trace .3s both .6s; }
-          #ext-page #ext-content .header .cross .x-bar:last-child::before {
-            animation-delay: .8s; }
-
-@keyframes trace {
-  to {
-    width: 100%; } }
-          #ext-page #ext-content .header .cross .x-bar::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            transition: all .2s .2s;
-            height: 100%;
-            border-radius: 10px;
-            top: 0;
-            left: 0;
-            background-color: #fce14b; }
-          #ext-page #ext-content .header .cross .x-bar:last-child {
-            transform: rotate(45deg); }
-            #ext-page #ext-content .header .cross .x-bar:last-child::after {
-              transition-delay: 0s; }
-        #ext-page #ext-content .header .cross:hover .x-bar::after {
-          width: 100%; }
     #ext-page #ext-content .content-wrapper {
       margin-top: 100px; }
       @media (min-width: 768px) {
@@ -789,6 +744,45 @@ body.dark #contact-title {
 @keyframes appear {
   to {
     transform: scale(1, 1); } }
+
+#cursor-follower .cross {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  position: absolute;
+  width: 20px;
+  height: 20px; }
+  #cursor-follower .cross .x-bar {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 10px;
+    transform: translateY(10px) rotate(-45deg);
+    overflow: hidden; }
+    #cursor-follower .cross .x-bar::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      transition: all .2s;
+      height: 100%;
+      border-radius: 10px;
+      top: 0;
+      left: 0;
+      background-color: #323739; }
+    #cursor-follower .cross .x-bar:last-child::before {
+      transition-delay: 0s; }
+    #cursor-follower .cross .x-bar:last-child {
+      transform: translateY(10px) rotate(45deg); }
+
+#cursor-follower.closing .round-cursor {
+  background-color: #fce14b;
+  transform: scale(1.5); }
+
+#cursor-follower.closing .cross .x-bar::before {
+  width: 100%; }
+
+#cursor-follower.closing .cross .x-bar:first-child::before {
+  transition-delay: .2s; }
 
 .portfolio-list {
   text-align: left; }
