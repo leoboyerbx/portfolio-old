@@ -111,11 +111,6 @@ function cursorFollower (element, hovers = [], throttle = true) {
   } else {
     document.addEventListener('mousemove', handler)
   }
-  document.addEventListener('wheel', ev => {
-    if (isGrabbed) {
-      translate(0, -ev.deltaY)
-    }
-  })
 
   const moveTo = (cx, cy) => {
     const rect = element.getBoundingClientRect()

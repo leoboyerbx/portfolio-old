@@ -40,7 +40,7 @@
             </div>
             <div id="mybio-content">
                 <div class="row">
-                    <div class="col-12 col-md-auto text-center align-items-center justify-content-center d-flex">
+                    <div class="col-12 col-lg-auto text-center align-items-center justify-content-center d-flex">
                         <div id="mybio-photo"></div>
                     </div>
                     <div class="col-12 col-md px-3">
@@ -114,33 +114,6 @@
         </div>
     </div>
 </div>
-
-<!--<div id="menu"></div>-->
-<!--<div id="menu-button"<%= locals.page ? 'class=scrolled' : '' %>>-->
-<!--    <div id="menu-button-icon" class="link-1">-->
-<!--        <div class="h-bar"></div>-->
-<!--        <div class="h-bar"></div>-->
-<!--        <div class="h-bar"></div>-->
-<!--        <div class="x-bar"></div>-->
-<!--        <div class="x-bar"></div>-->
-<!--    </div>-->
-<!--    <div id="menu-button-hint">-->
-<!--        <div class="text-menu" class="link-1">-->
-<!--            <span>M</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>e</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>n</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>u</span>-->
-<!--        </div>-->
-<!--        <div class="text-close">-->
-<!--            <span>F</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>e</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>r</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>m</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>e</span>&lt;!&ndash; whitespace-->
-<!--            &ndash;&gt;<span>r</span>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <div id="ext-page" <%= locals.page ? 'class=open' : '' %>>
     <div class="cache"></div>
     <div id="ext-content" <%= locals.page ? '' : 'class=hidden' %>>
@@ -163,6 +136,33 @@
         <svg height="40" width="40">
             <circle id="loadcircle" cx="20" cy="20" r="15" stroke-width="3" fill="none" />
         </svg>
+    </div>
+</div>
+
+<div id="menu"></div>
+<div id="menu-button">
+    <a id="menu-button-icon" is="cursor-link" cursor-class="menu" cursor-grab cursor-grab-padding="20">
+        <div class="h-bar"></div>
+        <div class="h-bar"></div>
+        <div class="h-bar"></div>
+        <div class="x-bar"></div>
+        <div class="x-bar"></div>
+    </a>
+    <div id="menu-button-hint">
+        <div class="text-menu" class="link-1">
+            <span>M</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>n</span><!-- whitespace
+            --><span>u</span>
+        </div>
+        <div class="text-close">
+            <span>F</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>r</span><!-- whitespace
+            --><span>m</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>r</span>
+        </div>
     </div>
 </div>
 </body>

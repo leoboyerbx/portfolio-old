@@ -11,7 +11,7 @@ import animateCols from './modules/animateCols'
 window.addEventListener('DOMContentLoaded', function () {
   loading.end()
   // parallax($('#home'), 0.4)
-  // menu($('#menu'), $('#menu-button'), $('#page-content'))
+  menu($('#menu'), $('#menu-button'), $('#page-content'))
   const who = new ScrollMoov($('#mybio #line-1'),
     {
       translateX: '50px'

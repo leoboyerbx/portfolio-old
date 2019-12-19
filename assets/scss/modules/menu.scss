@@ -6,6 +6,7 @@ $bars-widths: 15% 15% 15%;
 $bar-color: #101010;
 
 #menu-button {
+  display: block;
   cursor: pointer;
   //cursor: none;
   z-index: 11;
@@ -254,5 +255,12 @@ $bar-color: #101010;
   }
   &.open::before {
     transform: translate(-50%, -50% ) scale3d(1, 1, 1);
+  }
+}
+
+
+#cursor-follower.menu {
+  .round-cursor {
+    border-width: 2px;
   }
 }

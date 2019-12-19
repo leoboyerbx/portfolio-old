@@ -174,11 +174,15 @@ $header-text-color: white;
         top: 50%;
         width: 20px;
         height: 20px;
+        transition: all .3s;
         @include md() {
           position: relative;
           right: unset;
           top: unset;
           transform: scale(1.5);
+          &:hover {
+            opacity: 0;
+          }
         }
         .cross {
           position: absolute;
