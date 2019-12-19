@@ -288,6 +288,7 @@
 
 
 #menu-button {
+  display: block;
   cursor: pointer;
   z-index: 11; }
   #menu-button #menu-button-hint {
@@ -505,6 +506,9 @@
   #menu.open::before {
     transform: translate(-50%, -50%) scale3d(1, 1, 1); }
 
+#cursor-follower.menu .round-cursor {
+  border-width: 2px; }
+
 #mybio-text-wrapper {
   position: relative; }
   #mybio-text-wrapper .mybio-text {
@@ -687,13 +691,16 @@ body.dark #contact-title {
         right: 20px;
         top: 50%;
         width: 20px;
-        height: 20px; }
+        height: 20px;
+        transition: all .3s; }
         @media (min-width: 768px) {
           #ext-page #ext-content .header .header-close {
             position: relative;
             right: unset;
             top: unset;
-            transform: scale(1.5); } }
+            transform: scale(1.5); }
+            #ext-page #ext-content .header .header-close:hover {
+              opacity: 0; } }
         #ext-page #ext-content .header .header-close .cross {
           position: absolute;
           pointer-events: all;
