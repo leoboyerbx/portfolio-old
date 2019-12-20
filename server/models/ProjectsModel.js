@@ -4,7 +4,6 @@ const ProjectEntity = require('@server/entities/ProjectEntity')
 function rowDataToEntities (source) {
   const result = []
   source.forEach(row => result.push(new ProjectEntity(row)))
-  console.log(result)
   return result
 }
 
