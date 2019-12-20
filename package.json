@@ -37,6 +37,14 @@
     "express": "^4.17.1",
     "fetch-progress": "^1.2.0",
     "lodash.throttle": "^4.1.1",
+    "module-alias": "^2.2.2",
+    "mysql": "^2.17.1",
     "parse-css-dimension": "^1.1.0"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@server": "server",
+    "@app": "server/classes/app.js",
+    "@views": "views"
   }
 }
