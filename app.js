@@ -1,10 +1,10 @@
+require('module-alias/register')
 const path = require('path')
 global._path = path
 global.__root = __dirname
 global.__viewsPath = path.join(__root, 'views')
-require('./server/index')()
 
-// require('module-alias/register')
+require('./server/index')()
 // global.__root = __dirname
 //
 // const http = require('http');

@@ -125,15 +125,4 @@ function cursorFollower (element, hovers = [], throttle = true) {
     const y = rect.y + dy
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
   }
-
-  // function handleHovers (selector) {
-  //   $$(selector).forEach(link => {
-  //     link.addEventListener('mouseover', () => {
-  //       element.classList.add(...(link.getAttribute('cursor-class')).split(' '))
-  //     })
-  //     link.addEventListener('mouseleave', () => {
-  //       element.classList.remove(...(link.getAttribute('cursor-class')).split(' '))
-  //     })
-  //   })
-  // }
 }

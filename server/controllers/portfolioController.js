@@ -1,3 +1,5 @@
+const ProjectsModel = require('@server/models/ProjectsModel')
+
 class PortfolioController {
   ajaxView (req, res, view) {
     if (req.isAjax) {
@@ -8,6 +10,7 @@ class PortfolioController {
   }
 
   web (req, res) {
+    ProjectsModel.all().then(console.log)
     this.ajaxView(req, res, 'portfolio/web')
   }
   av (req, res) {

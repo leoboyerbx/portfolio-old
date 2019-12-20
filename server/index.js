@@ -1,4 +1,4 @@
-/* global __viewsPath __root */
+/* global __root */
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -9,12 +9,12 @@ const http = require('http').createServer(serverApp)
 const PortfolioController = require(path.join(__root, 'server/controllers/portfolioController'))
 
 module.exports = function () {
-
   serverApp.set('view engine', 'ejs')
 
   serverApp.use(bodyParser.json())
   serverApp.use(bodyParser.urlencoded({ extended: true }))
   serverApp.use('/assets', express.static('public/assets'))
+  serverApp.use('/user', express.static('public/userContent'))
   serverApp.use(require('./middlewares/isAjax'))
   serverApp.use(require('./middlewares/renderView'))
 
