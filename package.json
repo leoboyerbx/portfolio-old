@@ -36,7 +36,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "fetch-progress": "^1.2.0",
-    "lodash": "^4.17.15",
+    "lodash.throttle": "^4.1.1",
     "parse-css-dimension": "^1.1.0"
   }
 }

@@ -1,5 +1,4 @@
-import _ from 'lodash/function'
-import { $$ } from '@/modules/qs'
+import _throttle from 'lodash.throttle'
 
 let isGrabbed = false
 
@@ -26,10 +25,11 @@ export default function auto (element, hovers = [], throttle = true) {
 }
 
 function allowMove () {
-  if (isGrabbed) {
-    return false
-  }
-  return true
+  return !isGrabbed
+  // if (isGrabbed) {
+  //   return false
+  // }
+  // return true
 }
 
 function cursorFollower (element, hovers = [], throttle = true) {
@@ -106,7 +106,7 @@ function cursorFollower (element, hovers = [], throttle = true) {
     }
   }
   if (throttle) {
-    const throttled = _.throttle(handler, 50)
+    const throttled = _throttle(handler, 50)
     document.addEventListener('mousemove', throttled)
   } else {
     document.addEventListener('mousemove', handler)
@@ -118,6 +118,7 @@ function cursorFollower (element, hovers = [], throttle = true) {
     const y = cy - (rect.height / 2)
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
   }
+  // eslint-disable-next-line no-unused-vars
   const translate = function (dx, dy) {
     const rect = element.getBoundingClientRect()
     const x = rect.x + dx

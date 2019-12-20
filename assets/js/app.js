@@ -1,4 +1,4 @@
-import { $, $$ } from './modules/qs'
+import { $ } from './modules/qs'
 import menu from './modules/menu'
 import ScrollMoov from './modules/ScrollMoov'
 import Louwp from './modules/louwp'
@@ -9,22 +9,25 @@ import ajax from './modules/ajax'
 import animateCols from './modules/animateCols'
 
 window.addEventListener('DOMContentLoaded', function () {
-  loading.end()
+  // Selection of elements
+  const pageContent = $('#page-content')
+
+  window.loading.end()
   // parallax($('#home'), 0.4)
-  menu($('#menu'), $('#menu-button'), $('#page-content'))
+  menu($('#menu'), $('#menu-button'), pageContent)
   const who = new ScrollMoov($('#mybio #line-1'),
     {
       translateX: '50px'
     },
     {
       translateX: '0px'
-    }, { considerEndScroll: true, parent: $('#page-content') })
+    }, { considerEndScroll: true, parent: pageContent })
   const amI = new ScrollMoov($('#mybio #line-2'),
     {
       translateX: '-25px'
     }, {
       translateX: '25px'
-    }, { considerEndScroll: true, parent: $('#page-content') })
+    }, { considerEndScroll: true, parent: pageContent })
 
   const j = new Louwp($('#mybio-text-louwp'), $('.mybio-text'))
 
@@ -34,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }, {
       translateX: '0px'
     }, {
-      parent: $('#page-content')
+      parent: pageContent
     })
   const iCanDo = new ScrollMoov($('#my-portfolio .line-2'),
     {
@@ -42,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }, {
       translateX: '-10px'
     }, {
-      parent: $('#page-content')
+      parent: pageContent
     })
 
   letterByLetterAnim()
@@ -67,7 +70,7 @@ window.addEventListener('DOMContentLoaded', function () {
   cursorFollower($('#cursor-follower'), followerHovers, true)
   // setTimeout(preventScroll.enableScroll, 30
 
-  const extpage = extPage($('#ext-page'))
-  ajax(extpage)
+  const extPageEl = extPage($('#ext-page'))
+  ajax(extPageEl)
   animateCols(400)
 })
