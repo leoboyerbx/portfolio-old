@@ -10,8 +10,13 @@ class ProjectEntity {
   get viewPath () {
     return path.join(__viewsPath, 'projects', this.type, this.view_name)
   }
+
+  get path () {
+    return `/${this.type}/${this.slug}`
+  }
+
   get imgPath () {
-    return path.join('/user/projects/img', this.img_name)
+    return '/user/projects/img/' + this.img_name
   }
 }
 module.exports = ProjectEntity

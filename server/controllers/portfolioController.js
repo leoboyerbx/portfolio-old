@@ -1,18 +1,21 @@
 const ProjectsModel = require('@server/models/ProjectsModel')
 
 class PortfolioController {
-  ajaxView (req, res, view) {
+  ajaxView (req, res, view, locals = {}) {
     if (req.isAjax) {
-      res.renderView(view)
+      res.renderView(view, locals)
     } else {
-      res.render('index', { page: view })
+      locals.page = view
+      res.render('index', locals)
     }
   }
 
   web (req, res) {
-    ProjectsModel.all().then(console.log)
-    this.ajaxView(req, res, 'portfolio/web')
+    ProjectsModel.all().then(projects => {
+      this.ajaxView(req, res, 'portfolio/web', { projects })
+    })
   }
+
   av (req, res) {
     this.ajaxView(req, res, 'portfolio/audiovisuel')
   }
