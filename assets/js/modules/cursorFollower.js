@@ -90,10 +90,30 @@ function cursorFollower (element, hovers = [], throttle = true) {
       cursorEventListeners(this, 'hidden')
     }
   }
+  // eslint-disable-next-line no-undef
+  class CursorScrollable extends HTMLDivElement {
+    constructor () {
+      super()
+      this.initialScroll = this.scrollTop
+
+      function handler () {
+        if (isGrabbed) {
+          const delta = this.scrollTop - this.initialScroll
+          this.initialScroll = this.scrollTop
+          translate(0, -delta)
+        }
+      }
+      // const throttled = _throttle(handler, 50)
+      this.addEventListener('scroll', handler)
+    }
+  }
   window.customElements.define('cursor-link', CursorLink, {
     extends: 'a'
   })
   window.customElements.define('cursor-hide', CursorHide, {
+    extends: 'div'
+  })
+  window.customElements.define('cursor-scrollable', CursorScrollable, {
     extends: 'div'
   })
   element.style.position = 'absolute'
@@ -119,11 +139,13 @@ function cursorFollower (element, hovers = [], throttle = true) {
     const y = cy - (rect.height / 2)
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
   }
-  // eslint-disable-next-line no-unused-vars
+
   const translate = function (dx, dy) {
+    element.style.transition = 'none'
     const rect = element.getBoundingClientRect()
     const x = rect.x + dx
     const y = rect.y + dy
     element.style.transform = `translate3d(${x}px, ${y}px,0)`
+    element.style.transition = null
   }
 }

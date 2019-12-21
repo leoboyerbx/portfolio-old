@@ -45,8 +45,12 @@ async function loadPage (page) {
       'x-requested-with': 'xmlhttprequest'
     }
   })
-  const text = await response.text()
-  return text
+  if (response.status === 200) {
+    const text = await response.text()
+    return text
+  } else if (response.status === 404) {
+    console.info('404')
+  }
 }
 
 function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
