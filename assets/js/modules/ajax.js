@@ -55,7 +55,7 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
     loadPage(page).then(content => {
       extPage.setHTML(content)
       const newLinks = extPage.extContent.querySelectorAll('.i-link')
-      if (newLinks) setUpLinks(newLinks)
+      if (newLinks) setUpLinks($$(newLinks))
       animateCols(900)
       extPage.showContent()
       cursorEndLoading()
@@ -76,16 +76,14 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
 }
 
 function setUpLinks (links) {
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault()
-      if (link.pathname === '/') {
-        extPage.hidePage()
-        history.pushState(null, null, '/')
-      } else {
-        openPage(link.href, e.clientX, e.clientY)
-      }
-    })
+  links.addEventListener('click', function (e) {
+    e.preventDefault()
+    if (this.pathname === '/') {
+      extPage.hidePage()
+      history.pushState(null, null, '/')
+    } else {
+      openPage(this.href, e.clientX, e.clientY)
+    }
   })
 }
 
