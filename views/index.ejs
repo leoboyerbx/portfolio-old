@@ -1,6 +1,6 @@
 <%- include(_path.join(__viewsPath, 'partials/head'))%>
 <body>
-<div id="page-content">
+<div id="page-content" is="cursor-scrollable">
     <div id="home">
         <div id="home-content-wrapper">
 
@@ -66,7 +66,7 @@
             <div id="my-portfolio-categories">
                 <div class="category">
                     <div class="category-content-wrapper">
-                        <a href="/web" class="category-content i-link"  is="cursor-link" cursor-class="" cursor-grab cursor-grab-padding="20" id="category-code">
+                        <a href="/web" class="category-content i-link"  is="cursor-link" cursor-class="hover1" id="category-code">
                             <img src="assets/icons/web-programming.svg" alt="">
                             <div class="category-name">Web et<br>programmation</div>
                         </a>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="category">
                     <div class="category-content-wrapper">
-                        <a href="/video" class="category-content i-link" is="cursor-link" cursor-class="hover1 dark">
+                        <a href="/video" class="category-content i-link" is="cursor-link" cursor-class="hover1">
                             <img src="assets/icons/web-programming.svg" alt="">
                             <div class="category-name">Audiovisuel<br>et vidéo</div>
                         </a>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="category">
                     <div class="category-content-wrapper">
-                        <a href="/graphisme" class="category-content i-link"  is="cursor-link" cursor-class="hover1 dark">
+                        <a href="/graphisme" class="category-content i-link"  is="cursor-link" cursor-class="hover1">
                             <img src="assets/icons/web-programming.svg" alt="">
                             <div class="category-name">Graphisme et<br>motion-design</div>
                         </a>
@@ -122,7 +122,7 @@
 </div>
 <div id="ext-page" <%= locals.page ? 'class=open' : '' %>>
     <div class="cache"></div>
-    <div id="ext-content" <%= locals.page ? '' : 'class=hidden' %>>
+    <div id="ext-content" is="cursor-scrollable" <%= locals.page ? '' : 'class=hidden' %>>
         <%if (locals.page) { %>
         <%-include(_path.join(__viewsPath, locals.page))%>
         <%}%>
