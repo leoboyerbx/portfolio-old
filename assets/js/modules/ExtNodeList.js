@@ -1,5 +1,6 @@
-import { $$ } from './qs'
 import css from './css'
+
+const $$ = document.querySelectorAll.bind(document)
 
 export default class ExtNodeList {
   constructor (source) {
@@ -23,6 +24,12 @@ export default class ExtNodeList {
   addClass (...args) {
     this.forEach(node => {
       node.classList.add(...args)
+    })
+  }
+
+  addEventListener (...args) {
+    this.forEach(node => {
+      node.addEventListener(...args)
     })
   }
 

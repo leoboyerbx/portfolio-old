@@ -26,7 +26,7 @@ module.exports = function () {
   serverApp.get('/web', (req, res) => {
     portfolioController.web(req, res)
   })
-  serverApp.get('/av', (req, res) => {
+  serverApp.get('/video', (req, res) => {
     portfolioController.av(req, res)
   })
 
