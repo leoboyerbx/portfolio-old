@@ -9,8 +9,9 @@ function rowDataToEntities (source) {
 
 class ProjectsModel {
   static all () {
-    return new Promise((resolve, reject) => {
-      connection.query('SELECT * FROM projects', (err, result) => {
+    return new Promise((resolve) => {
+      connection.query('SELECT * FROM projects ORDER BY position', (err, result) => {
+        if (err) throw err
         if (result) {
           result = rowDataToEntities(result)
           resolve(result)
@@ -23,11 +24,20 @@ class ProjectsModel {
 
   static get (query, unique = false) {
     return new Promise((resolve) => {
-      connection.query('SELECT * FROM questions_qcm WHERE ?', query, (err, result) => {
+      connection.query('SELECT * FROM projects WHERE ? ORDER BY position', query, (err, result) => {
         if (err) throw err
-        resolve(unique ? result[0] : result)
+        if (result) {
+          result = rowDataToEntities(result)
+          resolve(unique ? result[0] : result)
+        } else {
+          resolve(false)
+        }
       })
     })
+  }
+
+  static getByType (type) {
+    return this.get({ type: type })
   }
 
   static async getById (id) {

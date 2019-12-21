@@ -11,7 +11,7 @@ class PortfolioController {
   }
 
   web (req, res) {
-    ProjectsModel.all().then(projects => {
+    ProjectsModel.getByType('web').then(projects => {
       this.ajaxView(req, res, 'portfolio/web', { projects })
     })
   }
