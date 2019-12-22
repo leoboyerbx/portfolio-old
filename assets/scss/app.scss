@@ -47,13 +47,17 @@ a, a:hover {
 
     #home-text-wrapper {
       color: #101010;
-      font-family: 'Futura PT', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-weight: 400;
       font-size: 400%;
 
       #home-name {
         color: $theme-grey-dark;
         overflow: hidden;
+        font-size: 5vw;
+        @include lg() {
+        font-size: 50px;
+      }
         @for $i from 1 through 2 {
           .name:nth-child(#{$i}) {
             display: inline-block;
@@ -70,7 +74,10 @@ a, a:hover {
     #home-portfolio-word {
       font-family: "arboria", sans-serif;
       font-weight: 600;
-      font-size: 15vw;
+      font-size: 17vw;
+      @include xl() {
+        font-size: 200px;
+      }
       display: flex;
       align-items: baseline;
       color: $theme-main;

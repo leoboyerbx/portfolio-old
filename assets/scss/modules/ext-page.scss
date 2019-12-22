@@ -226,6 +226,7 @@ $header-text-color: white;
     }
 
     .content-wrapper {
+      min-height: 100%;
       margin-top: 100px;
       @include md () {
         margin: 0;

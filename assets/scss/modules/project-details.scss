@@ -1,15 +1,27 @@
 .project-details {
-  .title {
-    font-family: 'Arboria', sans-serif;
-  }
+  background-color: #fff;
   .pan {
+    position: absolute;
     width: 50%;
     min-height: 100%;
     top: 0;
     left: 0;
   }
   .pan.left {
-    .title
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $theme-grey-dark;
+
+    .title {
+      width: 80%;
+      font-family: 'Raleway', sans-serif;
+      h2 {
+        font-weight: 100;
+      }
+    }
   }
   .pan.right {
     left: 50%;

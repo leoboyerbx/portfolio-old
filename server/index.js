@@ -27,6 +27,9 @@ module.exports = function () {
   serverApp.get('/web', (req, res) => {
     portfolioController.web(req, res)
   })
+  serverApp.get('/:type((web|video|graphisme))/:project', (req, res) => {
+    portfolioController.project(req, res)
+  })
   serverApp.get('/video', (req, res) => {
     portfolioController.av(req, res)
   })
