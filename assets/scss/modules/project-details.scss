@@ -1,0 +1,18 @@
+.project-details {
+  .title {
+    font-family: 'Arboria', sans-serif;
+  }
+  .pan {
+    width: 50%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .pan.left {
+    .title
+  }
+  .pan.right {
+    left: 50%;
+    background-color: #fff;
+  }
+}

@@ -21,6 +21,15 @@ class PortfolioController {
       this.ajaxView(req, res, 'portfolio/video', { projects })
     })
   }
+
+  project (req, res) {
+    ProjectsModel.get({ slug: req.params.project }, true).then(project => {
+      if (project) {
+        this.ajaxView(req, res, 'portfolio/projects/' + project.view_name, { project })
+      }
+
+    })
+  }
 }
 
 module.exports = PortfolioController

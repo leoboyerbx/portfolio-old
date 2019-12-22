@@ -17,6 +17,7 @@ module.exports = function () {
   serverApp.use('/user', express.static('public/userContent'))
   serverApp.use(require('./middlewares/isAjax'))
   serverApp.use(require('./middlewares/renderView'))
+  serverApp.use(require('./middlewares/notFound'))
 
   const portfolioController = new PortfolioController()
 
@@ -28,6 +29,10 @@ module.exports = function () {
   })
   serverApp.get('/video', (req, res) => {
     portfolioController.av(req, res)
+  })
+  serverApp.use(function (req, res, next) {
+    res.notFound()
+    next()
   })
 
   http.listen(process.env.PORT || 3000, () => {
