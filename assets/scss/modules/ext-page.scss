@@ -112,9 +112,6 @@ $header-text-color: white;
         align-items: center;
         justify-content: center;
 
-        .svg-text {
-          max-width: 20vw;
-        }
         .svg-text-wrapper {
           position: relative;
           display: flex;
@@ -128,15 +125,15 @@ $header-text-color: white;
             position: absolute;
             content: '';
             height: 5px;
-            left: 10%;
-            right: 90%;
+            left: 0;
+            right: 100%;
             top: 50%;
             transform: translateY(-50%);
             background-color: #fff;
             transition: all .3s;
           }
           &.del::before {
-            right: 10%;
+            right: 0;
           }
         }
         &::before {
@@ -148,6 +145,9 @@ $header-text-color: white;
         overflow: visible;
         height: 30px;
         max-width: 60vw;
+        @include md () {
+          max-width: 100%;
+        }
         fill: transparent;
         stroke: $header-text-color;
         stroke-width: 5px;

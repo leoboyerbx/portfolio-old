@@ -18,5 +18,9 @@ class ProjectEntity {
   get imgPath () {
     return '/user/projects/img/' + this.img_name
   }
+
+  get tags () {
+    return this.raw_tags.split(', ').join(',').split(',')
+  }
 }
 module.exports = ProjectEntity

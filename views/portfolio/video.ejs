@@ -1,8 +1,11 @@
+<section class="content-wrapper text-center portfolio-list">
+    <header class="header audiovisuel">
+        <div class="svg-text-wrapper">
 
-<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
-<svg class="svg-text audiovisuel" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="1474.4px" height="204.9px" viewBox="0 0 1474.4 204.9" style="enable-background:new 0 0 1474.4 204.9;"
-     xml:space="preserve">
+            <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
+            <svg class="svg-text audiovisuel" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="1474.4px" height="204.9px" viewBox="0 0 1474.4 204.9" style="enable-background:new 0 0 1474.4 204.9;"
+                 xml:space="preserve">
     <g>
         <path class="st0 letter-amaj" d="M79.1,20.2h38.7L197,202.1h-39.9l-12.3-28.9H52.5l-12.3,28.9H0L79.1,20.2z M132.5,142.6l-21.1-51.9
     c-5.6-13.8-12.6-32-12.9-32.6c-0.3,0.6-7.3,18.8-12.9,32.6l-21.1,51.9H132.5z"/>
@@ -32,7 +35,22 @@
         <path class="st0 letter-l" d="M1436.8,17.4h37.6v184.7h-37.6V17.4z"/>
     </g>
 </svg>
-<p>
-<a class="i-link" href="/web">Clique billy</a>
+        </div>
+        <a href="/" onmouseover="document.querySelector('.svg-text-wrapper').classList.add('del')" onmouseout="document.querySelector('.svg-text-wrapper').classList.remove('del')" class="header-close i-link" is="cursor-link" cursor-class="closing" >
+            <div class="cross">
+                <div class="x-bar"></div>
+                <div class="x-bar"></div>
+            </div>
+        </a>
 
-</p>
+    </header>
+    <!--            <img src="/assets/" alt="">-->
+
+    <div class="projects-list">
+        <% if(locals.projects) {
+                for (const project of projects) {%>
+            <%-include('./components/project', { path: project.path, img: project.imgPath, title: project.title, tags: project.tags })%>
+        <% }} %>
+    </div>
+
+</section>

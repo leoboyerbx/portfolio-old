@@ -621,8 +621,6 @@ body.dark #contact-title {
           display: flex;
           align-items: center;
           justify-content: center; }
-          #ext-page #ext-content .header .svg-text {
-            max-width: 20vw; }
           #ext-page #ext-content .header .svg-text-wrapper {
             position: relative;
             display: flex;
@@ -634,14 +632,14 @@ body.dark #contact-title {
               position: absolute;
               content: '';
               height: 5px;
-              left: 10%;
-              right: 90%;
+              left: 0;
+              right: 100%;
               top: 50%;
               transform: translateY(-50%);
               background-color: #fff;
               transition: all .3s; }
             #ext-page #ext-content .header .svg-text-wrapper.del::before {
-              right: 10%; }
+              right: 0; }
           #ext-page #ext-content .header::before {
             content: none; } }
       #ext-page #ext-content .header .svg-text {
@@ -651,6 +649,9 @@ body.dark #contact-title {
         fill: transparent;
         stroke: white;
         stroke-width: 5px; }
+        @media (min-width: 768px) {
+          #ext-page #ext-content .header .svg-text {
+            max-width: 100%; } }
         #ext-page #ext-content .header .svg-text .letter-amaj {
           stroke-dasharray: 921;
           stroke-dashoffset: 921; }

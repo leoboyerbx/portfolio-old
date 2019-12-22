@@ -28,14 +28,8 @@
         <div class="projects-list">
             <% if(locals.projects) {
                 for (const project of projects) {%>
-                <%-include('./components/project', { path: project.path, img: project.imgPath, title: project.title, tags: ['HTML', 'CSS', 'JS']})%>
+                <%-include('./components/project', { path: project.path, img: project.imgPath, title: project.title, tags: project.tags})%>
             <% }} %>
-<!--            -->
-<!--            <%-include('./components/project', { path: '/web/colorjs', img: '/assets/images/colorjs.jpg', title: 'ColorJS', tags: ['JS', 'Projet perso']})%>-->
-<!--            <%-include('./components/project', { path: '/web/colorjs', img: '/assets/images/qwwizzy.jpg', title: 'Qwwizzy', tags: ['PHP', 'JS']})%>-->
-<!--            <%-include('./components/project', { path: '/web/colorjs', img: '/assets/images/colorjs.jpg', title: 'StackAlert', tags: ['JS', 'Projet perso']})%>-->
-<!--            <%-include('./components/project', { path: '/web/colorjs', img: '/assets/images/locked-60.jpg', title: 'pyRushHour', tags: ['Python']})%>-->
-<!--            <%-include('./components/project', { path: '/web/colorjs', img: '/assets/images/locked-60.jpg', title: 'ENTs1', tags: ['PHP', 'JS']})%>-->
         </div>
 
     </section>
