@@ -536,8 +536,8 @@ a, a:hover {
     stroke: $color-ext-page;
   }
   &.loading {
-    .round-cursor {
-      opacity: 0;
+    .round-cursor, .plus-cursor, .cross-cursor {
+      opacity: 0 !important;
     }
     .progress-cursor {
       opacity: 1;

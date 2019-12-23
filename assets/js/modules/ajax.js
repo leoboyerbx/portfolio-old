@@ -58,6 +58,7 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
     cursorLoading()
     loadPage(page).then(content => {
       extPage.setHTML(content)
+      extPage.extContent.scrollTop = 0
       const newLinks = extPage.extContent.querySelectorAll('.i-link')
       if (newLinks) setUpLinks($$(newLinks))
       animateCols(900)

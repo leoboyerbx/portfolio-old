@@ -37,7 +37,7 @@ function cursorFollower (element, hovers = [], throttle = true) {
   function cursorEventListeners (link, className, grab = false) {
     link.addEventListener('mouseover', () => {
       if (className) {
-        element.className = ''
+        element.className = element.classList.contains('loading') ? 'loading' : ''
         element.classList.add(...(className).split(' '))
       }
       if (grab) link.grab()
