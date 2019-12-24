@@ -16,7 +16,7 @@ class ProjectEntity {
   }
 
   get imgPath () {
-    return '/user/projects/img/' + this.img_name
+    return '/user/projects/img/thumbnails/' + this.img_name
   }
 
   get tags () {

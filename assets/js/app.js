@@ -7,6 +7,7 @@ import cursorFollower from './modules/cursorFollower'
 import extPage from './modules/extPage'
 import ajax from './modules/ajax'
 import animateCols from './modules/animateCols'
+import lightbox from './modules/lightbox'
 
 window.addEventListener('DOMContentLoaded', function () {
   // Selection of elements
@@ -73,4 +74,6 @@ window.addEventListener('DOMContentLoaded', function () {
   const extPageEl = extPage($('#ext-page'))
   ajax(extPageEl)
   animateCols(400)
+
+  lightbox()
 })

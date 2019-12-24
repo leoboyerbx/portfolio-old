@@ -8,7 +8,7 @@ let extPage
 let cursorFollower
 
 function cursorLoading () {
-  cursorFollower.classList.add('loading')
+  cursorFollower.className = 'loading'
 }
 function cursorEndLoading () {
   setTimeout(() => {

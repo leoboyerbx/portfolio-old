@@ -275,7 +275,7 @@ a, a:hover {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    @include lg() {
+    @include md() {
       flex-direction: row;
     }
     .category {
@@ -424,6 +424,18 @@ a, a:hover {
     left: 0;
     transform: scale(.82);
     border: solid $theme-main 3px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 115%;
+      left: 75%;
+      width: 0;
+      height: 5px;
+      border-radius: 4px;
+      background-color: $theme-main;
+      transform: rotate(45deg);
+      transition: all .2s ease;
+    }
   }
   .plus-cursor {
     transition: all .2s ease;
@@ -480,6 +492,15 @@ a, a:hover {
   &.dark .round-cursor {
     background-color: $theme-grey-dark;
     border-color: $theme-grey-dark;
+  }
+  &.zoom {
+    .round-cursor {
+      border-width: 5px;
+      transform: scale(.5) translate(-50%, -50%);
+      &::before {
+        width: 80%;
+      }
+    }
   }
   &.hidden {
     transition: all .3s;
@@ -547,5 +568,44 @@ a, a:hover {
 body:not(:hover) {
   #cursor-follower {
     opacity: 0;
+  }
+}
+
+
+.cross {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  .x-bar {
+    position: absolute;
+    height: 3px;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      transition: all .2s .2s;
+      height: 100%;
+      border-radius: 10px;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      animation: trace .3s both .6s;
+    }
+    &:last-child::before {
+      animation-delay: .8s;
+    }
+    @keyframes trace {
+      to {
+        width: 100%;
+      }
+    }
+    &:last-child {
+      transform: rotate(45deg);
+    }
   }
 }

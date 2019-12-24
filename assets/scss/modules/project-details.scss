@@ -1,5 +1,6 @@
 .project-details {
   background-color: #fff;
+  height: auto;
   .pan-left {
     //pointer-events: none;
     padding: 50px 0;
@@ -12,6 +13,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include md() {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 40%;
+      height: 100%;
+    }
     .title {
       width: 100%;
       font-family: 'Raleway', sans-serif;
@@ -64,16 +72,65 @@
       text-align: center;
       margin-top: 20px;
     }
+    .nav-projects {
+      padding: 20px 0;
+      .back {
+        font-family: 'Arboria', sans-serif;
+        font-weight: 400;
+      }
+    }
   }
   .pan-right {
-    width: 100%;
+    left: 0;
+    right: 0;
     height: auto;
     color: #000;
-    //background-color: #fff;
+    background-color: #fff;
     transition: all .5s $transition-easing;
+    @include md () {
+      position: absolute;
+      left: 40%;
+      top: 0;
+    }
     .description-wrapper {
       width: 100%;
       padding: 50px;
+      display: flex;
+      flex-direction: column;
+      @include md() {
+        padding: 70px;
+      }
+      .images {
+        margin-bottom: 30px;
+        display: grid;
+        grid-template-rows: 300px;
+        grid-auto-rows: minmax(180px, auto);
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 10px;
+        &.template-1 {
+          grid-auto-rows: minmax(80px, auto);
+          grid-template-areas: "first  first first first first"
+                                "second second . . ."
+                                "second second third third third"
+                                ".      .      third third third";
+        }
+        .img-wrapper {
+          cursor: pointer;
+          &:nth-child(1) { grid-area: first; }
+          &:nth-child(2) { grid-area: second; }
+          &:nth-child(3) { grid-area: third; }
+          &:nth-child(4) { grid-area: fourth; }
+          &:nth-child(5) { grid-area: fifth; }
+          &:nth-child(6) { grid-area: sixth; }
+        }
+        .img-project {
+          height: 100%;
+          width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+
+      }
       .description {
         font-weight: 500;
         font-size: 1.3em;
