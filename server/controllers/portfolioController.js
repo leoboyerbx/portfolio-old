@@ -23,7 +23,7 @@ class PortfolioController {
   }
 
   project (req, res) {
-    ProjectsModel.get({ slug: req.params.project }, true).then(project => {
+    ProjectsModel.getBySlug(req.params.project).then(project => {
       if (project && project.type === req.params.type) {
         this.ajaxView(req, res, 'portfolio/projects/' + project.view_name, { project })
       } else {

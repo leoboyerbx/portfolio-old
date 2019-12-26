@@ -97,7 +97,7 @@ export default function ajax (extP) {
   extPage = extP
   setUpLinks($$('.i-link'))
   window.addEventListener('popstate', ev => {
-    if (ev.state === null) {
+    if (document.location.pathname === '/') {
       extPage.hidePage()
     } else {
       openPage(document.location.pathname, document.documentElement.clientHeight / 2, document.documentElement.clientWidth / 2, false)

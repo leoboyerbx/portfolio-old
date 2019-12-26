@@ -4,6 +4,9 @@
             <h1>Locked in 60'</h1>
             <h2>"Escape game d'exception"</h2>
         </div>
+        <div class="cta">
+            <a href="https://lockedin60.cf/" class="button light" is="cursor-link" cursor-class="hover1 dark" target="_blank">Voir le projet</a>
+        </div>
         <div class="specs">
             <div class="title">Caractéristiques du projet</div>
             <div class="specs-list">
@@ -29,11 +32,31 @@
             Juin 2019 | Réalisé en DUT MMI
         </div>
         <div class="nav-projects">
+            <a href="<%=project.prev ? project.prev.path : '/'%>" class="i-link prev<%=project.prev ? '' : 'hidden'%>" is="cursor-link" cursor-grab cursor-grab-padding="15">
+                <!--                retour-->
+                <div class="arrow">
+                    <div class="h-bar"></div>
+                    <div class="arrow-bars">
+                        <div class="a-bar"></div>
+                        <div class="a-bar"></div>
+                    </div>
+                </div>
+            </a>
             <a href="/<%=project.type%>" is="cursor-link" cursor-class="closing" class="i-link back">
-<!--                retour-->
+                <!--                retour-->
                 <div class="cross">
                     <div class="x-bar"></div>
                     <div class="x-bar"></div>
+                </div>
+            </a>
+            <a href="<%=project.next.path%>" class="i-link prev" is="cursor-link" cursor-grab cursor-grab-padding="15">
+                <!--                retour-->
+                <div class="arrow right">
+                    <div class="h-bar"></div>
+                    <div class="arrow-bars">
+                        <div class="a-bar"></div>
+                        <div class="a-bar"></div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -51,7 +74,8 @@
                 <p>Nous avons choisi de faire un site "one-page", avec une navigation en AJAX. Cela nous permet d'avoir une expérience utilisateur fluide. Le menu utilise un concept en "off-canvas", dans une recherche d'originalité.</p>
             </div>
             <div class="links">
-                <a href="https://locked-in-60.cf/" class="slide-link" data-slided="ww.locked-in-60.cf" is="cursor-link" cursor-class="hover1">Visiter le site</a>
+                <a href="https://lockedin60.cf/" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark">Visiter le site</a>
+                <a href="https://github.com/leoboyerbx/locked-60" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark">Voir le GitHub</a>
             </div>
         </div>
     </div>

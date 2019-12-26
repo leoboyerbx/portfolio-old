@@ -27,7 +27,8 @@ function createLightBox () {
       'background-color': 'rgba(0, 0, 0, 0.7)',
       transition: 'all .4s',
       opacity: '0',
-      'pointer-events': 'none'
+      'pointer-events': 'none',
+      'z-index': '50'
     })
     lightboxWrapper.onclick = hideLightBox
     document.querySelector('#ext-content').appendChild(lightboxWrapper)

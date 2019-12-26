@@ -2,6 +2,12 @@
   background-color: #fff;
   height: auto;
   .pan-left {
+    & > div {
+      margin: 20px 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
     //pointer-events: none;
     padding: 50px 0;
     left: 0;
@@ -17,7 +23,7 @@
       position: fixed;
       left: 0;
       top: 0;
-      width: 40%;
+      width: 400px;
       height: 100%;
     }
     .title {
@@ -32,8 +38,12 @@
         font-weight: 100;
       }
     }
+    .cta {
+      //margin: 20px 0;
+    }
     .specs  {
       width: 100%;
+      max-width: 400px;
       margin-top: 20px;
       .title {
         font-family: 'Raleway', sans-serif;
@@ -48,7 +58,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding: 10px 40px;
+        padding: 0 40px;
         flex-direction: column;
         .spec {
           height: 30px;
@@ -73,7 +83,12 @@
       margin-top: 20px;
     }
     .nav-projects {
-      padding: 20px 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      a {
+        margin: 0 10px;
+      }
       .back {
         font-family: 'Arboria', sans-serif;
         font-weight: 400;
@@ -89,7 +104,7 @@
     transition: all .5s $transition-easing;
     @include md () {
       position: absolute;
-      left: 40%;
+      left: 400px;
       top: 0;
     }
     .description-wrapper {
@@ -134,6 +149,9 @@
       .description {
         font-weight: 500;
         font-size: 1.3em;
+      }
+      .links {
+        margin: 20px 0;
       }
     }
   }
