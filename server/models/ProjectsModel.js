@@ -37,18 +37,24 @@ class ProjectsModel {
     })
   }
 
-  static async getBySlug (slug) {
-    const projects = await this.all(['id', 'slug', 'title', 'img_name', 'view_name', 'type', 'position', 'raw_tags'])
-    if (projects) {
-      const index = projects.findIndex(project => project.slug === slug)
-      const project = projects[index]
-      project.prev = projects[index - 1]
-      project.next = projects[index + 1]
-      console.log(project)
-      return project
-    } else {
-      return false
-    }
+  static getBySlugAndType (slug, type) {
+    return new Promise(resolve => {
+      this.getByType(type).then(projects => {
+        if (projects) {
+          const index = projects.findIndex(project => project.slug === slug)
+          if (index === -1) {
+            resolve(false)
+          } else {
+            const project = projects[index]
+            project.prev = projects[index - 1]
+            project.next = projects[index + 1]
+            resolve(project)
+          }
+        } else {
+          resolve(false)
+        }
+      })
+    })
   }
 
   static getByType (type) {

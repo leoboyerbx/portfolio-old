@@ -22,5 +22,9 @@ class ProjectEntity {
   get tags () {
     return this.raw_tags.split(', ').join(',').split(',')
   }
+
+  get specs () {
+    return this.raw_specs.split(', ').join(',').split(',')
+  }
 }
 module.exports = ProjectEntity

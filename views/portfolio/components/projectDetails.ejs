@@ -1,0 +1,64 @@
+<div class="content-wrapper project-details">
+    <div class="pan-left">
+        <div class="title">
+            <h1><%=project.title%></h1>
+            <h2><%=project.subtitle%></h2>
+    </div>
+        <div class="cta">
+            <a href="<%=project.url%>" class="button light" is="cursor-link" cursor-class="hover1 dark" target="_blank">Voir le projet</a>
+        </div>
+        <div class="specs">
+            <div class="title">Caractéristiques du projet</div>
+            <div class="specs-list">
+                <%for(spec of project.specs) { %>
+                  <%-include('./projectSpec', { spec })%>
+              <%  }%>
+            </div>
+        </div>
+        <div class="infos">
+            <%=project.info%>
+        </div>
+        <div class="nav-projects">
+            <div class="links">
+                <a href="<%=project.prev ? project.prev.path : '/'%>" class="i-link prev <%=project.prev ? '' : 'utils hidden'%>" is="cursor-link" cursor-grab cursor-grab-padding="15">
+                    <div class="arrow" onmouseover="document.querySelector('#hint-prev').classList.add('visible')" onmouseout="document.querySelector('#hint-prev').classList.remove('visible')">
+                        <div class="h-bar"></div>
+                        <div class="arrow-bars">
+                            <div class="a-bar"></div>
+                            <div class="a-bar"></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="/<%=project.type%>" is="cursor-link" cursor-class="closing" class="i-link back">
+                    <!--                retour-->
+                    <div class="cross">
+                        <div class="x-bar"></div>
+                        <div class="x-bar"></div>
+                    </div>
+                </a>
+                <a href="<%=project.next.path%>" class="i-link prev" is="cursor-link" cursor-grab cursor-grab-padding="15">
+                    <!--                retour-->
+                    <div class="arrow right" onmouseover="document.querySelector('#hint-next').classList.add('visible')"  onmouseout="document.querySelector('#hint-next').classList.remove('visible')">
+                        <div class="h-bar"></div>
+                        <div class="arrow-bars">
+                            <div class="a-bar"></div>
+                            <div class="a-bar"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="hints">
+                <div class="hint" id="hint-prev">
+                    <b>Projet précédent</b> | <%=project.prev ? project.prev.title : ''%>
+                </div>
+                <div class="hint" id="hint-next">
+                    <b>Projet suivant</b><br><%=project.next ? project.next.title : ''%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pan-right">
+        <%-include(project.viewPath, { project })%>
+    </div>
+
+</div>
