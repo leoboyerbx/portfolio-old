@@ -133,10 +133,18 @@
 </div>
 
 <div id="menu">
-    <div id="menu-links">
-        <a data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
-        <a data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
-        <a data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
+    <div id="menu-content">
+        <div id="menu-links">
+            <div class="link-wrapper">
+                <a class="menu-link" data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
+            </div>
+            <div class="link-wrapper">
+                <a class="menu-link" data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
+            </div>
+            <div class="link-wrapper">
+                <a class="menu-link" data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
+            </div>
+        </div>
     </div>
 </div>
 <div id="menu-button"<%= locals.page ? ' class=scrolled' : '' %>>

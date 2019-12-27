@@ -234,18 +234,32 @@ $bar-color: #101010;
   top: 0;
   left: 0;
   z-index: 190;
-  transition-delay: .5s;
   pointer-events: none;
-  background-color: rgba(255, 255, 255, .95);
-  opacity: 0;
+  //background-color: rgba(255, 255, 255, .95);
+  opacity: 1;
   transition: all .5s ease-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: .95;
+    transform-origin: left center;
+    transform: scale(0, 1);
+    transition: all .7s $transition-easing;
+  }
 
   &.open {
     pointer-events: all;
-    transition-delay: 0s;
-    opacity: 1;
-  }
+    &::before {
 
+      transform: scale(1, 1);
+    }
+  }
   #menu-links {
     position: absolute;
     top: 10%;
@@ -259,42 +273,56 @@ $bar-color: #101010;
     flex-direction: column;
     justify-content: center;
     padding-left: 8%;
-    a {
-      color: transparent;
-      position: relative;
-      width: auto;
-      cursor: pointer;
-      margin-bottom: 10px;
-      &:last-child {
-        margin-bottom: 0;
+    .link-wrapper {
+      overflow: hidden;
+      //position: relative;
+      @for $i from 0 through 5 {
+        &:nth-child(#{$i + 1}) a {
+          transition-delay: $i * .1s;
+        }
       }
-      &::before, &::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        height: 100%;
-        color: $theme-grey-dark;
-        overflow: hidden;
-        transition: all .5s $transition-easing;
-      }
-      &::before {
-        right: 0;
-        width: 100%;
-      }
-      &::after {
-        color: $theme-main;
-        width: 0;
-        left: 0;
-      }
-      &:hover {
+      a {
+        display: inline-block;
+        color: transparent;
+        position: relative;
+        width: auto;
+        cursor: pointer;
+        padding-bottom: 10px;
+
+        transition: all .8s $transition-easing;
+        transform: translateY(80%);
+
+        &::before, &::after {
+          content: attr(data-text);
+          position: absolute;
+          bottom: 0;
+          height: 100%;
+          color: $theme-grey-dark;
+          overflow: hidden;
+          transition: all .5s $transition-easing;
+        }
         &::before {
-          opacity: 0;
+          right: 0;
+          width: 100%;
         }
         &::after {
-          width: 100%;
+          color: $theme-main;
+          width: 0;
+          left: 0;
+        }
+        &:hover {
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            width: 100%;
+          }
         }
       }
     }
+  }
+  &.open #menu-links .link-wrapper a {
+      transform: translateY(0);
   }
 }
 
