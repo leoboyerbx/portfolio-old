@@ -16,6 +16,10 @@ window.addEventListener('DOMContentLoaded', function () {
   window.loading.end()
   // parallax($('#home'), 0.4)
   menu($('#menu'), $('#menu-button'), pageContent)
+
+  // eslint-disable-next-line no-unused-vars
+  const j = new Louwp($('#mybio-text-louwp'), $('.mybio-text'))
+
   // eslint-disable-next-line no-unused-vars
   const who = new ScrollMoov($('#mybio #line-1'),
     {
@@ -32,24 +36,22 @@ window.addEventListener('DOMContentLoaded', function () {
       translateX: '25px'
     }, { considerEndScroll: true, parent: pageContent })
   //
-  // eslint-disable-next-line no-unused-vars
-  const j = new Louwp($('#mybio-text-louwp'), $('.mybio-text'))
   //
   // eslint-disable-next-line no-unused-vars
   const what = new ScrollMoov($('#my-portfolio .line-1'),
     {
-      translateX: '-20px'
+      translateX: '-40px'
     }, {
-      translateX: '0px'
+      translateX: '10px'
     }, {
       parent: pageContent
     })
   // eslint-disable-next-line no-unused-vars
   const iCanDo = new ScrollMoov($('#my-portfolio .line-2'),
     {
-      translateX: '10px'
+      translateX: '30px'
     }, {
-      translateX: '-10px'
+      translateX: '-20px'
     }, {
       parent: pageContent
     })

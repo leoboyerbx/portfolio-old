@@ -1,4 +1,5 @@
 import CssDimension from 'parse-css-dimension'
+import _throttle from 'lodash.throttle'
 
 function documentHeight () {
   const body = document.body
@@ -19,10 +20,17 @@ export default class ScrollMoov {
       this.endPoint = options.endPoint ? options.endPoint : this.getPosition().y + this.element.offsetHeight
     } else {
       this.endPoint = Math.min(options.endPoint ? options.endPoint : this.getPosition().y + this.element.offsetHeight, this.parent === window ? documentHeight() : this.parent.scrollHeight - viewportHeight)
-      console.log(this.endPoint)
+      // console.log(this.endPoint)
     }
-
-    this.parent.addEventListener('scroll', () => { this.updateProgression() })
+    if (options.deltaEndPoint) {
+      this.endPoint -= options.deltaEndPoint
+    }
+    if (options.throttle) {
+      const handler = _throttle(() => { this.updateProgression() }, 100)
+      this.parent.addEventListener('scroll', () => { handler() })
+    } else {
+      this.parent.addEventListener('scroll', () => { this.updateProgression() })
+    }
 
     this.animatedProperties = []
     this.initAnimatedProperties(from, to)

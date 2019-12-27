@@ -33,35 +33,10 @@
         </div>
     </div>
     <div id="homepage-content">
-        <div id="mybio" class="slide">
-            <div id="mybio-title" class="part-title">
-                <div id="line-1">Qui</div>
-                <div id="line-2">suis-je ?</div>
-            </div>
-            <div id="mybio-content">
-                <div class="row">
-                    <div class="col-12 col-lg-auto text-center align-items-center justify-content-center d-flex">
-                        <div id="mybio-photo"></div>
-                    </div>
-                    <div class="col-12 col-md px-3">
-                        <div id="mybio-text-wrapper" class="cursor-hidden">
-                            <div class="mybio-text" is="cursor-hide">
-                                <p>
-                                    Léo Boyer, étudiant en DUT Métiers du Multimédia et de l'Internet à Grenoble. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto aut blanditiis consequatur deserunt dolorum eligendi esse ex explicabo
-                                </p>
-                            </div>
-                            <div id="mybio-text-louwp"  is="cursor-hide">
-                                <div id="mybio-hidden"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div id="my-portfolio" class="mb-4">
-            <div id="my-portfolio-title">
-                <div class="line-1">Ce que</div>
-                <div class="line-2">je sais faire</div>
+            <div id="my-portfolio-title" class="part-title">
+                <div class="line-1">Mes</div>
+                <div class="line-2">projets</div>
             </div>
             <div id="my-portfolio-categories">
                 <div class="category">
@@ -90,34 +65,46 @@
                 </div>
             </div>
         </div>
+        <div id="mybio" class="slide">
+            <div id="mybio-title" class="part-title">
+                <div id="line-1">Qui</div>
+                <div id="line-2">suis-je ?</div>
+            </div>
+            <div id="mybio-content">
+                <div class="row">
+                    <div class="col-12 col-lg-auto text-center align-items-center justify-content-center d-flex">
+                        <div id="mybio-photo"></div>
+                    </div>
+                    <div class="col-12 col-md px-3">
+                        <div id="mybio-text-wrapper" class="cursor-hidden">
+                            <div class="mybio-text" is="cursor-hide">
+                                <p>
+                                    Léo Boyer, 19 ans, passionné depuis plus de 7 ans par le web, l'informatique et l'audiovisuel, et par la création. Je me forme actuellement en DUT <b>Métiers du Multimédia et de l'Internet</b> à Grenoble, et j'aimerais m'orienter vers un métier dans le développement, qui me permette d'exercer ma créativité.
+                                </p>
+                                <p>
+                                    <a class="i-link" href="/profil" class="louwp-hover" data-hover="focus"><u>Voir mon profil</u></a>
+                                </p>
+                            </div>
+                            <div id="mybio-text-louwp"  is="cursor-hide">
+                                <div id="mybio-hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="contact" class="mt-5">
-            <div id="contact-title">
+            <div id="contact-title" class="part-title">
                 <div class="lt lt1 ltc">C</div><div class="lt lt2 lto">o</div><div class="lt lt3 ltn">n</div><div class="lt lt4 ltt">t</div><div class="lt lt5 lta">a</div><div class="lt lt6 ltc2">c</div><div class="lt lt7 ltt2">t</div>
             </div>
             <div id="contact-content">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <p>Vous pouvez me contacter à l'adresse <a href="mailto:contact@leoboyer.fr">contact@leoboyer.fr</a></p>
+                <p>Télécharger mon CV</p>
             </div>
         </div>
+    </div>
+    <div id="homepage-footer">
+
     </div>
 </div>
 <div id="ext-page" <%= locals.page ? 'class=open' : '' %>>
@@ -145,7 +132,13 @@
     </div>
 </div>
 
-<div id="menu"></div>
+<div id="menu">
+    <div id="menu-links">
+        <a data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
+        <a data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
+        <a data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
+    </div>
+</div>
 <div id="menu-button"<%= locals.page ? ' class=scrolled' : '' %>>
     <a id="menu-button-icon" is="cursor-link" cursor-class="menu" cursor-grab cursor-grab-padding="20">
         <div class="h-bar"></div>

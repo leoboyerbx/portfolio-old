@@ -87,7 +87,10 @@ a.button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 95vh;
+  @include md () {
+    height: 100vh;
+  }
   background-color: #fff;
   #home-content-wrapper {
     height: 90%;
@@ -200,7 +203,7 @@ a.button {
 #homepage-content {
   position: absolute;
   width: 100%;
-  top: 100%;
+  top: 100vh;
   left: 0;
   overflow: hidden;
 }
@@ -218,7 +221,6 @@ a.button {
     text-align: center;
     width: 100%;
     color: $theme-grey-dark;
-
     font-family: 'arboria', sans-serif;
     font-weight: 800;
     line-height: 1em;
@@ -245,19 +247,6 @@ a.button {
       }
       border-radius: 100%;
       position: relative;
-      //&::before {
-      //  transition: all .4s $transition-easing;
-      //  content:'';
-      //  position: absolute;
-      //  top: 0;
-      //  left: 0;
-      //  border-radius: 50%;
-      //  background-color: $theme-grey-dark;
-      //  z-index: 1;
-      //  width: 100%;
-      //  height: 100%;
-      //  transform: scale(1.1);
-      //}
       &::after {
         transition: all .4s $transition-easing;
         content:'';
@@ -285,7 +274,7 @@ a.button {
       font-family: 'arboria', sans-serif;
       font-weight: 600;
     }
-    #mybio-hidden {
+    #mybio-hidden, #mybio-hidden a {
       -webkit-text-stroke-width: 1px;
       color: #fff;
       -webkit-text-stroke-color: $theme-grey-dark;
@@ -302,11 +291,9 @@ a.button {
   #my-portfolio-title {
     text-align: center;
     width: 100%;
-    font-size: 6em;
     font-family: 'arboria', sans-serif;
     font-weight: 800;
     line-height: 1em;
-    margin-bottom: 1em;
     color: $theme-grey-dark;
 
     .line-1 {
@@ -334,6 +321,7 @@ a.button {
       z-index: 0;
       padding: 25px 50px;
       display: flex;
+      max-width: 400px;
       justify-content: center;
     @include md {
       padding: 100px 50px;
@@ -411,13 +399,24 @@ a.button {
   #contact-title {
     color: $theme-grey-dark;
     text-align: center;
-    font-size: 6em;
     font-family: 'arboria', sans-serif;
     font-weight: 800;
     line-height: 1em;
   }
   .lt {
+    transition: all .5s ease;
     display: inline-block;
+  }
+  #contact-content {
+    width: 100%;
+    background-color: $theme-grey-light;
+    font-size: 200%;
+    text-align: center;
+    padding: 60px 0;
+    margin: 30px 0;
+    a {
+      font-weight: bold;
+    }
   }
 }
 

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev npx webpack",
     "build": "npx webpack",
-    "start-dev":  "forever start -w --watchDirectory ./server/ --id \"dev-portfolio\" -c node app.js",
+    "start-dev": "forever start -w --watchDirectory ./server/ --id \"dev-portfolio\" -c node app.js",
     "stop": "forever stop dev-portfolio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -37,6 +37,7 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "express-sitemap": "^1.8.0",
     "fetch-progress": "^1.2.0",
     "lodash.throttle": "^4.1.1",
     "module-alias": "^2.2.2",

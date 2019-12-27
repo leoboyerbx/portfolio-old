@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const serverApp = express()
 const http = require('http').createServer(serverApp)
+const sitemap = require('express-sitemap')()
 
 const PortfolioController = require(path.join(__root, 'server/controllers/portfolioController'))
 
@@ -33,6 +34,11 @@ module.exports = function () {
   serverApp.get('/video', (req, res) => {
     portfolioController.av(req, res)
   })
+  // sitemap.generate(serverApp)
+  serverApp.get('/sitemap.xml', (req, res) => {
+    sitemap.XMLtoWeb(res)
+  })
+
   serverApp.use(function (req, res, next) {
     res.notFound()
     next()
