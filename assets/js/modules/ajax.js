@@ -1,6 +1,7 @@
 /* global fetch history */
 import { $, $$ } from './qs'
 import animateCols from '@/modules/animateCols'
+import { unGrab } from '@/modules/cursorFollower'
 // import fetchProgress from 'fetch-progress'
 
 let extPage
@@ -66,7 +67,7 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
       cursorEndLoading()
     }).catch(console.error)
   }
-
+  unGrab()
   if (extPage.isOpen()) {
     extPage.hideContent()
     setTimeout(load, 300)

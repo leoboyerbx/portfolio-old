@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
   window.loading.end()
   // parallax($('#home'), 0.4)
   menu($('#menu'), $('#menu-button'), pageContent)
+  // eslint-disable-next-line no-unused-vars
   const who = new ScrollMoov($('#mybio #line-1'),
     {
       translateX: '50px'
@@ -23,15 +24,18 @@ window.addEventListener('DOMContentLoaded', function () {
     {
       translateX: '0px'
     }, { considerEndScroll: true, parent: pageContent })
+  // eslint-disable-next-line no-unused-vars
   const amI = new ScrollMoov($('#mybio #line-2'),
     {
       translateX: '-25px'
     }, {
       translateX: '25px'
     }, { considerEndScroll: true, parent: pageContent })
-
+  //
+  // eslint-disable-next-line no-unused-vars
   const j = new Louwp($('#mybio-text-louwp'), $('.mybio-text'))
-
+  //
+  // eslint-disable-next-line no-unused-vars
   const what = new ScrollMoov($('#my-portfolio .line-1'),
     {
       translateX: '-20px'
@@ -40,6 +44,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }, {
       parent: pageContent
     })
+  // eslint-disable-next-line no-unused-vars
   const iCanDo = new ScrollMoov($('#my-portfolio .line-2'),
     {
       translateX: '10px'
@@ -51,25 +56,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   letterByLetterAnim()
 
-  console.log(who, amI, j, what, iCanDo)
-  // preventScroll.disableScroll()
-  const followerHovers = [
-    {
-      selector: '.link-1',
-      className: 'hover1'
-    },
-    {
-      selector: '.link-light',
-      className: 'hover2'
-    },
-    {
-      selector: '.cursor-hidden',
-      className: 'hidden'
-    }
-  ]
-  // cursorFollower($('#cursor-pointer'), followerHovers, false)
-  cursorFollower($('#cursor-follower'), followerHovers, true)
-  // setTimeout(preventScroll.enableScroll, 30
+  cursorFollower($('#cursor-follower'), true)
 
   const extPageEl = extPage($('#ext-page'))
   ajax(extPageEl)

@@ -1,13 +1,21 @@
 import _throttle from 'lodash.throttle'
+
 // import { $$ } from './qs'
-
 let isGrabbed = false
+let gElement
+export function unGrab () {
+  isGrabbed = false
+  gElement.querySelector('.round-cursor').style.width = null
+  gElement.querySelector('.round-cursor').style.height = null
+  gElement.querySelector('.round-cursor').style.transform = null
+}
 
-export default function auto (element, hovers = [], throttle = true) {
+export default function auto (element, throttle = true) {
+  gElement = element
   let started = false
   function start () {
     if (!started) {
-      cursorFollower(element, hovers, throttle)
+      cursorFollower(element, throttle)
       started = true
       window.cursor = true
       window.removeEventListener('mousemove', start, false)
@@ -33,7 +41,7 @@ function allowMove () {
   // return true
 }
 
-function cursorFollower (element, hovers = [], throttle = true) {
+function cursorFollower (element, throttle = true) {
   function cursorEventListeners (link, className, grab = false) {
     link.addEventListener('mouseover', () => {
       if (className && !element.classList.contains('loading')) {
@@ -77,10 +85,7 @@ function cursorFollower (element, hovers = [], throttle = true) {
     }
 
     unGrab () {
-      isGrabbed = false
-      element.querySelector('.round-cursor').style.width = null
-      element.querySelector('.round-cursor').style.height = null
-      element.querySelector('.round-cursor').style.transform = null
+      unGrab()
     }
   }
   // eslint-disable-next-line no-undef

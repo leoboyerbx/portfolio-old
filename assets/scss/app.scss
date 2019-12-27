@@ -29,6 +29,7 @@ a.button {
   position: relative;
   transition: all .3s;
   z-index: 2;
+  display: inline-block;
   &::before {
     content: '';
     position: absolute;
@@ -203,7 +204,12 @@ a.button {
   left: 0;
   overflow: hidden;
 }
-
+.part-title {
+  font-size: 20vw;
+  @include md() {
+    font-size: 100px;
+  }
+}
 #mybio {
   position: relative;
   min-height:400px;
@@ -212,7 +218,7 @@ a.button {
     text-align: center;
     width: 100%;
     color: $theme-grey-dark;
-    font-size: 6em;
+
     font-family: 'arboria', sans-serif;
     font-weight: 800;
     line-height: 1em;
@@ -268,15 +274,6 @@ a.button {
       img {
         z-index: 2;
       }
-      //&:hover {
-      //  &::before {
-      //    transform: scale(1.15);
-      //  }
-      //  &::after {
-      //    transform: scale(.95);
-      //  }
-      //}
-
     }
     .mybio-text, #mybio-hidden {
       color: $theme-grey-dark;

@@ -175,6 +175,7 @@ $header-text-color: white;
         width: 20px;
         height: 20px;
         transition: all .3s;
+        transform: translateY(-50%);
         @include md() {
           position: relative;
           right: unset;
