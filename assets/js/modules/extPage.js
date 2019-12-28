@@ -7,7 +7,7 @@ export default function extPage (element) {
   function showPage (x, y) {
     element.classList.add('open')
     externalPageOpened = true
-    // $('#menu-button').classList.add('scrolled')
+    $('#menu-button').classList.add('scrolled')
     isAnimating = true
     cache.style.left = x + 'px'
     cache.style.top = y + 'px'
