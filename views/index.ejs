@@ -23,13 +23,13 @@
                 </div>
 
             </div>
-            <div id="arrow-scroll" class="link-1">
+            <a id="arrow-scroll" is="cursor-link" cursor-class="hover1">
                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
                 <polyline class="arrow-scroll-line" points="21,105.5 151.4,194.5 279,105.5" />
                 </svg>
 
-            </div>
+            </a>
         </div>
     </div>
     <div id="homepage-content">
@@ -82,7 +82,7 @@
                                     Léo Boyer, 19 ans, passionné depuis plus de 7 ans par le web, l'informatique et l'audiovisuel, et par la création. Je me forme actuellement en DUT <b>Métiers du Multimédia et de l'Internet</b> à Grenoble, et j'aimerais m'orienter vers un métier dans le développement, qui me permette d'exercer ma créativité.
                                 </p>
                                 <p>
-                                    <a class="i-link" href="/profil" class="louwp-hover" data-hover="focus"><u>Voir mon profil</u></a>
+                                    <a class="i-link" href="/profile" class="louwp-hover" data-hover="focus"><u>Voir mon profil</u></a>
                                 </p>
                             </div>
                             <div id="mybio-text-louwp"  is="cursor-hide">
@@ -98,8 +98,13 @@
                 <div class="lt lt1 ltc">C</div><div class="lt lt2 lto">o</div><div class="lt lt3 ltn">n</div><div class="lt lt4 ltt">t</div><div class="lt lt5 lta">a</div><div class="lt lt6 ltc2">c</div><div class="lt lt7 ltt2">t</div>
             </div>
             <div id="contact-content">
-                <p>Vous pouvez me contacter à l'adresse <a href="mailto:contact@leoboyer.fr">contact@leoboyer.fr</a></p>
-                <p>Télécharger mon CV</p>
+                <div class="cv">
+                    <a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">&mdash; Mon CV</a>
+                    <a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Ma Carte de Visite &mdash;</a>
+                </div>
+                <div class="coords">
+                    <p>+33 (0) 7 82 45 93 32 - <a href="mailto:contact@leoboyer.fr" is="cursor-link" cursor-class="hover1"><u>contact@leoboyer.fr</u></a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -136,18 +141,24 @@
     <div id="menu-content">
         <div id="menu-links">
             <div class="link-wrapper">
-                <a class="menu-link" data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
+                <a class="menu-link i-link" href="/" data-target="#home" data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
             </div>
             <div class="link-wrapper">
-                <a class="menu-link" data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
+                <a class="menu-link i-link" href="/" data-target="#my-portfolio" data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
             </div>
             <div class="link-wrapper">
-                <a class="menu-link" data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
+                <a class="menu-link i-link" href="/profile" data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
             </div>
         </div>
         <div id="menu-separator"></div>
         <div id="menu-contact">
-            <div class="cv"><a href="/assets/CV_Léo_Boyer.pdf" class="button">Mon CV</a></div>
+            <div class="cv"><a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Mon CV &mdash;</a></div>
+            <div class="cv"><a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Ma Carte de Visite &mdash;</a></div>
+            <div class="coords">
+                <h1>Contact</h1>
+                <p>+33 (0) 7 82 45 93 32</p>
+                <p><a href="mailto:contact@leoboyer.fr" is="cursor-link" cursor-class="hover1"><u>contact@leoboyer.fr</u></a></p>
+            </div>
         </div>
     </div>
 </div>

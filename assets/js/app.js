@@ -8,6 +8,8 @@ import extPage from './modules/extPage'
 import ajax from './modules/ajax'
 import animateCols from './modules/animateCols'
 import lightbox from './modules/lightbox'
+import innerLinks from '@/modules/innerLinks'
+import arrowScroll from '@/modules/arrowScroll'
 
 window.addEventListener('DOMContentLoaded', function () {
   // Selection of elements
@@ -15,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   window.loading.end()
   // parallax($('#home'), 0.4)
-  menu($('#menu'), $('#menu-button'), pageContent)
+  const menuObj = menu($('#menu'), $('#menu-button'), pageContent)
 
   // eslint-disable-next-line no-unused-vars
   const j = new Louwp($('#mybio-text-louwp'), $('.mybio-text'))
@@ -65,4 +67,7 @@ window.addEventListener('DOMContentLoaded', function () {
   animateCols(400)
 
   lightbox()
+
+  innerLinks('a[data-target]', menuObj)
+  arrowScroll()
 })

@@ -40,7 +40,7 @@ export default function () {
       translate: ['0', '0']
     }, {
       parent: $('#page-content'),
-      deltaEndPoint: 300,
+      // deltaEndPoint: 300,
       throttle: true
     })
   }

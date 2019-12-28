@@ -2,6 +2,18 @@ import preventScroll from './preventScroll'
 let open = false
 
 export default function menu (menu, button, mainScroll = window) {
+  function close () {
+    menu.classList.remove('open')
+    button.classList.remove('menu-open')
+    button.classList.add('closed')
+    preventScroll.enableScroll()
+    setTimeout(function () {
+      button.classList.remove('closed')
+    }, 500)
+  }
+
+  menu.close = close
+
   button.addEventListener('click', () => {
     menu.classList.toggle('open')
     button.classList.toggle('menu-open')
@@ -25,4 +37,7 @@ export default function menu (menu, button, mainScroll = window) {
       button.classList.add('scrolled')
     }
   })
+  return {
+    close
+  }
 }
