@@ -4,5 +4,13 @@ module.exports = function renderView (request, response, next) {
   response.renderView = function (view, locals = undefined, callback = undefined) {
     response.render(path.join(__viewsPath, view), locals, callback)
   }
+  response.ajaxView = function (view, locals = {}) {
+    if (request.isAjax) {
+      response.renderView(view, locals)
+    } else {
+      locals.page = view
+      response.renderView('index', locals)
+    }
+  }
   next()
 }

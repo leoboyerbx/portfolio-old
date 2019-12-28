@@ -45,11 +45,9 @@ async function loadPage (page) {
       'x-requested-with': 'xmlhttprequest'
     }
   })
-  if (response.status === 200) {
+  if (response.status === 200 || response.status === 404) {
     const text = await response.text()
     return text
-  } else if (response.status === 404) {
-    console.info('404')
   }
 }
 

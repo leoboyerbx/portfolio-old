@@ -1797,3 +1797,10 @@ body:not(:hover) #cursor-follower {
     width: 100%;
     transition: all .2s .1s; }
 
+.c404 {
+  padding: 100px 50px; }
+  .c404 h1 {
+    font-size: 4em;
+    color: #fce14b;
+    font-weight: 800; }
+

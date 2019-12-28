@@ -735,3 +735,11 @@ body:not(:hover) {
     }
   }
 }
+.c404 {
+  padding: 100px 50px;
+  h1 {
+    font-size: 4em;
+    color: $theme-main;
+    font-weight: 800;
+  }
+}
