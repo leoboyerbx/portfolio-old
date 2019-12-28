@@ -6,12 +6,12 @@ export default function arrowScroll () {
     e.preventDefault()
     $('#my-portfolio').scrollIntoView({ behavior: 'smooth', block: 'center' })
   })
-
-  $('#page-content').addEventListener('scroll', () => {
-    if (window.scrollY) {
-      arrow.classList.add('scrolled')
+  const container = $('#page-content')
+  container.addEventListener('scroll', () => {
+    if (container.scrollTop) {
+      arrow.classList.add('hidden')
     } else {
-      arrow.classList.remove('scrolled')
+      arrow.classList.remove('hidden')
     }
   })
 }
