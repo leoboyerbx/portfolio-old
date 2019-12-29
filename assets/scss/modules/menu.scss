@@ -11,6 +11,7 @@ $bar-color: #101010;
   //cursor: none;
   z-index: 210;
   #menu-button-hint {
+    display: block;
     transition: all .3s $transition-easing;
   }
 
@@ -176,9 +177,10 @@ $bar-color: #101010;
       }
     }
   }
-  &.scrolled {
+  &.scrolled:not(.menu-open) {
     #menu-button-hint {
-      transform: translate3d(0, -100px, 0);
+      //transform: translate3d(0, -100px, 0);
+      opacity: 0;
     }
   }
 
@@ -235,7 +237,7 @@ $bar-color: #101010;
 #menu {
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 190;
@@ -267,17 +269,24 @@ $bar-color: #101010;
   }
   #menu-links {
     position: absolute;
-    top: 10%;
-    bottom: 10%;
-    left: 0;
     list-style-type: none;
     font-family: 'Arboria', sans-serif;
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 8%;
+    padding-left: 10%;
+    top: 80px;
+    left: 0;
+    @include md () {
+      font-size: 3em;
+      padding-left: 8%;
+      top: 10%;
+      bottom: 10%;
+      left: 0;
+
+    }
     .link-wrapper {
       overflow: hidden;
       //position: relative;
@@ -334,9 +343,13 @@ $bar-color: #101010;
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 1px;
-    height: 80%;
+    width: 80%;
+    height: 1px;
     transform: translate(-50%, -50%);
+    @include md () {
+      width: 1px;
+      height: 80%;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -345,34 +358,47 @@ $bar-color: #101010;
       top: 0;
       left: 0;
       background-color: $theme-grey-dark;
-      transform: scale(1, 0);
-      transform-origin: center bottom;
+      transform: scale(0, 1);
+      @include md () {
+        transform: scale(1, 0);
+      }
+      transform-origin: left bottom;
       transition: transform .6s $transition-easing;
     }
   }
   &.open #menu-separator::before {
     transform: scale(1, 1);
     transition-delay: .3s;
-    transform-origin: center top;
+    transform-origin: right top;
   }
   #menu-contact {
     position: absolute;
-    top: 20%;
-    right: 0;
-    //width: 50%;
-    height: 80%;
-    padding: 50px ;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
-    .cv {
+    left: 0;
+    padding: 0 10%;
+    bottom: 50px;
+    @include md {
+      top: 20%;
+      right: 0;
+      height: 80%;
+      left: auto;
+      padding: 50px;
       text-align: right;
-      margin-bottom: 20px;
+    }
+    .cv {
+      margin-bottom: 15px;
+      @include md () {
+        margin-bottom: 20px;
+      }
     }
     .coords {
-      margin-top: 20px;
-      text-align: right;
+      margin-top: 15px;
+      @include md () {
+        margin-bottom: 20px;
+      }
       color: $theme-grey-dark;
       h1 {
         font-size: 120%;
@@ -386,7 +412,7 @@ $bar-color: #101010;
 
     div {
       transform: translateX(150%);
-      transition: all .6s $transition-easing;
+      transition: all .7s $transition-easing;
       @for $i from 0 through 5 {
         &:nth-child(#{$i+1}) {
           transition-delay: ($i * .1s) + .5s;

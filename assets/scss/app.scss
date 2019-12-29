@@ -2,11 +2,15 @@
 @import './globals/colors';
 @import '../fonts/MontserratRaleway.css';
 
+// Bootstrap grid only
+@import "lib/bootstrap/bootstrap-grid";
+
 @import "./modules/menu";
 @import "./modules/louwp";
 @import "./modules/ext-page";
 @import "./modules/portfolio-category";
 @import "./modules/project-details";
+@import "./modules/profile";
 
 body {
   font-family: 'Raleway', sans-serif;

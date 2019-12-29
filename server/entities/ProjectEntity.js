@@ -8,7 +8,7 @@ class ProjectEntity {
   }
 
   get viewPath () {
-    return path.join(__viewsPath, 'projects', this.type, this.view_name)
+    return path.join(__viewsPath, 'projects', this.type, this.view_name) + '.ejs'
   }
 
   get path () {

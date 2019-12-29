@@ -4,6 +4,13 @@ import _throttle from 'lodash.throttle'
 let isGrabbed = false
 
 export default function auto (element, throttle = true) {
+  element.unGrab = function () {
+    isGrabbed = false
+    element.querySelector('.round-cursor').style.width = null
+    element.querySelector('.round-cursor').style.height = null
+    element.querySelector('.round-cursor').style.transform = null
+  }
+
   let started = false
   function start () {
     if (!started) {
@@ -47,12 +54,7 @@ function cursorFollower (element, throttle = true) {
       if (grab) link.unGrab()
     })
   }
-  element.unGrab = function () {
-    isGrabbed = false
-    element.querySelector('.round-cursor').style.width = null
-    element.querySelector('.round-cursor').style.height = null
-    element.querySelector('.round-cursor').style.transform = null
-  }
+  console.log(element)
   // eslint-disable-next-line no-undef
   class CursorLink extends HTMLAnchorElement {
     constructor () {

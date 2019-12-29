@@ -25,14 +25,20 @@ module.exports = function () {
   serverApp.get('/', (req, res) => {
     res.renderView('index')
   })
+  serverApp.get('/video', (req, res) => {
+    portfolioController.av(req, res)
+  })
   serverApp.get('/web', (req, res) => {
+    portfolioController.web(req, res)
+  })
+  serverApp.get('/graphics', (req, res) => {
+    portfolioController.web(req, res)
+  })
+  serverApp.get('/profile', (req, res) => {
     portfolioController.web(req, res)
   })
   serverApp.get('/:type((web|video|graphisme))/:project', (req, res) => {
     portfolioController.project(req, res)
-  })
-  serverApp.get('/video', (req, res) => {
-    portfolioController.av(req, res)
   })
   // sitemap.generate(serverApp)
   serverApp.get('/sitemap.xml', (req, res) => {
