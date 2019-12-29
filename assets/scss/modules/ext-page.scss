@@ -159,10 +159,14 @@ $header-text-color: white;
         .letter-i {@include stroke(497)}
         .letter-l {@include stroke(445)}
         .letter-o {@include stroke(703)}
+        .letter-pmaj {@include stroke(893)}
+        .letter-r {@include stroke(477)}
         .letter-s {@include stroke(686)}
         .letter-u {@include stroke(743)}
         .letter-v {@include stroke(634)}
         .letter-wmaj {@include stroke(1415)}
+
+        .letters-fi {@include stroke(1123)}
 
       }
 
@@ -208,6 +212,9 @@ $header-text-color: white;
   }
   .header.web {
     @include delay(3, .4s);
+  }
+  .header.profil {
+    @include delay(6, .2s);
   }
   .header.audiovisuel {
     @include delay(11, .1s);

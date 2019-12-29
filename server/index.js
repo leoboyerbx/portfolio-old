@@ -35,7 +35,7 @@ module.exports = function () {
     portfolioController.web(req, res)
   })
   serverApp.get('/profile', (req, res) => {
-    portfolioController.web(req, res)
+    portfolioController.profile(req, res)
   })
   serverApp.get('/:type((web|video|graphisme))/:project', (req, res) => {
     portfolioController.project(req, res)

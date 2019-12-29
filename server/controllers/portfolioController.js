@@ -1,5 +1,4 @@
 const ProjectsModel = require('@server/models/ProjectsModel')
-const path = require('path')
 const fs = require('fs')
 
 class PortfolioController {

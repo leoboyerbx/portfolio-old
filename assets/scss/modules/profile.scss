@@ -1,3 +1,24 @@
 #profile {
+  .profile-content {
+    width: 100%;
+    padding: 20px 8%;
+    margin-top: 100px;
+    @include md() {
+      padding: 0 3%;
+      margin: 100px 0 4vw;
+    }
 
+    .pan-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include md () {
+
+      }
+    }
+    .pan-right {
+      position: relative;
+    }
+  }
 }
