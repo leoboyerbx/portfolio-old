@@ -15,7 +15,7 @@ class PortfolioController {
   }
 
   av (req, res) {
-    ProjectsModel.getByType('video').then(projects => {in
+    ProjectsModel.getByType('video').then(projects => {
       res.ajaxView('portfolio/video', { projects })
     })
   }
