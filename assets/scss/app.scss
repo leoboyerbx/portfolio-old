@@ -548,9 +548,20 @@ a.button {
     transform: scale(.5);
     background-color: $theme-main;
   }
+  &.dot .round-cursor {
+    transform: scale(.2);
+    background-color: $theme-main;
+  }
   &.dark .round-cursor {
-    background-color: $theme-grey-dark;
-    border-color: $theme-grey-dark;
+     background-color: $theme-grey-dark;
+     border-color: $theme-grey-dark;
+   }
+  &.light .round-cursor {
+     background-color: $theme-grey-light;
+     border-color: $theme-grey-light;
+   }
+  &.soften {
+    opacity: .8;
   }
   &.zoom {
     .round-cursor {
