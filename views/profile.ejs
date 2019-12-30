@@ -84,6 +84,37 @@
                         `Côté back-end, je développe en PHP ou en NodeJS. Je suis passionné par la notion de temps réel donc j'expérimente beaucoup avec Socket.io`
                         ]
                     })%>
+
+                    <%-include('./components/skillsBlock', {
+                    title: ['Production', 'Audiovisuelle'],
+                    skills: [
+                    { name: 'Pré-production', slug: 'checklist' },
+                    { name: 'Tournage', slug: 'camera' },
+                    { name: 'Montage et Post-production', slug: 'editing' },
+                    { name: 'Premiere Pro', slug: 'premiere' },
+                    { name: 'After Effect', slug: 'after' },
+                    { name: 'DaVinci Resolve', slug: 'davinci' },
+                    ],
+                    description: [
+                    `Durant ma formation de DUT et à titre personnel, j'ai pu me perfectionner dans la réalisation d'un projet vidéo de A à Z.`,
+                    `J'ai des notions de préparation et d'organisation de tournage, d'image et de son, et enfin de montage, post-production et étalonnage.`
+                    ]
+                    })%>
+
+                    <%-include('./components/skillsBlock', {
+                    title: ['Design', 'Graphisme et motion design'],
+                    skills: [
+                    { name: 'Motion design', slug: 'motion' },
+                    { name: 'After Effect', slug: 'after' },
+                    { name: 'Illustrator', slug: 'illustrator' },
+                    { name: 'Photoshop', slug: 'photoshop' },
+                    { name: 'InDesign', slug: 'indesign' },
+                    ],
+                    description: [
+                    `Je suis passionné de motion design et c'est par cette voie que je me suis intéressé au graphisme.`,
+                    `Durant mon DUT J'ai pu apprendre les bases des notions élémentaires d'esthétique et de composition. Je me suis également perfectionné sur les outils.`
+                    ]
+                    })%>
                 </div>
             </div>
         </div>
