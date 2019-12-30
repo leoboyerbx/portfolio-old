@@ -122,7 +122,7 @@
         .techno {
           position: static;
           width: 40px;
-          margin: 0 10px;
+          margin: 10px;
           &::after {
             content: attr(data-hint);
             font-weight: bold;
@@ -194,5 +194,8 @@
         margin-bottom: 30px;
       }
     }
+  }
+  .courses {
+    margin-bottom: 50px;
   }
 }

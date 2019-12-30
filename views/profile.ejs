@@ -75,7 +75,7 @@
                             { name: 'Socket.io', slug: 'socket-io' },
                             { name: 'PHP', slug: 'php' },
                             { name: 'Python', slug: 'python' },
-                            { name: 'Git version control', slug: 'git' },
+                            { name: 'Contrôleur de version Git', slug: 'git' },
                             { name: 'MySQL / MariaDB', slug: 'mysql' },
                         ],
                         description: [
@@ -113,6 +113,29 @@
                     description: [
                     `Je suis passionné de motion design et c'est par cette voie que je me suis intéressé au graphisme.`,
                     `Durant mon DUT J'ai pu apprendre les bases des notions élémentaires d'esthétique et de composition. Je me suis également perfectionné sur les outils.`
+                    ]
+                    })%>
+
+                    <%-include('./components/skillsBlock', {
+                    title: ['Compétences', 'Transversales'],
+                    skills: [
+                    { name: 'Scrum Agile', slug: 'scrum' },
+                    { name: "Outils d'intelligence collective", slug: 'ico' },
+                    ],
+                    description: [
+                    `J'ai été initié durant mon DUT aux techniques d'intelligence collective, de plus en plus largement utilisées.`,
+                        `J'ai pu pratiquer diverses méthodes de gestion de projet, notamment la méthode "Scrum Agile".`
+                    ]
+                    })%>
+
+                    <%-include('./components/skillsBlock', {
+                    title: ['Généralités', 'Informatique'],
+                    skills: [
+                    { name: 'Linux', slug: 'linux' },
+                    { name: 'Suite Office', slug: 'office' },
+                    ],
+                    description: [
+                    `Je suis très à l'aise en informatique de manière générale. J'utilise baucoup Linux pour du développement, et je maîtrise la suite office (Word, Excel, Powerpoint).`
                     ]
                     })%>
                 </div>
