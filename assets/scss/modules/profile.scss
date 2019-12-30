@@ -14,11 +14,22 @@
       flex-direction: column;
       align-items: center;
       @include md () {
-
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 39%;
+        height: 100%;
+        justify-content: center;
       }
     }
     .pan-right {
       position: relative;
+      @include md() {
+        position: absolute;
+        right: 0;
+        left: 59%;
+        top: 0;
+      }
     }
   }
 }
