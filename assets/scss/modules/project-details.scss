@@ -186,7 +186,7 @@
   }
 }
 .techno {
-  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript";
+  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript", "Python", "Sass", "Node", "Premiere", "After", "Indesign", "Illustrator", "Photoshop";
   @each $techno in $technos {
     $lc: to_lower_case($techno);
     &.t-#{$lc} {

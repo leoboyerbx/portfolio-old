@@ -121,7 +121,6 @@
     </div>
 </div>
 
-<!--<div id="cursor-pointer" class="cursor-follow"></div>-->
 <div id="cursor-follower">
     <div class="round-cursor"></div>
     <div class="plus-cursor"></div>
@@ -137,55 +136,6 @@
     </div>
 </div>
 
-<div id="menu">
-    <div id="menu-content">
-        <div id="menu-links">
-            <div class="link-wrapper">
-                <a class="menu-link i-link" href="/" data-target="#home" data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
-            </div>
-            <div class="link-wrapper">
-                <a class="menu-link i-link" href="/" data-target="#my-portfolio" data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
-            </div>
-            <div class="link-wrapper">
-                <a class="menu-link i-link" href="/profile" data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
-            </div>
-        </div>
-        <div id="menu-separator"></div>
-        <div id="menu-contact">
-            <div class="cv"><a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Mon CV &mdash;</a></div>
-            <div class="cv"><a href="/assets/CV_Léo_Boyer.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Ma Carte de Visite &mdash;</a></div>
-            <div class="coords">
-                <h1>Contact</h1>
-                <p>+33 (0) 7 82 45 93 32</p>
-                <p><a href="mailto:contact@leoboyer.fr" is="cursor-link" cursor-class="hover1"><u>contact@leoboyer.fr</u></a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="menu-button"<%= locals.page ? ' class=scrolled' : '' %>>
-    <a id="menu-button-icon" is="cursor-link" cursor-class="menu" cursor-grab cursor-grab-padding="20">
-        <div class="h-bar"></div>
-        <div class="h-bar"></div>
-        <div class="h-bar"></div>
-        <div class="x-bar"></div>
-        <div class="x-bar"></div>
-    </a>
-    <a id="menu-button-hint" is="cursor-link" cursor-class="hover1">
-        <div class="text-menu" class="link-1">
-            <span>M</span><!-- whitespace
-            --><span>e</span><!-- whitespace
-            --><span>n</span><!-- whitespace
-            --><span>u</span>
-        </div>
-        <div class="text-close">
-            <span>F</span><!-- whitespace
-            --><span>e</span><!-- whitespace
-            --><span>r</span><!-- whitespace
-            --><span>m</span><!-- whitespace
-            --><span>e</span><!-- whitespace
-            --><span>r</span>
-        </div>
-    </a>
-</div>
+<%-include('./partials/menu')%>
 </body>
 </html>
