@@ -343,6 +343,7 @@ a.button {
       }
       .category-content {
         background-color: #fff;
+        transition-delay: .3s;
         position: absolute;
         top: 0;
         left: 0;
@@ -363,9 +364,10 @@ a.button {
           height: 100%;
           left: 0;
           top: 0;
-          background-color: $theme-grey-dark;
+          border-radius: 100%;
+          background-color: #fff;
           z-index: 0;
-          transform: scale(0) rotate(45deg);
+          transform: scale(1);
           transition: all .3s;
         }
 
@@ -380,9 +382,13 @@ a.button {
           color: $theme-grey-dark;
           transition: $transition;
           z-index: 1;
+          border-radius: 100%;
         }
 
         &:hover {
+          background-color: $theme-grey-dark;
+          transition-delay: 0s;
+
           .category-name {
             color: #fff;
           }
@@ -390,8 +396,7 @@ a.button {
             filter: brightness(100%);
           }
           &::before {
-            transform: scale(1);
-            border-radius: 100%;
+            transform: scale(0);
           }
         }
       }

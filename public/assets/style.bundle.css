@@ -3735,16 +3735,12 @@ body.dark #contact-title {
         .project-details .pan-right .description-wrapper {
           padding: 70px; } }
       .project-details .pan-right .description-wrapper .images {
-        order: 2;
         margin-bottom: 30px;
         display: grid;
         grid-template-rows: 300px;
         grid-auto-rows: minmax(180px, auto);
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 10px; }
-        @media (min-width: 768px) {
-          .project-details .pan-right .description-wrapper .images {
-            order: 0; } }
         .project-details .pan-right .description-wrapper .images.template-1 {
           grid-auto-rows: minmax(80px, auto);
           grid-template-areas: "first  first first first first" "second second . . ." "second second third third third" ".      .      third third third"; }
@@ -3768,11 +3764,9 @@ body.dark #contact-title {
           max-height: 100%;
           object-fit: cover; }
       .project-details .pan-right .description-wrapper .description {
-        order: 1;
         font-weight: 500;
         font-size: 1.3em; }
       .project-details .pan-right .description-wrapper .links {
-        order: 1;
         text-align: center;
         margin: 20px 0; }
         .project-details .pan-right .description-wrapper .links a {
@@ -4182,6 +4176,7 @@ a.button {
         padding-top: 100%; }
       #my-portfolio #my-portfolio-categories .category .category-content {
         background-color: #fff;
+        transition-delay: .3s;
         position: absolute;
         top: 0;
         left: 0;
@@ -4202,9 +4197,10 @@ a.button {
           height: 100%;
           left: 0;
           top: 0;
-          background-color: #323739;
+          border-radius: 100%;
+          background-color: #fff;
           z-index: 0;
-          transform: scale(0) rotate(45deg);
+          transform: scale(1);
           transition: all .3s; }
         #my-portfolio #my-portfolio-categories .category .category-content img {
           width: 80px;
@@ -4215,14 +4211,17 @@ a.button {
           font-size: 120%;
           color: #323739;
           transition: all 0.3s cubic-bezier(0.42, 0, 0.11, 0.98);
-          z-index: 1; }
-        #my-portfolio #my-portfolio-categories .category .category-content:hover .category-name {
-          color: #fff; }
-        #my-portfolio #my-portfolio-categories .category .category-content:hover img {
-          filter: brightness(100%); }
-        #my-portfolio #my-portfolio-categories .category .category-content:hover::before {
-          transform: scale(1);
+          z-index: 1;
           border-radius: 100%; }
+        #my-portfolio #my-portfolio-categories .category .category-content:hover {
+          background-color: #323739;
+          transition-delay: 0s; }
+          #my-portfolio #my-portfolio-categories .category .category-content:hover .category-name {
+            color: #fff; }
+          #my-portfolio #my-portfolio-categories .category .category-content:hover img {
+            filter: brightness(100%); }
+          #my-portfolio #my-portfolio-categories .category .category-content:hover::before {
+            transform: scale(0); }
     #my-portfolio #my-portfolio-categories #category-code {
       -webkit-background-size: cover;
       background-size: cover; }

@@ -133,10 +133,6 @@
         padding: 70px;
       }
       .images {
-        order: 2;
-        @include md () {
-          order: 0;
-        }
         margin-bottom: 30px;
         display: grid;
         grid-template-rows: 300px;
@@ -168,12 +164,10 @@
 
       }
       .description {
-        order: 1;
         font-weight: 500;
         font-size: 1.3em;
       }
       .links {
-        order: 1;
         text-align: center;
         margin: 20px 0;
         a {
