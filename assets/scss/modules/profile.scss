@@ -80,8 +80,8 @@
     .skills-list {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      margin-top: 100px;
-      @include xl() {
+      margin-top: 30px;
+      @include xxl() {
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 20px;
       }
@@ -140,6 +140,58 @@
             opacity: 1;
           }
         }
+      }
+    }
+    .course-block {
+      .course-title {
+        position: relative;
+        padding-left: 1.5em;
+        font-size: 1.4em;
+        font-weight: bold;
+        .date {
+          opacity: .5;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1em;
+          height: 1em;
+          border-radius: 100%;
+          background-color: $theme-main;
+        }
+      }
+      .course-desc {
+        position: relative;
+        line-height: 1.2em;
+        padding: 10px 10px 10px 2.5em;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 5px;
+          bottom: 5px;
+          right: 0;
+          left: .65em;
+          border-left: dotted #fff 4px;
+        }
+      }
+      &:last-child {
+        .course-desc {
+          &::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: $theme-main;
+            top: 100%;
+            left: .65em;
+            transform: translateX(-40%);
+          }
+        }
+
+        margin-bottom: 30px;
       }
     }
   }

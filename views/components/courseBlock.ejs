@@ -1,0 +1,10 @@
+<div class="course-block">
+    <div class="course-title">
+        <span class="date"><%=date%></span> | <%=title%>
+    </div>
+    <div class="course-desc">
+        <% for(const paragraph of description) { %>
+        <p><%-paragraph%></p>
+        <% } %>
+    </div>
+</div>

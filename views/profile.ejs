@@ -41,30 +41,49 @@
             </div>
         </div>
         <div class="pan pan-right">
+            <div class="profile-details courses">
+                <h1>Mon parcours</h1>
+                <%-include('./components/courseBlock', {
+                title: 'DUT MMI',
+                date: '2018 - 2020',
+                description: [
+                `Le DUT MMI, pour <b>Métiers du Multimédia et de l'Internet</b>, regroupe une grande partie de mes centres d'intérêts. Il m'a permis de progresser en audiovisuel, en web, de débuter en graphisme et en communication, et d'apprendre les bases de la gestion de projet.`,
+                `À travers de nombreux projets, il me permet de mettre en pratique mes compétences et mes connaissances.`,
+                `Je suis actuellement cette formation à Grenoble.`
+                ]
+                })%>
+
+                <%-include('./components/courseBlock', {
+                title: 'Bac S Sciences de l\'ingénieur',
+                date: '2018',
+                description: [
+                `J'ai obtenu le Bac S SI avec mention Très Bien au lycée <b>La Marninière Diderot</b> à Lyon.`,
+                "Les différents projets comme le TPE de Première m'ont amené à devoir penser de manière différente et créative."
+                ]
+                })%>
+            </div>
             <div class="profile-details">
                 <h1>Mes compétences</h1>
                 <div class="skills-list">
-                    <div class="skills-block">
-                        <div class="skills-title" data-surtitle="Développement">Web</div>
-                        <div class="skills-icons">
-                            <a is="cursor-link" data-hint="HTML/CSS" cursor-class="dot light" class="techno t-css"></a>
-                            <a is="cursor-link" data-hint="Préprocesseur Sass" cursor-class="dot light" class="techno t-sass"></a>
-                            <a is="cursor-link" data-hint="Javascript/Typescript" cursor-class="dot light" class="techno t-typescript"></a>
-                            <a is="cursor-link" data-hint="jQuery" cursor-class="dot light" class="techno t-jquery"></a>
-                            <a is="cursor-link" data-hint="Webpack" cursor-class="dot light" class="techno t-webpack"></a>
-                            <a is="cursor-link" data-hint="NodeJS" cursor-class="dot light" class="techno t-node"></a>
-                            <a is="cursor-link" data-hint="Socket.io" cursor-class="dot light" class="techno t-socket-io"></a>
-                            <a is="cursor-link" data-hint="PHP" cursor-class="dot light" class="techno t-php"></a>
-                            <a is="cursor-link" data-hint="Python" cursor-class="dot light" class="techno t-python"></a>
-                        </div>
-                        <div class="skills-desc">
-                            <p>
-                                Mes langages de prédilection sont Javascript et Typescript, mais j'utilise beaucoup PHP et j'ai des bases en Python.
-                            </p>
-                            <p>Côté front-end je sais utiliser Webpack pour "bundler" mes fichiers source.</p>
-                            <p>Côté back-end, je développe en PHP ou en NodeJS. Je suis passionné par la notion de temps réel donc j'expérimente beaucoup avec Socket.io</p>
-                        </div>
-                    </div>
+                    <%-include('./components/skillsBlock', {
+                        title: ['Développement', 'Web'],
+                        skills: [
+                            { name: 'HTML / CSS', slug: 'css' },
+                            { name: 'Préprocesseur Sass', slug: 'sass' },
+                            { name: 'Webpack', slug: 'webpack' },
+                            { name: 'NodeJS', slug: 'node' },
+                            { name: 'Socket.io', slug: 'socket-io' },
+                            { name: 'PHP', slug: 'php' },
+                            { name: 'Python', slug: 'python' },
+                            { name: 'Git version control', slug: 'git' },
+                            { name: 'MySQL / MariaDB', slug: 'mysql' },
+                        ],
+                        description: [
+                            `Mes langages de prédilection sont Javascript et Typescript, mais j'utilise beaucoup PHP et j'ai des bases en Python.`,
+                            `Côté front-end je sais utiliser Webpack pour "bundler" mes fichiers source.`,
+                        `Côté back-end, je développe en PHP ou en NodeJS. Je suis passionné par la notion de temps réel donc j'expérimente beaucoup avec Socket.io`
+                        ]
+                    })%>
                 </div>
             </div>
         </div>

@@ -1,0 +1,13 @@
+<div class="skills-block">
+    <div class="skills-title" data-surtitle="<%=locals.title[0]%>"><%=locals.title[1]%></div>
+    <div class="skills-icons">
+        <% for (const skill of skills) { %>
+            <a is="cursor-link" data-hint="<%=skill.name%>" cursor-class="dot light" class="techno t-<%= skill.slug %>"></a>
+        <% } %>
+    </div>
+    <div class="skills-desc">
+        <% for(const paragraph of description) { %>
+        <p><%-paragraph%></p>
+        <% } %>
+    </div>
+</div>

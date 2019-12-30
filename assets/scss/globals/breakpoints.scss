@@ -10,6 +10,9 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
+
+$screen-xxl-min: 1300px;
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
@@ -34,6 +37,12 @@ $screen-xl-min: 1200px;
 // Extra large devices
 @mixin xl {
   @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
     @content;
   }
 }
