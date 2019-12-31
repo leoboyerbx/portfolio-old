@@ -54,7 +54,6 @@ function cursorFollower (element, throttle = true) {
       if (grab) link.unGrab()
     })
   }
-  console.log(element)
   // eslint-disable-next-line no-undef
   class CursorLink extends HTMLAnchorElement {
     constructor () {

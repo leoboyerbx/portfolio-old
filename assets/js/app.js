@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', function () {
   // Selection of elements
   const pageContent = $('#page-content')
 
-  window.loading.end()
   // parallax($('#home'), 0.4)
   const menuObj = menu($('#menu'), $('#menu-button'), pageContent)
 
@@ -70,4 +69,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   innerLinks('a[data-target]', menuObj)
   arrowScroll()
+
+  window.loading.end()
 })
