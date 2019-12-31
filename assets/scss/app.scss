@@ -456,7 +456,7 @@ a.button {
 //}
 #cursor-follower {
   position: absolute;
-  z-index: 10000;
+  z-index: 8000;
   top: -100px;
   left: 0;
   box-sizing: border-box;
@@ -773,6 +773,18 @@ body:not(:hover) {
     &.t-#{$lc} {
       &::before {
         content: url("../img/logos/#{$lc}.svg");
+      }
+    }
+  }
+}
+body {
+  .anim-when-loaded {
+    animation-play-state: paused;
+  }
+  .loaded {
+    body.loaded {
+      .anim-when-loaded {
+        animation-play-state: running;
       }
     }
   }
