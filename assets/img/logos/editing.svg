@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#FCE14B;}
+</style>
+<path class="st0" d="M512,60v195.1c-11.6-8.8-25.2-15-40-18V60c0-11-9-20-20-20H60c-11,0-20,9-20,20v392c0,11,9,20,20,20h177
+	c3,14.8,9.3,28.4,18,40H60c-33.1,0-60-26.9-60-60V60C0,26.9,26.9,0,60,0h392C485.1,0,512,26.9,512,60z"/>
+<path class="st1" d="M452,275c-26.1,0-48.3,16.7-56.6,40H355v-71c0-22.1-17.9-40-40-40v111H204c0,22.1,17.9,40,40,40h71v40.4
+	c-23.3,8.3-40,30.5-40,56.6c0,33.1,26.9,60,60,60s60-26.9,60-60c0-26.1-16.7-48.3-40-56.6V355h40.4c8.3,23.3,30.5,40,56.6,40
+	c33.1,0,60-26.9,60-60S485.1,275,452,275z M335,472c-11,0-20-9-20-20s9-20,20-20s20,9,20,20S346,472,335,472z M452,355
+	c-11,0-20-9-20-20s9-20,20-20s20,9,20,20S463,355,452,355z"/>
+<rect x="315" y="79" class="st0" width="40" height="40"/>
+<rect x="78" y="79" class="st0" width="40" height="40"/>
+<rect x="157" y="79" class="st0" width="40" height="40"/>
+<rect x="394" y="79" class="st0" width="40" height="40"/>
+<rect x="79" y="393" class="st0" width="40" height="40"/>
+<rect x="156" y="393" class="st0" width="40" height="40"/>
+<rect x="236" y="79" class="st0" width="40" height="40"/>
+</svg>
