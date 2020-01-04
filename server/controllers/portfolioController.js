@@ -2,10 +2,15 @@ const ProjectsModel = require('@server/models/ProjectsModel')
 const fs = require('fs')
 
 class PortfolioController {
-
   web (req, res) {
     ProjectsModel.getByType('web').then(projects => {
       res.ajaxView('portfolio/web', { projects })
+    })
+  }
+
+  graphics (req, res) {
+    ProjectsModel.getByType('graphics').then(projects => {
+      res.ajaxView('portfolio/graphics', { projects })
     })
   }
 

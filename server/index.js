@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 
 const serverApp = express()
 const http = require('http').createServer(serverApp)
-const sitemap = require('express-sitemap')()
+
+const sitemapController = require('./controllers/sitemapController')
 
 const PortfolioController = require(path.join(__root, 'server/controllers/portfolioController'))
 
@@ -32,7 +33,7 @@ module.exports = function () {
     portfolioController.web(req, res)
   })
   serverApp.get('/graphics', (req, res) => {
-    portfolioController.web(req, res)
+    portfolioController.graphics(req, res)
   })
   serverApp.get('/profile', (req, res) => {
     portfolioController.profile(req, res)
@@ -40,10 +41,7 @@ module.exports = function () {
   serverApp.get('/:type((web|video|graphisme))/:project', (req, res) => {
     portfolioController.project(req, res)
   })
-  // sitemap.generate(serverApp)
-  serverApp.get('/sitemap.xml', (req, res) => {
-    sitemap.XMLtoWeb(res)
-  })
+  sitemapController(serverApp)
 
   serverApp.use(function (req, res, next) {
     res.notFound()

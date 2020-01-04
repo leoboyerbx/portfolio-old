@@ -18,12 +18,19 @@
             <div class="coords">
                 <h1>Contact</h1>
                 <p>+33 (0) 7 82 07 87 32</p>
-                <p><a href="mailto:contact@leoboyer.fr" is="cursor-link" cursor-class="hover1 soften"><u>contact@leoboyer.fr</u></a></p>
-                <p class="mt-4">
-                    <a href="https://www.linkedin.com/in/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften">
+                <p>
+                    <script type="text/javascript">
+                      user = "contact";
+                      domain = "leoboyer.fr";
+                      document.write('<a href=\"mailto:' + user + '@' + domain + '\" is="cursor-link" cursor-class="hover1 soften"><u>' +
+                        user + '@' + domain + '</u></a>');
+                    </script>
+                </p>
+                <p class="mt-4" id="menu-social-icons">
+                    <a data-info="Profil LinkedIn" href="https://www.linkedin.com/in/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften">
                         <i class="icon-linkedin icon-1hx"></i>
                     </a>
-                    <a href="https://github.com/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften" class="ml-2">
+                    <a data-info="Page GitHub" href="https://github.com/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften" class="ml-2">
                         <i class="icon-github icon-1hx"></i>
                     </a>
                 </p>

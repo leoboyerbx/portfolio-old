@@ -413,6 +413,25 @@ $bar-color: #101010;
       }
     }
 
+    #menu-social-icons {
+      position: relative;
+      a::after {
+        content: attr(data-info);
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+        left: 0;
+        top: 100%;
+        font-size: 110%;
+        padding: 5px;
+        opacity: 0;
+        transition: all .3s;
+      }
+      a:hover::after {
+        opacity: 1;
+      }
+    }
+
     div {
       transform: translateX(150%);
       transition: all .7s $transition-easing;
