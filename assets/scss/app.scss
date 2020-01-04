@@ -119,7 +119,7 @@ a.button {
         @for $i from 1 through 2 {
           .name:nth-child(#{$i}) {
             display: inline-block;
-            animation: name-arrive .5s $transition-easing (($i - 1) * .05s) both;
+            animation: name-arrive .5s $transition-easing ((($i - 1) * .05s) + .4s) both;
           }
         }
         @keyframes name-arrive {
@@ -160,7 +160,7 @@ a.button {
       @for $i from 1 through 11 {
         @include animation-home-translate(letter-#{$i}, ($i - 2) * 30px);
         .letter:nth-child(#{$i}) {
-          animation: letter-#{$i} 1s $transition-easing .1s both;
+          animation: letter-#{$i} 1s $transition-easing .6s both;
         }
       }
     }
@@ -779,13 +779,12 @@ body:not(:hover) {
 }
 body {
   .anim-when-loaded {
-    animation-play-state: paused;
+    animation-delay: 5s;
   }
-  .loaded {
-    body.loaded {
-      .anim-when-loaded {
-        animation-play-state: running;
-      }
-    }
-  }
+  //&.loaded {
+  //    .anim-when-loaded {
+  //      transition-delay: 3s;
+  //      animation-play-state: running;
+  //    }
+  //}
 }

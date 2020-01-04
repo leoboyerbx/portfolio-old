@@ -4033,10 +4033,10 @@ a.button {
             font-size: 50px; } }
         #home #home-content-wrapper #home-text-wrapper #home-name .name:nth-child(1) {
           display: inline-block;
-          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0s both; }
+          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0.4s both; }
         #home #home-content-wrapper #home-text-wrapper #home-name .name:nth-child(2) {
           display: inline-block;
-          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0.05s both; }
+          animation: name-arrive 0.5s cubic-bezier(0.42, 0, 0.11, 0.98) 0.45s both; }
 
 @keyframes name-arrive {
   from {
@@ -4064,77 +4064,77 @@ a.button {
     opacity: 0;
     transform: translate3d(-30px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(1) {
-        animation: letter-1 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-1 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-2 {
   from {
     opacity: 0;
     transform: translate3d(0px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(2) {
-        animation: letter-2 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-2 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-3 {
   from {
     opacity: 0;
     transform: translate3d(30px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(3) {
-        animation: letter-3 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-3 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-4 {
   from {
     opacity: 0;
     transform: translate3d(60px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(4) {
-        animation: letter-4 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-4 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-5 {
   from {
     opacity: 0;
     transform: translate3d(90px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(5) {
-        animation: letter-5 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-5 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-6 {
   from {
     opacity: 0;
     transform: translate3d(120px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(6) {
-        animation: letter-6 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-6 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-7 {
   from {
     opacity: 0;
     transform: translate3d(150px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(7) {
-        animation: letter-7 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-7 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-8 {
   from {
     opacity: 0;
     transform: translate3d(180px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(8) {
-        animation: letter-8 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-8 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-9 {
   from {
     opacity: 0;
     transform: translate3d(210px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(9) {
-        animation: letter-9 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-9 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-10 {
   from {
     opacity: 0;
     transform: translate3d(240px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(10) {
-        animation: letter-10 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-10 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
 
 @keyframes letter-11 {
   from {
     opacity: 0;
     transform: translate3d(270px, 0, 0); } }
       #home #home-content-wrapper #home-portfolio-word .letter:nth-child(11) {
-        animation: letter-11 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.1s both; }
+        animation: letter-11 1s cubic-bezier(0.42, 0, 0.11, 0.98) 0.6s both; }
     #home #home-content-wrapper #arrow-scroll {
       position: absolute;
       left: 50%;
@@ -4685,8 +4685,5 @@ body:not(:hover) #cursor-follower {
   content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNC4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCgkuc3Qxe2ZpbGw6I0ZDRTE0Qjt9DQo8L3N0eWxlPg0KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iMjA4IiBjeT0iMjU2IiByPSI4Ii8+DQo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjA4LDE2MGMtNTIuOSwwLTk2LDQzLjEtOTYsOTZzNDMuMSw5Niw5Niw5NnM5Ni00My4xLDk2LTk2UzI2MC45LDE2MCwyMDgsMTYweiBNMTMzLjcsMjI2LjJsMTQuOSw1LjkNCgljLTEuOCw0LjQtMyw5LTMuOCwxMy43bC0xNS44LTIuNUMxMjkuOSwyMzcuNSwxMzEuNSwyMzEuOCwxMzMuNywyMjYuMkwxMzMuNywyMjYuMnogTTEyOC4yLDI2MWwxNi0xYzAuMyw0LjcsMS4xLDkuNCwyLjQsMTQNCglsLTE1LjQsNC41QzEyOS42LDI3Mi44LDEyOC41LDI2NywxMjguMiwyNjFMMTI4LjIsMjYxeiBNMTQ4LjQsMzA5LjNjLTMuOS00LjQtNy40LTkuMy0xMC4zLTE0LjRsMTQtNy44YzIuMyw0LjEsNS4xLDgsOC4yLDExLjYNCglMMTQ4LjQsMzA5LjN6IE0yNDIuMywzMDEuN2wtMjQuMS0yNC4xYy0zLjEsMS41LTYuNiwyLjQtMTAuMywyLjRjLTEzLjIsMC0yNC0xMC44LTI0LTI0YzAtMTAuNCw2LjctMTkuMiwxNi0yMi41VjE3NmgxNnY1Ny41DQoJYzkuMywzLjMsMTYsMTIuMSwxNiwyMi41YzAsMy43LTAuOSw3LjItMi40LDEwLjNsMjQuMSwyNC4xTDI0Mi4zLDMwMS43eiIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ4My4yLDM4NEw0MjQsMzM2LjZWMzY4SDIwOGMtNjEuOCwwLTExMi01MC4yLTExMi0xMTJzNTAuMi0xMTIsMTEyLTExMnMxMTIsNTAuMiwxMTIsMTEyDQoJYzAsNDAuOC0yMiw3Ni40LTU0LjYsOTZoNDkuOGMxNi45LTE4LjksMjguNi00MS44LDMzLjgtNjYuNmwxLTQuOWwyNi02Ljd2LTM1LjZsLTI2LTYuNmwtMS00LjljLTMuNi0xNy43LTEwLjYtMzQuNC0yMC43LTQ5LjcNCglsLTIuOC00LjJsMTMuOC0yMy4xbC0yNS4xLTI1LjFsLTIzLjEsMTMuOGwtNC4yLTIuOGMtMTUuMy0xMC4xLTMyLTE3LTQ5LjctMjAuN2wtNC45LTFsLTYuNi0yNmgtMzUuNWwtNi42LDI2bC00LjksMQ0KCWMtMTcuNywzLjYtMzQuNCwxMC42LTQ5LjcsMjAuN2wtNC4yLDIuOGwtMjMuMS0xMy44bC0yNS4xLDI1LjFsMTMuOCwyMy4xbC0yLjgsNC4yYy0xMC4xLDE1LjMtMTcsMzItMjAuNyw0OS43bC0xLDQuOWwtMjYsNi42djM1LjYNCglsMjYsNi42bDEsNC45QzgwLjcsMzUxLjgsMTQwLDQwMCwyMDgsNDAwaDIxNnYzMS40TDQ4My4yLDM4NHoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNCwzNjh2MzJoMTE0LjhjLTE2LjYtOC0zMS43LTE4LjktNDQuNy0zMkgyNHoiLz4NCjwvc3ZnPg0K); }
 
 body .anim-when-loaded {
-  animation-play-state: paused; }
-
-body .loaded body.loaded .anim-when-loaded {
-  animation-play-state: running; }
+  animation-delay: 5s; }
 

@@ -70,7 +70,7 @@ document.write(`<style>
 }
 body.loaded #loader {
     opacity: 0;
-    transition-delay: .1s;
+    transition-delay: .5s;
 }
 </style>`)
 
