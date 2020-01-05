@@ -3,7 +3,7 @@
   height: auto;
   .pan-left {
     //pointer-events: none;
-    padding: 40px 0 10px;
+    padding: 50px 0 10px;
     left: 0;
     top: 0;
     background-color: $theme-grey-dark;
@@ -206,6 +206,12 @@
                                 "third third third  fourth  fourth"
                                 "third third third  fourth fourth"
                                 ".  .  .            fourth fourth"
+        ;
+        }
+        &.template-5 {
+          grid-auto-rows: minmax(200px, auto);
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-areas: "first  first first second second second"
         ;
         }
         .img-wrapper {
