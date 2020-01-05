@@ -1,3 +1,6 @@
+const express = require('express')
+const path = require('path')
+
 const sitemap = require('express-sitemap')
 const ProjectsModel = require('../models/ProjectsModel')
 // const date = new Date().toISOString()
@@ -46,8 +49,6 @@ module.exports = async function (serverApp) {
     console.log('hey')
     generatedSitemap.XMLtoWeb(res)
   })
-  serverApp.get('/robots.txt', (req, res) => {
-    generatedSitemap.TXTtoWeb(res)
-  })
+  serverApp.use('/robots.txt', express.static(path.join(__root, 'public', 'robots.txt')))
   return true
 }
