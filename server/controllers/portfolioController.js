@@ -10,23 +10,23 @@ function getNextType (type) {
 class PortfolioController {
   web (req, res) {
     ProjectsModel.getByType('web').then(projects => {
-      res.ajaxView('portfolio/web', { projects })
+      res.ajaxView('portfolio/web', { projects, pageTitle: 'Web et programmation | Léo Boyer - Portfolio' })
     })
   }
 
   graphics (req, res) {
     ProjectsModel.getByType('graphics').then(projects => {
-      res.ajaxView('portfolio/graphics', { projects })
+      res.ajaxView('portfolio/graphics', { projects, pageTitle: 'Graphisme | Léo Boyer - Portfolio' })
     })
   }
 
   profile (req, res) {
-    res.ajaxView('profile')
+    res.ajaxView('profile', { pageTitle: 'Profil | Léo Boyer - Portfolio' })
   }
 
   av (req, res) {
     ProjectsModel.getByType('video').then(projects => {
-      res.ajaxView('portfolio/video', { projects })
+      res.ajaxView('portfolio/video', { projects, pageTitle: 'Audiovisuel | Léo Boyer - Portfolio' })
     })
   }
 
@@ -35,7 +35,7 @@ class PortfolioController {
       if (project) {
         fs.access(project.viewPath, fs.constants.F_OK, (err) => {
           if (!err) {
-            res.ajaxView('portfolio/components/projectDetails', { project, nextType: getNextType(req.params.type) })
+            res.ajaxView('portfolio/components/projectDetails', { project, nextType: getNextType(req.params.type), pageTitle: `${project.title} | Léo Boyer - Portfolio` })
           } else {
             res.notFound()
           }

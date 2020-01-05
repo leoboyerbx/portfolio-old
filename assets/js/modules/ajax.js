@@ -46,8 +46,9 @@ async function loadPage (page) {
     }
   })
   if (response.status === 200 || response.status === 404) {
+    const title = response.headers.get('page-title')
     const text = await response.text()
-    return text
+    return { text, title }
   }
 }
 
@@ -55,7 +56,8 @@ function openPage (page, x, y, pushState = true, state = { key: 'value' }) {
   function load () {
     cursorLoading()
     loadPage(page).then(content => {
-      extPage.setHTML(content)
+      extPage.setHTML(content.text)
+      if (content.title) document.title = content.title
       extPage.extContent.scrollTop = 0
       const newLinks = extPage.extContent.querySelectorAll('.i-link')
       if (newLinks) setUpLinks($$(newLinks))
@@ -84,6 +86,7 @@ function setUpLinks (links) {
     e.preventDefault()
     if (this.pathname === '/') {
       extPage.hidePage()
+      document.title = 'Léo Boyer - Portfolio'
       history.pushState(null, null, '/')
     } else {
       openPage(this.href, e.clientX, e.clientY)

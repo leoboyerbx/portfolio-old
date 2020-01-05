@@ -1,4 +1,12 @@
 const sitemap = require('express-sitemap')
+const ProjectsModel = require('../models/ProjectsModel')
+
+async function generateSitemap () {
+  const projects = await ProjectsModel.all()
+  const options = {
+    url: 'www.leoboyer.fr',
+  }
+}
 
 module.exports = function (serverApp) {
   const generatedSitemap = sitemap({
@@ -21,8 +29,8 @@ module.exports = function (serverApp) {
       },
       '/backdoor': {
         hide: true,
-      },
-    },
+      }
+    }
   })
   serverApp.get('/sitemap.xml', (req, res) => {
     generatedSitemap.XMLtoWeb(res)
