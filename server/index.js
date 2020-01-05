@@ -41,11 +41,11 @@ module.exports = function () {
   serverApp.get('/:type((web|video|graphics))/:project', (req, res) => {
     portfolioController.project(req, res)
   })
-  sitemapController(serverApp)
-
-  serverApp.use(function (req, res, next) {
-    res.notFound()
-    next()
+  sitemapController(serverApp).then(()=> {
+    serverApp.use(function (req, res, next) {
+      res.notFound()
+      next()
+    })
   })
 
   http.listen(process.env.PORT || 3000, () => {
