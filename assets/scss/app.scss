@@ -5,6 +5,9 @@
 // Bootstrap grid only
 @import "lib/bootstrap/bootstrap-grid";
 
+//icons
+@import "../fonts/icons/styles.css";
+
 @import "./modules/menu";
 @import "./modules/louwp";
 @import "./modules/ext-page";
@@ -20,6 +23,10 @@ body {
 a, a:hover {
   text-decoration: none;
   color: inherit;
+}
+
+iframe {
+  border: none;
 }
 
 .utils.hidden {
@@ -119,7 +126,7 @@ a.button {
         @for $i from 1 through 2 {
           .name:nth-child(#{$i}) {
             display: inline-block;
-            animation: name-arrive .5s $transition-easing (($i - 1) * .05s) both;
+            animation: name-arrive .5s $transition-easing ((($i - 1) * .05s) + .4s) both;
           }
         }
         @keyframes name-arrive {
@@ -160,7 +167,7 @@ a.button {
       @for $i from 1 through 11 {
         @include animation-home-translate(letter-#{$i}, ($i - 2) * 30px);
         .letter:nth-child(#{$i}) {
-          animation: letter-#{$i} 1s $transition-easing .1s both;
+          animation: letter-#{$i} 1s $transition-easing .6s both;
         }
       }
     }
@@ -383,6 +390,7 @@ a.button {
           transition: $transition;
           z-index: 1;
           border-radius: 100%;
+          margin-top: 5px;
         }
 
         &:hover {
@@ -544,6 +552,17 @@ a.button {
     opacity: 0;
     transition: all .2s;
   }
+  .restart-cursor {
+    transition: all .2s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(.5) rotate(-180deg);
+    opacity: 0;
+    font-size: 22px;
+  }
   &.hover1 .round-cursor {
     transform: scale(.5);
     background-color: $theme-main;
@@ -585,9 +604,20 @@ a.button {
       transform: scale(.5);
       opacity: 1;
     }
-    .plus-cursor-info {
+    //.plus-cursor-info {
+    //  opacity: 1;
+    //  letter-spacing: 0;
+    //}
+  }
+  &.hover-restart {
+    .round-cursor {
+      transform: scale(1.2);
+      background-color: $theme-main;
+    }
+    .restart-cursor {
+      transition: all .4s ease;
+      transform: scale(.6);
       opacity: 1;
-      letter-spacing: 0;
     }
   }
 
@@ -627,10 +657,27 @@ a.button {
     stroke: $color-ext-page;
   }
   &.loading {
-    .round-cursor, .plus-cursor, .cross-cursor {
+    .round-cursor, .plus-cursor, .cross-cursor, .restart-cursor {
       opacity: 0 !important;
     }
     .progress-cursor {
+      opacity: 1;
+    }
+  }
+
+  // Écrans tactiles
+  &.touch {
+    top: 50%;
+    left: 55%;
+    //transform: translate(-50%, -50%);
+    & > div {
+      display: none;
+    }
+    .progress-cursor {
+      display: block;
+      opacity: 0;
+    }
+    &.loading .progress-cursor {
       opacity: 1;
     }
   }
@@ -767,7 +814,7 @@ body:not(:hover) {
 }
 
 .techno {
-  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript", "Python", "Sass", "Node", "Premiere", "After", "Indesign", "Illustrator", "Photoshop", "Scrum", "Typescript", "Git", "Mysql", "Camera", "editing", "davinci", "checklist", "motion", "Linux", "Office", "ico", "scrum";
+  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript", "Python", "Sass", "Node", "NodeJS", "Premiere", "After", "Indesign", "Illustrator", "Photoshop", "Scrum", "Typescript", "Git", "Mysql", "Camera", "editing", "davinci", "checklist", "motion", "Linux", "Office", "ico", "scrum", "interviews", "typography";
   @each $techno in $technos {
     $lc: to_lower_case($techno);
     &.t-#{$lc} {
@@ -779,13 +826,12 @@ body:not(:hover) {
 }
 body {
   .anim-when-loaded {
-    animation-play-state: paused;
+    animation-delay: 5s;
   }
-  .loaded {
-    body.loaded {
-      .anim-when-loaded {
-        animation-play-state: running;
-      }
-    }
-  }
+  //&.loaded {
+  //    .anim-when-loaded {
+  //      transition-delay: 3s;
+  //      animation-play-state: running;
+  //    }
+  //}
 }

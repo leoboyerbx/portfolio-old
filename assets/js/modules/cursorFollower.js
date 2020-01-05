@@ -22,7 +22,7 @@ export default function auto (element, throttle = true) {
   }
   window.addEventListener('touchstart', function () {
     started = true
-    element.style.display = 'none'
+    element.classList.add('touch')
     window.cursor = false
   })
   window.addEventListener('mousemove', start, false)

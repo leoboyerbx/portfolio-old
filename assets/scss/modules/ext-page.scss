@@ -153,13 +153,18 @@ $header-text-color: white;
         stroke-width: 5px;
 
         .letter-amaj {@include stroke(921)}
+        .letter-a {@include stroke(792)}
         .letter-b {@include stroke(880)}
         .letter-d {@include stroke(880)}
         .letter-e {@include stroke(804)}
+        .letter-gmaj {@include stroke(990)}
+        .letter-h {@include stroke(828)}
         .letter-i {@include stroke(497)}
         .letter-l {@include stroke(445)}
+        .letter-m {@include stroke(1129)}
         .letter-o {@include stroke(703)}
         .letter-pmaj {@include stroke(893)}
+        .letter-p {@include stroke(871)}
         .letter-r {@include stroke(477)}
         .letter-s {@include stroke(686)}
         .letter-u {@include stroke(743)}
@@ -213,11 +218,14 @@ $header-text-color: white;
   .header.web {
     @include delay(3, .4s);
   }
-  .header.profil {
-    @include delay(6, .2s);
-  }
   .header.audiovisuel {
     @include delay(11, .1s);
+  }
+  .header.graphisme {
+    @include delay(9, .2s);
+  }
+  .header.profil {
+    @include delay(6, .2s);
   }
 }
 @keyframes path {

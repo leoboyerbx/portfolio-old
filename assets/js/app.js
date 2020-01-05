@@ -69,6 +69,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   innerLinks('a[data-target]', menuObj)
   arrowScroll()
-
+  document.addEventListener('WebComponentsReady', e => {
+    console.log(e)
+  })
   window.loading.end()
 })

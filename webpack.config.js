@@ -25,7 +25,7 @@ const config = {
     }
   },
   watch: dev,
-  mode: 'development',
+  mode: dev ? 'development' : 'production',
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.bundle.css'

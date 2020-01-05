@@ -8,7 +8,7 @@ let extPage
 let cursorFollower
 
 function cursorLoading () {
-  cursorFollower.className = 'loading'
+  cursorFollower.className = cursorFollower.classList.contains('touch') ? 'loading touch' : 'loading'
 }
 function cursorEndLoading () {
   setTimeout(() => {

@@ -1,22 +1,27 @@
+
+
+
 <div class="content-wrapper project-details">
     <div class="pan-left">
         <div class="title">
             <h1><%=project.title%></h1>
             <h2><%=project.subtitle%></h2>
-    </div>
+        </div>
+        <div class="infos">
+            <%=project.info%>
+        </div>
+        <%if(project.url) {%>
         <div class="cta">
             <a href="<%=project.url%>" class="button light" is="cursor-link" cursor-class="hover1 dark" target="_blank">Voir le projet</a>
         </div>
+        <%}%>
         <div class="specs">
             <div class="title">Caractéristiques du projet</div>
-            <div class="specs-list">
+            <div class="specs-icons">
                 <%for(spec of project.specs) { %>
                   <%-include('./projectSpec', { spec })%>
               <%  }%>
             </div>
-        </div>
-        <div class="infos">
-            <%=project.info%>
         </div>
         <div class="nav-projects">
             <div class="links">
@@ -36,7 +41,7 @@
                         <div class="x-bar"></div>
                     </div>
                 </a>
-                <a href="<%=project.next.path%>" class="i-link prev" is="cursor-link" cursor-grab cursor-grab-padding="15">
+                <a href="<%=project.next ? project.next.path : '/'%>" class="i-link prev <%=project.next ? '' : 'utils hidden'%>" is="cursor-link" cursor-grab cursor-grab-padding="15">
                     <!--                retour-->
                     <div class="arrow right" onmouseover="document.querySelector('#hint-next').classList.add('visible')"  onmouseout="document.querySelector('#hint-next').classList.remove('visible')">
                         <div class="h-bar"></div>
