@@ -25,6 +25,10 @@ a, a:hover {
   color: inherit;
 }
 
+iframe {
+  border: none;
+}
+
 .utils.hidden {
   visibility: hidden;
 }
@@ -638,6 +642,8 @@ a.button {
       opacity: 1;
     }
   }
+
+  // Écrans tactiles
 }
 body:not(:hover) {
   #cursor-follower {
@@ -771,7 +777,7 @@ body:not(:hover) {
 }
 
 .techno {
-  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript", "Python", "Sass", "Node", "Premiere", "After", "Indesign", "Illustrator", "Photoshop", "Scrum", "Typescript", "Git", "Mysql", "Camera", "editing", "davinci", "checklist", "motion", "Linux", "Office", "ico", "scrum";
+  $technos: "jQuery", "Ajax", "CSS", "Webpack", "Responsive", "no-responsive", "socket-io", "php", "backoffice", "Javascript", "Python", "Sass", "Node", "NodeJS", "Premiere", "After", "Indesign", "Illustrator", "Photoshop", "Scrum", "Typescript", "Git", "Mysql", "Camera", "editing", "davinci", "checklist", "motion", "Linux", "Office", "ico", "scrum", "interviews";
   @each $techno in $technos {
     $lc: to_lower_case($techno);
     &.t-#{$lc} {

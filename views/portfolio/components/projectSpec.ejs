@@ -4,7 +4,11 @@ let slug
 const specs = {
   'no-responsive' : "PC Uniquement",
   'socket-io' : "Socket.io",
-  'backoffice' : "Back Office"
+  'backoffice' : "Back Office",
+    'mobile-compatible' : 'Compatible PC et Mobiles',
+    'camera' : 'Tournage',
+    'editing' : 'Montage',
+    'checklist' : 'Écriture'
 }
 if (specs[locals.spec]) {
   fullName = specs[locals.spec]
@@ -14,7 +18,4 @@ if (specs[locals.spec]) {
 slug = fullName.toLowerCase()
 }
  %>
-<div class="spec">
-    <div class="techno t-<%=slug%>"></div>
-    <div class="name"><%=fullName%></div>
-</div>
+<a is="cursor-link" data-hint="<%=fullName%>" cursor-class="dot light" class="techno t-<%= slug %>"></a>

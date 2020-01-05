@@ -38,7 +38,7 @@ module.exports = function () {
   serverApp.get('/profile', (req, res) => {
     portfolioController.profile(req, res)
   })
-  serverApp.get('/:type((web|video|graphisme))/:project', (req, res) => {
+  serverApp.get('/:type((web|video|graphics))/:project', (req, res) => {
     portfolioController.project(req, res)
   })
   sitemapController(serverApp)
