@@ -1,7 +1,13 @@
 /* global __viewsPath */
 const path = require('path')
+const analyticsID = require('@app').getInstance().getAnalyticsId()
+
 module.exports = function renderView (request, response, next) {
   response.renderView = function (view, locals = undefined, callback = undefined) {
+    if (locals === undefined) {
+      locals = {}
+    }
+    locals['analyticsID'] = analyticsID
     response.render(path.join(__viewsPath, view), locals, callback)
   }
   response.ajaxView = function (view, locals = {}) {
