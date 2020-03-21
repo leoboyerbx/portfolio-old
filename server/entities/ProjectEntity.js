@@ -44,11 +44,24 @@ class ProjectEntity {
     return markup
   }
 
+  generateYoutubeHtml (url) {
+    return `<div class="video">
+        <div class="video-embed" is="cursor-hide">
+            <iframe class="" src="${url}" allowfullscreen></iframe>
+        </div>
+    </div>`
+  }
+
   get mediaHtml () {
-    if (this.media_type === 'images') {
-      return this.generateImagesHtml(this.media_content)
+    let result = ''
+    switch (this.media_type) {
+      case 'images':
+        result = this.generateImagesHtml(this.media_content)
+        break
+      case 'youtube':
+        result = this.generateYoutubeHtml(this.media_content)
     }
-    return ''
+    return result
   }
 
   get descriptionHtml () {
