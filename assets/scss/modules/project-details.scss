@@ -143,20 +143,6 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      &.horizontal {
-        flex-direction: row;
-        justify-content: center;
-        @include xl() {
-          flex-wrap: nowrap;
-        }
-        a {
-          min-width: 300px;
-        }
-        .description {
-          min-width: 300px;
-          margin-left: 30px;
-        }
-      }
       @include md() {
         padding: 70px;
       }
@@ -208,6 +194,26 @@
         a {
           margin: 10px 20px;
         }
+      }
+      &.horizontal {
+        flex-direction: row;
+        justify-content: center;
+        @include xl() {
+          flex-wrap: nowrap;
+        }
+        .img-wrapper {
+          min-width: 300px;
+          flex-grow: 0;
+        }
+        .description {
+          min-width: 300px;
+          margin-left: 30px;
+          flex-grow: 1;
+        }
+      }
+      .images {
+        width: auto;
+        flex-grow: 0;
       }
     }
   }
