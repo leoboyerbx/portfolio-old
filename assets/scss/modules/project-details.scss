@@ -143,6 +143,20 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
+      &.horizontal {
+        flex-direction: row;
+        justify-content: center;
+        @include xl() {
+          flex-wrap: nowrap;
+        }
+        a {
+          min-width: 300px;
+        }
+        .description {
+          min-width: 300px;
+          margin-left: 30px;
+        }
+      }
       @include md() {
         padding: 70px;
       }
@@ -152,20 +166,6 @@
         margin: 0 auto 30px;
         display: flex;
 
-        &.template-unique-desc {
-          display: flex;
-          justify-content: center;
-          @include xl() {
-            flex-wrap: nowrap;
-          }
-          a {
-            min-width: 300px;
-          }
-          .description {
-            min-width: 300px;
-            margin-left: 30px;
-          }
-        }
         .img-wrapper {
           margin: 0 8px;
           cursor: pointer;
