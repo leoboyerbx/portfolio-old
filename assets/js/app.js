@@ -10,6 +10,7 @@ import animateCols from './modules/animateCols'
 import lightbox from './modules/lightbox'
 import innerLinks from '@/modules/innerLinks'
 import arrowScroll from '@/modules/arrowScroll'
+import videoAnimation from "@/modules/videoAnimation";
 
 window.addEventListener('DOMContentLoaded', function () {
   // Selection of elements
@@ -66,6 +67,7 @@ window.addEventListener('DOMContentLoaded', function () {
   animateCols(400)
 
   lightbox()
+  videoAnimation()
 
   innerLinks('a[data-target]', menuObj)
   arrowScroll()

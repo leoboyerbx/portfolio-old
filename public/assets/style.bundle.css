@@ -3926,6 +3926,9 @@ body.dark #contact-title {
   .project-details.scrolled .pan-right {
     padding-top: 300px; }
 
+.video-animation {
+  position: relative; }
+
 .skills-icons, .specs-icons {
   position: relative;
   display: flex;
