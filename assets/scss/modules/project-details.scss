@@ -141,6 +141,7 @@
       width: 100%;
       padding: 50px;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       @include md() {
         padding: 70px;
@@ -149,19 +150,10 @@
         width: 100%;
         max-width: 900px;
         margin: 0 auto 30px;
-        display: grid;
-        grid-auto-rows: minmax(300px, auto);
-        grid-template-columns: repeat(6, 1fr);
-        grid-gap: 10px;
-        &.template-single {
-          grid-auto-rows: auto;
-          grid-template-columns: repeat(1, 1fr);
-          grid-template-rows: 400px;
-          grid-template-areas: "first";
-        }
+        display: flex;
+
         &.template-unique-desc {
           display: flex;
-          flex-wrap: wrap;
           justify-content: center;
           @include xl() {
             flex-wrap: nowrap;
@@ -174,53 +166,11 @@
             margin-left: 30px;
           }
         }
-        &.no-crop img {
-          object-fit: contain;
-        }
-        &.template-1 {
-          grid-auto-rows: minmax(80px, auto);
-          grid-template-areas: "first  first first first first"
-                                "second second . . ."
-                                "second second third third third"
-                                ".      .      third third third";
-        }
-        &.template-2 {
-          grid-auto-rows: minmax(80px, auto);
-          grid-template-areas: "first  first first first first"
-                                " . . .            second second"
-                                "third third third second second "
-                                "third third third .  .";
-        }
-        &.template-3 {
-          grid-auto-rows: minmax(100px, auto);
-          grid-template-areas: "first  first first first first"
-                                " . . .            second second"
-                                "third third third second second "
-                                "third third third .  ."
-                                ".   .    fourth fourth fourth";
-        }
-        &.template-4 {
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: 300px;
-          grid-auto-rows: 200px;
-          grid-template-areas: "first first first"
-                               "second third fourth";
-        ;
-        }
-        &.template-5 {
-          grid-auto-rows: minmax(200px, auto);
-          grid-template-columns: repeat(6, 1fr);
-          grid-template-areas: "first  first first second second second"
-        ;
-        }
         .img-wrapper {
+          margin: 0 8px;
           cursor: pointer;
-          &:nth-child(1) { grid-area: first; }
-          &:nth-child(2) { grid-area: second; }
-          &:nth-child(3) { grid-area: third; }
-          &:nth-child(4) { grid-area: fourth; }
-          &:nth-child(5) { grid-area: fifth; }
-          &:nth-child(6) { grid-area: sixth; }
+          box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.3);
+          flex-grow: 1;
         }
         .img-project {
           height: 100%;
