@@ -1,4 +1,15 @@
 const path = require('path')
+const md = require('markdown-it')()
+const mila = require('markdown-it-link-attributes')
+
+md.use(mila, {
+  attrs: {
+    target: '_blank',
+    is: 'cursor-link',
+    'cursor-class': 'hover1',
+    class: 'underlined'
+  }
+})
 
 class ProjectEntity {
   constructor (data) {
@@ -20,7 +31,7 @@ class ProjectEntity {
   }
 
   generateImagesHtml (imagesString) {
-    const images = imagesString.split(', ').join(',').split(',')
+    const images = this.parseCommaSeparated(imagesString)
     let markup = `<div class="images">`
     images.map(imagePath => {
       if (imagePath === 'break') {
@@ -40,12 +51,34 @@ class ProjectEntity {
     return ''
   }
 
+  get descriptionHtml () {
+    return md.render(this.description_md)
+  }
+
   get tags () {
-    return this.raw_tags.split(', ').join(',').split(',')
+    return this.parseCommaSeparated(this.raw_tags)
+  }
+
+  get links () {
+    if (this.buttons_links) {
+      const links = this.parseCommaSeparated(this.buttons_links)
+      return links.map(link => {
+        const raw = link.split('-> ').join('->').split(' ->').join('->').split('->')
+        return {
+          title: raw[0],
+          url: raw[1]
+        }
+      })
+    }
+    return []
   }
 
   get specs () {
-    return this.raw_specs.split(', ').join(',').split(',')
+    return this.parseCommaSeparated(this.raw_specs)
+  }
+
+  parseCommaSeparated (string) {
+    return string.split(', ').join(',').split(',')
   }
 }
 module.exports = ProjectEntity

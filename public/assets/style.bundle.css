@@ -4084,6 +4084,9 @@ a, a:hover {
   text-decoration: none;
   color: inherit; }
 
+.underlined {
+  text-decoration: underline; }
+
 iframe {
   border: none; }
 
