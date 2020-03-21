@@ -33,13 +33,7 @@ class PortfolioController {
   project (req, res) {
     ProjectsModel.getBySlugAndType(req.params.project, req.params.type).then(project => {
       if (project) {
-        fs.access(project.viewPath, fs.constants.F_OK, (err) => {
-          if (!err) {
-            res.ajaxView('portfolio/components/projectDetails', { project, nextType: getNextType(req.params.type), pageTitle: `${project.title} | Léo Boyer - Portfolio` })
-          } else {
-            res.notFound()
-          }
-        })
+        res.ajaxView('portfolio/components/projectDetails', { project, nextType: getNextType(req.params.type), pageTitle: `${project.title} | Léo Boyer - Portfolio` })
       } else {
         res.notFound()
       }
