@@ -52,6 +52,13 @@ class ProjectEntity {
     </div>`
   }
 
+  generateVideoAnimationHtml (src) {
+    return `<div class="video">
+                    <video-animation src="/user/projects/video/mac/mac.mp4">
+                    </video-animation>
+            </div>`
+  }
+
   get mediaHtml () {
     let result = ''
     switch (this.media_type) {
@@ -60,6 +67,10 @@ class ProjectEntity {
         break
       case 'youtube':
         result = this.generateYoutubeHtml(this.media_content)
+        break
+      case 'video-animation':
+        result = this.generateVideoAnimationHtml(this.media_content)
+        break
     }
     return result
   }
