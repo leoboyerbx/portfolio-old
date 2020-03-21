@@ -41,6 +41,8 @@
     "express-sitemap": "^1.8.0",
     "fetch-progress": "^1.2.0",
     "lodash.throttle": "^4.1.1",
+    "markdown-it": "^10.0.0",
+    "markdown-it-link-attributes": "^3.0.0",
     "module-alias": "^2.2.2",
     "mysql": "^2.17.1",
     "parse-css-dimension": "^1.1.0"
