@@ -4084,7 +4084,7 @@ a, a:hover {
   text-decoration: none;
   color: inherit; }
 
-.underlined {
+.underlined, .underlined:hover {
   text-decoration: underline; }
 
 iframe {
