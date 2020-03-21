@@ -70,7 +70,7 @@ class ProjectEntity {
         }
       })
     }
-    return []
+    return undefined
   }
 
   get specs () {

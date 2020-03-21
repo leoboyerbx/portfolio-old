@@ -60,19 +60,18 @@
         </div>
     </div>
     <div class="pan-right">
-        <div class="description-wrapper">
+        <div class="description-wrapper <%= project.disposition === 1 ? 'horizontal' : '' %>">
             <%- project.mediaHtml %>
             <div class="description">
                 <%- project.descriptionHtml %>
             </div>
+            <% if (project.links) {%>
             <div class="links">
-                <%console.log(project.links)%>
                 <% project.links.map(link => { %>
-                    <a href="https://www.colorjs.cc/" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark">Visiter le site</a>
+                    <a href="<%=link.url%>" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark"><%=link.title%></a>
              <%  }) %>
-                <a href="https://github.com/leoboyerbx/colorjs" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark">Dépôt GitHub</a>
-                <a href="https://docs.colorjs.cc" target="_blank" class="button" is="cursor-link" cursor-class="hover1 dark">Documentation</a>
             </div>
+            <%}%>
         </div>
     </div>
 
