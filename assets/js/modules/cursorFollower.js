@@ -88,15 +88,13 @@ function cursorFollower (element, throttle = true) {
   }
   // eslint-disable-next-line no-undef
   class CursorHide extends HTMLDivElement {
-    constructor () {
-      super()
+    connectedCallback () {
       cursorEventListeners(this, 'hidden')
     }
   }
   // eslint-disable-next-line no-undef
   class CursorScrollable extends HTMLDivElement {
-    constructor () {
-      super()
+    connectedCallback () {
       this.initialScroll = this.scrollTop
 
       function handler () {
