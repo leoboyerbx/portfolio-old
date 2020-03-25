@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-undef
-const template = document.createElement('template');
+const template = document.createElement('template')
 
 template.innerHTML = `
     <style>

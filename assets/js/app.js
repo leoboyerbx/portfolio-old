@@ -10,7 +10,8 @@ import animateCols from './modules/animateCols'
 import lightbox from './modules/lightbox'
 import innerLinks from '@/modules/innerLinks'
 import arrowScroll from '@/modules/arrowScroll'
-import videoAnimation from "@/modules/videoAnimation";
+import videoAnimation from '@/modules/videoAnimation'
+import './modules/customElementsPolyfill'
 
 window.addEventListener('DOMContentLoaded', function () {
   // Selection of elements

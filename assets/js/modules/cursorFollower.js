@@ -56,8 +56,7 @@ function cursorFollower (element, throttle = true) {
   }
   // eslint-disable-next-line no-undef
   class CursorLink extends HTMLAnchorElement {
-    constructor () {
-      super()
+    connectedCallback () {
       const className = this.getAttribute('cursor-class')
       cursorEventListeners(this, className, this.getAttribute('cursor-grab') !== null)
     }
