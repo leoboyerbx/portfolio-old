@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev npx webpack",
     "build": "webpack",
+    "start": "node app.js",
     "start-dev": "forever start -w --watchDirectory ./server/ --id \"dev-portfolio\" -c node app.js",
     "stop": "forever stop dev-portfolio",
     "test": "echo \"Error: no test specified\" && exit 1"

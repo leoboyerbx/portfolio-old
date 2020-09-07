@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: .env.local
+    ports:
+      - "3000:3000"
+      - "3306:3306"
+    volumes:
+      - ./server:/app/server
+      - ./app.js:/app/app.js
