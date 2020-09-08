@@ -12,4 +12,4 @@ COPY server /app/server
 COPY views /app/views
 COPY docker-entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh", "node app.js"]
+CMD ["node", "app.js"]
