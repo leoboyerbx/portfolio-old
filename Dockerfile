@@ -1,4 +1,4 @@
-FROM node:14.9.0
+FROM node:lts
 
 # ENV CI=true
 ENV PORT=3000
@@ -10,6 +10,5 @@ COPY app.js /app/
 COPY public /app/public
 COPY server /app/server
 COPY views /app/views
-COPY docker-entrypoint.sh /usr/local/bin/
 
 CMD ["node", "app.js"]
