@@ -13,3 +13,4 @@ services:
     volumes:
       - ./server:/app/server
       - ./app.js:/app/app.js
+      - ./userContent:/app/public/userContent
