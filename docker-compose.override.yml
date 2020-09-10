@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    restart: unless-stopped
+    env_file: .env.local
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app.js:/app/app.js
+      - ./public:/app/public
+      - ./server:/app/server
+      - ./views:/app/views
+      - ./userContent:/app/public/userContent

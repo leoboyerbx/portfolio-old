@@ -1,16 +1,7 @@
 version: '3'
 
 services:
-  nodejs:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: nodejs
+  portfolio:
+    build: .
+    container_name: portfolio
     restart: unless-stopped
-    env_file: .env.local
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./server:/app/server
-      - ./app.js:/app/app.js
-      - ./userContent:/app/public/userContent
