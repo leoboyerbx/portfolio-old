@@ -22,6 +22,7 @@ build:
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY_IMAGE
     - echo "IMAGE_APP_TAG=$STAGE_IMAGE_APP_TAG" >> .env
+    - echo "USER_CONTENT_PATH=$STAGE_USER_CONTENT_PATH" >> .env
     - docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
     - docker-compose push
   only:
@@ -34,8 +35,17 @@ deploy-to-stage:
     - eval $(ssh-agent -s)
     - echo "$STAGE_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY_IMAGE
-    - echo "EXTERNAL_SERVICE_KEY=$EXTERNAL_SERVICE_STAGE_KEY" >> .env
     - echo "IMAGE_APP_TAG=$STAGE_IMAGE_APP_TAG" >> .env
+    # Env variables for service to run
+    - echo "USER_CONTENT_PATH=$STAGE_USER_CONTENT_PATH" >> .env
+    - echo "USER_CONTENT_PATH=$STAGE_USER_CONTENT_PATH" >> .env
+    - echo "MYSQL_HOST=$STAGE_MYSQL_HOST" >> .env
+    - echo "MYSQL_DATABASE=$STAGE_MYSQL_DATABASE" >> .env
+    - echo "MYSQL_PORT=$STAGE_MYSQL_PORT" >> .env
+    - echo "MYSQL_USER=$STAGE_MYSQL_USER" >> .env
+    - echo "MYSQL_PASSWORD=$STAGE_MYSQL_PASSWORD" >> .env
+    - echo "GA_ID=$STAGE_GA_ID" >> .env
+    # Remote ops
     - docker-compose -H "ssh://$STAGE_SERVER_USER@$STAGE_SERVER_IP" down --remove-orphans
     - docker-compose -H "ssh://$STAGE_SERVER_USER@$STAGE_SERVER_IP" pull
     - docker-compose -H "ssh://$STAGE_SERVER_USER@$STAGE_SERVER_IP" up -d
