@@ -11,4 +11,5 @@ COPY public /app/public
 COPY server /app/server
 COPY views /app/views
 
-CMD ["node", "app.js"]
+CMD ["echo", "Starting portfolio léo..."]
+CMD ["yarn", "start-dev"]

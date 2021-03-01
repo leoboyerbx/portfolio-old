@@ -24,7 +24,7 @@ module.exports = function () {
   const portfolioController = new PortfolioController()
 
   serverApp.get('/', (req, res) => {
-    res.renderView('index')
+    portfolioController.index(req, res)
   })
   serverApp.get('/video', (req, res) => {
     portfolioController.av(req, res)
