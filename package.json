@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev npx webpack",
     "build": "webpack",
-    "start-dev": "forever start -w --watchDirectory ./server/ --id \"dev-portfolio\" -c node app.js",
+    "dk:start": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "dk:start-d": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+    "dk:stop": "node ./_docker/docker-stop.js",
+    "db:load": "docker exec -i mysqldb-portfolio mysql -u root --password=root < ./_docker/data/last.sql",
+    "db:save": "docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/db_$(date +\"%Y_%m_%d_%H_%M\").sql && docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/last.sql",
+    "start": "node app.js",
+    "start-dev": "nodemon app.js",
     "stop": "forever stop dev-portfolio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -45,6 +51,7 @@
     "markdown-it-link-attributes": "^3.0.0",
     "module-alias": "^2.2.2",
     "mysql": "^2.17.1",
+    "nodemon": "^2.0.7",
     "parse-css-dimension": "^1.1.0"
   },
   "_moduleAliases": {

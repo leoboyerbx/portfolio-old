@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    restart: unless-stopped
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - GA_ID=${GA_ID}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${USER_CONTENT_PATH}:/app/public/userContent

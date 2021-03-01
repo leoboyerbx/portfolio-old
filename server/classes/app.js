@@ -1,5 +1,5 @@
 const MysqlDb = require('./MysqlDb')
-const config = require('@server/config/secret')
+const config = require('@server/config/ids')
 
 class App {
   static getInstance () {

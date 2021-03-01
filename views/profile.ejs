@@ -34,7 +34,9 @@
                 <div class="profile-img"></div>
             </div>
             <p class="profile-desc">
-                Bonjour, je suis Léo Boyer et j'ai  19 ans. Je suis passionné depuis plus de 7 ans par le web, l'informatique et l'audiovisuel, et par la création. Je me forme actuellement en DUT <b>Métiers du Multimédia et de l'Internet</b> à Grenoble, et j'aimerais m'orienter vers un métier dans le développement, qui me permette d'exercer ma créativité.
+                Bonjour, je suis Léo Boyer et j'ai <%=myAge%>. Je suis passionné depuis plus de <%=yearsPassion%> ans par le web, l'informatique, l'audiovisuel, et la création en général. Actuellement en Bachelor Développeur Interactif aux
+                <a href="https://www.gobelins.fr/formation/bddi-bachelor-developpeur-web-et-mobile-cycle-1-en-1" is="cursor-link" cursor-class="hover1 soften" target="_blank">Gobelins</a> à Annecy, et en alternance chez
+                <a href="https://www.wearewanaka.com" is="cursor-link" cursor-class="hover1 soften" target="_blank">Wanaka</a>, je m'oriente vers un métier dans le développement, me permettant d'exercer ma créativité.
             </p>
             <div class="profile-cv">
                 <a target="_blank" href="/assets/CV-Boyer-Léo.pdf" class="button light" is="cursor-link" cursor-class="dark hover1">&mdash; Mon CV &mdash;</a>
@@ -44,12 +46,21 @@
             <div class="profile-details courses">
                 <h1>Mon parcours</h1>
                 <%-include('./components/courseBlock', {
+                title: 'BDDI Gobelins',
+                date: '2020 - 2021',
+                description: [
+                `Le Bachelor Designer et Développeur Interactif proposé par l'école des Gobelins sur le campus Annecy s'effectue en alternance.`,
+                `Deux spécialités sont proposées: Développeur et Designer. Lors de nombreux projets et durant plus de la moitié du tronc commun, les élèves des deux spécialités travaillent ensemble, chacun pouvant mettre ses compétences en œuvre.`,
+                `Je suis actuellement cette formation sur le parcours développeur.`
+                ]
+                })%>
+
+                <%-include('./components/courseBlock', {
                 title: 'DUT MMI',
                 date: '2018 - 2020',
                 description: [
                 `Le DUT MMI, pour <b>Métiers du Multimédia et de l'Internet</b>, regroupe une grande partie de mes centres d'intérêts. Il m'a permis de progresser en audiovisuel, en web, de débuter en graphisme et en communication, et d'apprendre les bases de la gestion de projet.`,
-                `À travers de nombreux projets, il me permet de mettre en pratique mes compétences et mes connaissances.`,
-                `Je suis actuellement cette formation à Grenoble.`
+                `À travers de nombreux projets, j'ai pu y mettre en pratique mes compétences et mes connaissances.`,
                 ]
                 })%>
 

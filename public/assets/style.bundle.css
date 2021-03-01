@@ -3341,6 +3341,8 @@ html {
 
 #mybio-text-wrapper {
   position: relative; }
+  #mybio-text-wrapper a {
+    text-decoration: underline; }
   #mybio-text-wrapper .mybio-text {
     width: 100%;
     height: auto; }
@@ -4003,6 +4005,8 @@ body.dark #contact-title {
     margin-top: 30px;
     font-size: 1.1em;
     line-height: 1.5em; }
+    #profile .profile-content .profile-desc a {
+      text-decoration: underline; }
   #profile .profile-content .profile-cv {
     margin-top: 30px; }
   #profile .profile-content .profile-details h1 {

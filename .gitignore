@@ -3,5 +3,6 @@ node_modules/
 public/userContent
 server/config/secret.js
 .env.local
+userContent/
 
 CV-Boyer-Léo.pdf

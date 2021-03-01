@@ -2,6 +2,9 @@ $transition: all .3s $transition-easing;
 
 #mybio-text-wrapper {
   position: relative;
+  a {
+    text-decoration: underline;
+  }
 
   .mybio-text {
     //position: absolute;
