@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-const config = require('../config/ids')
+const config = require('../config/secret')
 
 class MySqlDb {
   static getConnection () {
