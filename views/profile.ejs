@@ -46,12 +46,21 @@
             <div class="profile-details courses">
                 <h1>Mon parcours</h1>
                 <%-include('./components/courseBlock', {
+                title: 'BDDI Gobelins',
+                date: '2020 - 2021',
+                description: [
+                `Le Bachelor Designer et Développeur Interactif proposé par l'école des Gobelins sur le campus Annecy s'effectue en alternance.`,
+                `Deux spécialités sont proposées: Développeur et Designer. Lors de nombreux projets et durant plus de la moitié du tronc commun, les élèves des deux spécialités travaillent ensemble, chacun pouvant mettre ses compétences en œuvre.`,
+                `Je suis actuellement cette formation sur le parcours développeur.`
+                ]
+                })%>
+
+                <%-include('./components/courseBlock', {
                 title: 'DUT MMI',
                 date: '2018 - 2020',
                 description: [
                 `Le DUT MMI, pour <b>Métiers du Multimédia et de l'Internet</b>, regroupe une grande partie de mes centres d'intérêts. Il m'a permis de progresser en audiovisuel, en web, de débuter en graphisme et en communication, et d'apprendre les bases de la gestion de projet.`,
-                `À travers de nombreux projets, il me permet de mettre en pratique mes compétences et mes connaissances.`,
-                `Je suis actuellement cette formation à Grenoble.`
+                `À travers de nombreux projets, j'ai pu y mettre en pratique mes compétences et mes connaissances.`,
                 ]
                 })%>
 
