@@ -14,3 +14,20 @@ services:
       - ./server:/app/server
       - ./views:/app/views
       - ./userContent:/app/public/userContent
+  db:
+    image: mysql:5.7
+    container_name: mysqldb-portfolio
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: devpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./_docker/data/last.sql:/docker-entrypoint-initdb.d/dump.sql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev npx webpack",
     "build": "webpack",
+    "dk:start": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+    "dk:stop": "node ./_docker/docker-stop.js",
+    "db:load": "docker exec -i mysqldb-portfolio mysql -u root --password=root < ./_docker/data/last.sql",
+    "db:save": "docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/db_$(date +\"%Y_%m_%d_%H_%M\").sql && docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/last.sql",
     "start": "node app.js",
     "start-dev": "forever start -w --watchDirectory ./server/ --id \"dev-portfolio\" -c node app.js",
     "stop": "forever stop dev-portfolio",
@@ -41,6 +45,7 @@
     "express": "^4.17.1",
     "express-sitemap": "^1.8.0",
     "fetch-progress": "^1.2.0",
+    "forever": "^3.0.4",
     "lodash.throttle": "^4.1.1",
     "markdown-it": "^10.0.0",
     "markdown-it-link-attributes": "^3.0.0",
