@@ -1,6 +1,4 @@
 const ProjectsModel = require('@server/models/ProjectsModel')
-const fs = require('fs')
-const myAgeModel = require('../models/myAgeModel')
 
 function getNextType (type) {
   const types = ['web', 'video', 'graphics', 'web']
@@ -22,7 +20,7 @@ class PortfolioController {
   }
 
   profile (req, res) {
-    res.ajaxView('profile', { pageTitle: 'Profil | Léo Boyer - Portfolio', ...this._agingVars() })
+    res.ajaxView('profile', { pageTitle: 'Profil | Léo Boyer - Portfolio' })
   }
 
   av (req, res) {
@@ -42,14 +40,7 @@ class PortfolioController {
   }
 
   index (req, res) {
-    res.renderView('index', this._agingVars())
-  }
-
-  _agingVars () {
-    return {
-      myAge: myAgeModel.formatMyAge('2000-05-02'),
-      yearsPassion: myAgeModel.myAge('2013-02-15').years
-    }
+    res.renderView('index')
   }
 }
 

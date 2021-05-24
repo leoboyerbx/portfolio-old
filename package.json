@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=dev npx webpack",
     "build": "webpack",
     "dk:start": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
-    "dk:start-d": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+    "dk:start-d": "docker-compose -f docker-compose.dev.yml up -d",
     "dk:stop": "node ./_docker/docker-stop.js",
     "db:load": "docker exec -i mysqldb-portfolio mysql -u root --password=root < ./_docker/data/last.sql",
     "db:save": "docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/db_$(date +\"%Y_%m_%d_%H_%M\").sql && docker exec mysqldb-portfolio mysqldump -u root --password=root --all-databases > ./_docker/data/last.sql",
