@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async defer data-domain="leoboyer.fr" src="https://plausible.lbxs.dev/js/plausible.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Bonjour, je suis Léo Boyer et j'ai 19 ans. Étudiant créatif et passionné, j'ai créé ce site dans le but de présenter mes différents projets.">
+
+    <title>Graphisme | Léo Boyer - Portfolio</title>
+    <link rel="icon" type="image/png" href="/assets/images/will.png" />
+    <script src="/assets/app.bundle.js"></script>
+</head>
+<body>
+    <script src="/assets/load.js" id="loadscript"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/lum0cyk.css">
+    <link rel="stylesheet" href="/assets/style.bundle.css">
+
+<div id="page-content">
+    <div id="home">
+        <div id="home-content-wrapper">
+
+            <div id="home-text-wrapper">
+                <div id="home-name">
+                    <span class="name anim-when-loaded">Léo</span>
+                    <span class="name anim-when-loaded">Boyer</span>
+                </div>
+                <div id="home-portfolio-word">
+                    <div class="letter">p</div>
+                    <div class="letter">o</div>
+                    <div class="letter">r</div>
+                    <div class="letter">t</div>
+                    <div class="letter">f</div>
+                    <div class="letter">o</div>
+                    <div class="letter">l</div>
+                    <div class="letter">i</div>
+                    <div class="letter">o</div>
+                    <div class="letter dot">.</div>
+                </div>
+
+            </div>
+            <a id="arrow-scroll" is="cursor-link" cursor-class="hover1">
+                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+                <polyline class="arrow-scroll-line" points="21,105.5 151.4,194.5 279,105.5" />
+                </svg>
+
+            </a>
+        </div>
+    </div>
+    <div id="homepage-content">
+        <div id="my-portfolio" class="mb-4">
+            <div id="my-portfolio-title" class="part-title">
+                <div class="line-1">Mes</div>
+                <div class="line-2">projets</div>
+            </div>
+            <div id="my-portfolio-categories">
+                <div class="category">
+                    <div class="category-content-wrapper">
+                        <a href="/web" class="category-content i-link"  is="cursor-link" cursor-class="hover1" id="category-code">
+                            <img src="/assets/icons/web-programming.svg" alt="Icon Web">
+                            <div class="category-name">Web et<br>programmation</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-content-wrapper">
+                        <a href="/video" class="category-content i-link" is="cursor-link" cursor-class="hover1">
+                            <img src="/assets/icons/video.svg" alt="Icon AV">
+                            <div class="category-name">Audiovisuel<br>et vidéo</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-content-wrapper">
+                        <a href="/graphics" class="category-content i-link"  is="cursor-link" cursor-class="hover1">
+                            <img src="/assets/icons/graphics.svg" alt="Icon Graphisme">
+                            <div class="category-name">Graphisme et<br>motion-design</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mybio" class="slide">
+            <div id="mybio-title" class="part-title">
+                <div id="line-1">Qui</div>
+                <div id="line-2">suis-je ?</div>
+            </div>
+            <div id="mybio-content">
+                <div class="row">
+                    <div class="col-12 col-lg-auto text-center align-items-center justify-content-center d-flex">
+                        <div id="mybio-photo"></div>
+                    </div>
+                    <div class="col-12 col-md px-3">
+                        <div id="mybio-text-wrapper" class="cursor-hidden">
+                            <div class="mybio-text" is="cursor-hide">
+                                <p>
+                                    Léo Boyer, 24 ans, passionné depuis plus de 11 ans par le web, l'informatique, l'audiovisuel, et la création en général. Actuellement en Bachelor Développeur Interactif aux
+                                    <a href="https://www.gobelins.fr/formation/bddi-bachelor-developpeur-web-et-mobile-cycle-1-en-1" target="_blank">Gobelins</a> à Annecy, et en alternance chez
+                                    <a href="https://www.wearewanaka.com" target="_blank">Wanaka</a>, je m'oriente vers un métier dans le développement, me permettant d'exercer ma créativité.
+                                </p>
+                                <p>
+                                    <a class="i-link" href="/profile" class="louwp-hover" data-hover="focus"><u>Voir mon profil</u></a>
+                                </p>
+                            </div>
+                            <div id="mybio-text-louwp"  is="cursor-hide">
+                                <div id="mybio-hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="mt-5">
+            <div id="contact-title" class="part-title">
+                <div class="lt lt1 ltc">C</div><div class="lt lt2 lto">o</div><div class="lt lt3 ltn">n</div><div class="lt lt4 ltt">t</div><div class="lt lt5 lta">a</div><div class="lt lt6 ltc2">c</div><div class="lt lt7 ltt2">t</div>
+            </div>
+            <div id="contact-content">
+                <div class="cv">
+                    <a target="_blank" href="/assets/CV-Boyer-Léo.pdf" class="button" is="cursor-link" cursor-class="dark hover1">&mdash; Mon CV &mdash;</a>
+                </div>
+                <div class="coords">
+                    <p>+33 (0) 7 82 07 87 32 - <a href="mailto:contact@leoboyer.fr" is="cursor-link" cursor-class="hover1"><u>contact@leoboyer.fr</u></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="homepage-footer">
+
+    </div>
+</div>
+<div id="ext-page" class=open>
+    <div class="cache"></div>
+    <div id="ext-content" is="cursor-scrollable" >
+        
+        <section class="content-wrapper text-center portfolio-list">
+    <header class="header graphisme">
+        <div class="svg-text-wrapper">
+            <!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In  -->
+            <svg class="svg-text graphisme"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="1388.22px" height="242.5px" viewBox="0 0 1388.22 242.5" style="enable-background:new 0 0 1388.22 242.5;"
+                 xml:space="preserve">
+                <defs>
+                </defs>
+                <g>
+                    <path class="st0 letter-gmaj" d="M0,111.15C0,59.22,39.86,17.4,95.99,17.4c25.54,0,47.99,8.98,64.55,23.3l-24.42,26.66
+		c-12.63-11.23-25.54-14.31-39.29-14.31c-31.72,0-55.85,25.82-55.85,58.1c0,32.56,23.58,58.38,55.85,58.38
+		c17.4,0,32-7.86,41.82-18.24v-26.66h-30.87V95.99h66.8v70.73c-16,23.86-45.47,38.45-78.31,38.45C40.14,205.17,0,163.35,0,111.15z"
+                    />
+                    <path class="st0 letter-r" d="M206.02,61.75h37.05v26.94c3.93-11.51,18.24-29.75,49.12-29.75v40.98c-32.56,0-48.56,14.88-48.56,48.28v53.89
+		h-37.61V61.75z"/>
+                    <path class="st0 letter-a" d="M307.34,131.92c0-40.42,24.7-72.97,63.43-72.97c16.28,0,33.68,6.46,43.78,19.93V61.75h36.77v140.33h-36.77
+		v-16.84c-9.82,13.47-27.51,19.65-43.78,19.65C332.04,204.89,307.34,172.33,307.34,131.92z M413.71,131.92
+		c0-21.89-14.03-38.17-33.4-38.17c-20.21,0-34.8,16.28-34.8,38.17c0,22.17,14.59,38.17,34.8,38.17
+		C399.68,170.09,413.71,154.37,413.71,131.92z"/>
+                    <path class="st0 letter-p" d="M479.95,61.75h35.65v16.84c11.51-13.75,28.07-19.65,44.91-19.65c38.73,0,63.43,32.56,63.43,72.69
+		c0,40.7-25.26,73.25-63.99,73.25c-16.28,0-32.28-6.46-42.38-18.8v56.41h-37.61V61.75z M585.49,131.92
+		c0-22.17-14.31-38.17-34.8-38.17c-19.09,0-33.4,15.72-33.4,38.17c0,22.17,14.03,38.17,33.4,38.17
+		C571.17,170.09,585.49,154.09,585.49,131.92z"/>
+                    <path class="st0 letter-h" d="M648.36,17.4h37.61v62.03c10.95-14.59,26.38-20.49,43.22-20.49c36.49,0,49.96,23.01,49.96,62.31v80.83h-37.61
+		v-76.06c0-20.49-6.17-31.44-24.7-31.44c-19.93,0-30.87,16-30.87,36.21v71.29h-37.61V17.4z"/>
+                    <path class="st0 letter-i" d="M802.45,22.45C802.45,10.1,812.55,0,824.62,0c12.35,0,22.45,10.1,22.45,22.45c0,12.07-10.1,22.17-22.45,22.17
+		C812.55,44.63,802.45,34.52,802.45,22.45z M806.1,61.75h37.61v140.33H806.1V61.75z"/>
+                    <path class="st0 letter-s" d="M865.04,185.8l13.47-28.91c9.54,7.3,22.73,14.88,43.78,14.88c8.7,0,23.01-3.37,23.01-11.79
+		s-12.07-10.38-24.14-13.75c-27.79-7.3-50.52-16.56-50.52-43.5c0-28.63,28.07-43.78,54.45-43.78c23.01,0,37.61,5.61,52.21,14.03
+		l-12.63,28.07c-13.75-6.74-26.66-9.82-39.01-9.82c-8.7,0-16.84,3.93-16.84,9.82c0,7.86,11.79,10.38,24.7,13.19
+		c23.86,5.61,49.96,16,49.96,44.63c0,34.52-35.08,46.03-61.19,46.03C892.26,204.89,872.9,193.1,865.04,185.8z"/>
+                    <path class="st0 letter-m" d="M1005.94,61.75h36.77v18.8c8.14-12.63,24.7-21.61,41.54-21.61c22.17,0,35.93,9.26,43.22,24.98
+		c10.1-16.84,29.47-24.98,45.47-24.98c39.58,0,51.92,27.22,51.92,63.15v79.99h-37.61v-75.22c0-18.52-4.49-32.28-24.42-32.28
+		c-18.52,0-28.63,14.88-28.63,33.4v74.1h-37.61v-75.22c0-18.52-4.21-32.28-24.42-32.28c-19.09,0-28.63,16.28-28.63,34.8v72.69
+		h-37.61V61.75z"/>
+                    <path class="st0 letter-e" d="M1247.32,131.92c0-40.42,31.43-72.97,72.69-72.97c38.17,0,68.2,32.56,68.2,72.41c0,6.74-0.84,13.47-0.84,13.47
+		h-101.88c4.49,19.37,20.49,28.63,39.01,28.63c13.47,0,27.51-3.93,37.89-10.95l14.03,26.94c-15.72,10.38-33.96,15.44-52.21,15.44
+		C1283.25,204.89,1247.32,178.23,1247.32,131.92z M1352.85,119.85c-2.81-17.68-16.84-29.47-33.96-29.47
+		c-16.28,0-30.31,11.79-33.96,29.47H1352.85z"/>
+                </g>
+</svg>
+        </div>
+        <a href="/" onmouseover="document.querySelector('.svg-text-wrapper').classList.add('del')" onmouseout="document.querySelector('.svg-text-wrapper').classList.remove('del')" class="header-close i-link" is="cursor-link" cursor-class="closing" >
+            <div class="cross">
+                <div class="x-bar"></div>
+                <div class="x-bar"></div>
+            </div>
+        </a>
+
+    </header>
+    <!--            <img src="/assets/" alt="">-->
+
+    <div class="projects-list">
+        
+            <div class="project">
+    <a href="/graphics/echo" class="i-link" is="cursor-link" cursor-class="hover-plus">
+        <div class="project-image">
+            <img src="/user/projects/img/thumbnails/echo.svg" alt="">
+        </div>
+        <div class="project-title">
+            Festival Echo
+        </div>
+    </a>
+    <div class="project-badges">
+        
+            <span class="project-badge">Affiche</span>
+        
+            <span class="project-badge">Flat Design</span>
+        
+            <span class="project-badge">Projet de cours</span>
+        
+    </div>
+</div>
+
+        
+            <div class="project">
+    <a href="/graphics/mac" class="i-link" is="cursor-link" cursor-class="hover-plus">
+        <div class="project-image">
+            <img src="/user/projects/img/thumbnails/mac.png" alt="">
+        </div>
+        <div class="project-title">
+            Musée d&#39;Art Contemporain de Lyon
+        </div>
+    </a>
+    <div class="project-badges">
+        
+            <span class="project-badge">Motion Design</span>
+        
+            <span class="project-badge">Projet de cours</span>
+        
+    </div>
+</div>
+
+        
+            <div class="project">
+    <a href="/graphics/logos" class="i-link" is="cursor-link" cursor-class="hover-plus">
+        <div class="project-image">
+            <img src="/user/projects/img/thumbnails/logos.svg" alt="">
+        </div>
+        <div class="project-title">
+            Ensemble de logos
+        </div>
+    </a>
+    <div class="project-badges">
+        
+            <span class="project-badge">Logos</span>
+        
+            <span class="project-badge">Typographie</span>
+        
+            <span class="project-badge">Projet de cours</span>
+        
+    </div>
+</div>
+
+        
+            <div class="project">
+    <a href="/graphics/derby" class="i-link" is="cursor-link" cursor-class="hover-plus">
+        <div class="project-image">
+            <img src="/user/projects/img/thumbnails/derby.jpg" alt="">
+        </div>
+        <div class="project-title">
+            Derby de la meije
+        </div>
+    </a>
+    <div class="project-badges">
+        
+            <span class="project-badge">Affiche</span>
+        
+    </div>
+</div>
+
+        
+    </div>
+
+</section>
+
+        
+    </div>
+</div>
+
+
+
+<div id="cursor-follower">
+    <div class="round-cursor"></div>
+    <div class="plus-cursor"></div>
+    <div class="restart-cursor"><i class="icon-cw icon-2x"></i></div>
+    <div class="cross-cursor">
+        <div class="x-bar"></div>
+        <div class="x-bar"></div>
+    </div>
+    <!--    <div class="plus-cursor-info">Voir</div>-->
+    <div class="progress-cursor">
+        <svg height="40" width="40">
+            <circle id="loadcircle" cx="20" cy="20" r="15" stroke-width="3" fill="none" />
+        </svg>
+    </div>
+</div>
+
+<div id="menu">
+    <div id="menu-content">
+        <div id="menu-links">
+            <div class="link-wrapper">
+                <a class="menu-link i-link" href="/" data-target="#home" data-text="Accueil" is="cursor-link" cursor-class="hover1 dark">Accueil</a>
+            </div>
+            <div class="link-wrapper">
+                <a class="menu-link i-link" href="/" data-target="#my-portfolio" data-text="Projets" is="cursor-link" cursor-class="hover1 dark">Projets</a>
+            </div>
+            <div class="link-wrapper">
+                <a class="menu-link i-link" href="/profile" data-text="Profil" is="cursor-link" cursor-class="hover1 dark">Profil</a>
+            </div>
+        </div>
+        <div id="menu-separator"></div>
+        <div id="menu-contact">
+            <div class="cv"><a target="_blank" href="/assets/CV-Boyer-Léo.pdf" class="button" is="cursor-link" cursor-class="dark hover1">Mon CV &mdash;</a></div>
+            <div class="coords">
+                <h1>Contact</h1>
+                <p>+33 (0) 7 82 07 87 32</p>
+                <p>
+                    <script type="text/javascript">
+                      user = "contact";
+                      domain = "leoboyer.fr";
+                      document.write('<a href=\"mailto:' + user + '@' + domain + '\" is="cursor-link" cursor-class="hover1 soften"><u>' +
+                        user + '@' + domain + '</u></a>');
+                    </script>
+                </p>
+                <p class="mt-4" id="menu-social-icons">
+                    <a data-info="Profil LinkedIn" href="https://www.linkedin.com/in/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften">
+                        <i class="icon-linkedin icon-1hx"></i>
+                    </a>
+                    <a data-info="Page GitHub" href="https://github.com/leoboyerbx/" target="_blank" is="cursor-link" cursor-class="hover1 soften" class="ml-2">
+                        <i class="icon-github icon-1hx"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="menu-button" class=scrolled>
+    <a id="menu-button-icon" is="cursor-link" cursor-class="menu" cursor-grab cursor-grab-padding="20">
+        <div class="h-bar"></div>
+        <div class="h-bar"></div>
+        <div class="h-bar"></div>
+        <div class="x-bar"></div>
+        <div class="x-bar"></div>
+    </a>
+    <a id="menu-button-hint" is="cursor-link" cursor-class="hover1">
+        <div class="text-menu" class="link-1">
+            <span>M</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>n</span><!-- whitespace
+            --><span>u</span>
+        </div>
+        <div class="text-close">
+            <span>F</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>r</span><!-- whitespace
+            --><span>m</span><!-- whitespace
+            --><span>e</span><!-- whitespace
+            --><span>r</span>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>
